@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/create', [App\Http\Controllers\FrontController::class, 'index'])->name('create');
+Route::post('/create', [App\Http\Controllers\FrontController::class, 'store'])->name('store');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
