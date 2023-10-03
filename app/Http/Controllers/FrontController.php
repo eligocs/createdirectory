@@ -24,13 +24,13 @@ class FrontController extends Controller
 
     public function store(Request $request)
     { 
-        $filename = '/admin-directory'.$request->input('directory_name');
+        $filename = '/admin-directory'.'/'.$request->input('directory_name');
         $content = 'Test dummy file';
         if (pathinfo($filename, PATHINFO_EXTENSION) === 'txt') { 
             Storage::disk('public')->put($filename, $content); 
             return redirect('create')->with('success',"Text file '{$filename}' has been created.");
         }  
-        $folderName = '/admin-directory'.$request->input('directory_name'); 
+        $folderName = '/admin-directory'.'/'.$request->input('directory_name'); 
         if (!Storage::disk('public')->exists($folderName)) {
             Storage::disk('public')->makeDirectory($folderName); 
             return redirect('create')->with('success', "Folder '{$folderName}' created successfully.");
@@ -66,4 +66,62 @@ class FrontController extends Controller
         }
         
     }
+
+
+    public function checkDirectoryExist(Request $request){ 
+        if($request->input('path')){ 
+            $folderName = '/admin-directory'.'/'.$request->input('path'); 
+            if (Storage::disk('public')->exists($folderName)) { 
+                return 1;
+            } else {
+                return 0;
+            } 
+        }else{
+            return 0;
+        }
+    }
+
+    public function deleteDirectory(Request $request){ 
+        if($request->input('path')){ 
+            $folderName = $request->input('path'); 
+            if (Storage::disk('public')->exists($folderName)) { 
+                if($request->type == 'file'){
+                    if (Storage::disk('public')->delete($folderName)) {  
+                        return response()->json([
+                            'status'=>200,
+                            'message'=>'File deleted successfully',
+                        ]);
+                    }
+                }else if($request->type == 'folder'){
+                    if (Storage::disk('public')->deleteDirectory($folderName)) {  
+                        return response()->json([
+                            'status'=>200,
+                            'message'=>'Folder deleted successfully',
+                        ]);
+                    }
+                }else {
+                    return response()->json([
+                        'status'=>500,
+                        'message'=>'Fail to delete folder or file !',
+                    ]);
+                } 
+            }else{
+                return response()->json([
+                    'status'=>404,
+                    'message'=>'Folder you are trying to delete does not exist !',
+                ]);
+            }
+        }else{
+            return response()->json([
+                'status'=>200,
+                'message'=>'Path to delete is not added in the request',
+            ]);
+        }
+    }
+
+    public function install(){
+        
+        return view('install');
+    }
+
 }  

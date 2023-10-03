@@ -18,8 +18,11 @@ Route::get('/', function () {
 });
 
 Route::get('/create', [App\Http\Controllers\FrontController::class, 'index'])->name('create');
+Route::get('/install', [App\Http\Controllers\FrontController::class, 'install'])->name('install');
 Route::post('/create', [App\Http\Controllers\FrontController::class, 'store'])->name('store');
 Route::post('/create_database',[App\Http\Controllers\FrontController::class,'create_database'])->name('create_database');
+Route::get('/checkDirectoryExist',[App\Http\Controllers\FrontController::class,'checkDirectoryExist'])->name('checkDirectoryExist');
+Route::get('/deleteDirectory',[App\Http\Controllers\FrontController::class,'deleteDirectory'])->name('deleteDirectory');
 
 Auth::routes();
 
