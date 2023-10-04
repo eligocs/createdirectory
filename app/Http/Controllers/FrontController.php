@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use File;
 use Session;
 use Storage;
-use DB;
+use DB; 
 class FrontController extends Controller
 {
     public function index()
@@ -81,6 +81,34 @@ class FrontController extends Controller
         }
     }
 
+    public function checkDatabaseExist(Request $request){ 
+        if($request->input('database')){ 
+            $databaseName = $request->input('database');  
+            $query = "SELECT SCHEMA_NAME FROM information_schema.SCHEMATA WHERE SCHEMA_NAME = ?";
+            $results = DB::select($query, [$databaseName]);  
+            if (count($results) > 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } 
+        return 0;
+    }
+
+    public function checkUsernameExist(Request $request){ 
+        if($request->input('username')){ 
+            $username = $request->input('username');   
+            $query = "SELECT COUNT(*) as userCount FROM mysql.user WHERE user = ?";
+            $results = DB::select($query, [$username]);
+            if (count($results) > 0 && $results[0]->userCount > 0) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+        return 0;
+    }
+
     public function deleteDirectory(Request $request){ 
         if($request->input('path')){ 
             $folderName = $request->input('path'); 
@@ -122,6 +150,89 @@ class FrontController extends Controller
     public function install(){
         
         return view('install');
+    }
+
+    public function setupadmin(Request $request){
+        
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'company_name' => 'required',
+            'email' => 'required',
+            'directory_name' => 'required',
+            'database' => 'required',
+            'username' => 'required',
+        ]);
+        $folderName = '/admin-directory'.'/'.$request->input('directory_name'); 
+        if (!Storage::disk('public')->exists($folderName)) {
+            Storage::disk('public')->makeDirectory($folderName);  
+            $folder = "Folder '{$folderName}' created successfully.";
+        } else { 
+            return response()->json([
+                'status'=>500,
+                'message'=>'Folder already exists!'
+            ]); 
+        }
+        if ($request->hasFile('image')) { 
+            $imageFile = $request->file('image');  
+            $tempPath = $imageFile->store('temp', 'local'); 
+            $imagePath = $folderName.'/' . $imageFile->getClientOriginalName();
+            Storage::disk('public')->move($tempPath, $imagePath);
+        }else{
+            return response()->json([
+                'status'=>500,
+                'message'=>'Fail to upload logo!'
+            ]); 
+        }
+        $company_name = $request->company_name ?? '';
+        $email = $request->email ?? '';
+        $directory_name = $request->directory_name ?? '';
+        $database = $request->database ?? '';
+        $username = $request->username ?? '';
+        $password = $password = str_random(10); 
+
+        // Create the database
+        DB::statement("CREATE DATABASE IF NOT EXISTS $database"); 
+        DB::statement("CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'");
+        $res = DB::statement("GRANT ALL PRIVILEGES ON $database.* TO '$username'@'localhost'"); 
+        if(!$res){
+            return response()->json([
+                'status'=>500,
+                'message'=>'Fail to create database adn user!'
+            ]); 
+        }
+        
+        $res = Credentials::create([
+            'company_name'=>$company_name,
+            'email'=>$email,
+            'directory_name'=>$directory_name,
+            'database'=>$database,
+            'username'=>$username,
+            'password'=>$password,
+        ]);
+        
+        return response()->json([
+            'status'=>200,
+            'company_name'=>$company_name,
+            'email'=>$email,
+            'directory_name'=>$folder,
+            'logo_path'=>$imagePath,
+            'database'=>$database,
+            'username'=>$username,
+            'password'=>$password,
+        ]); 
+
+    }
+
+    public function runMigrations(Request $request)
+    {
+        // You can run migrations using Artisan's migrate command
+        Artisan::call('migrate');
+
+        // Optionally, you can capture the output of the command
+        $output = Artisan::output();
+
+        // You can then return a response or use the output as needed
+        return response()->json(['message' => 'Migrations executed successfully', 'output' => $output]);
     }
 
 }  

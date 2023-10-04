@@ -11,6 +11,14 @@
     .rightme {
         text-align: right;
     }
+
+    .card-body {
+        height: 600px;
+    }
+
+    .cropper-container.cropper-bg {
+        margin-top: 8px;
+    }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
 
@@ -19,51 +27,62 @@
     <div class="row">
         <div class="card mainform ">
             <div class="card-body">
-                <div class="col-md-12 wizard">
+                <div class="col-md-12 startdatabaseMigration text-center mt-4" style="display:none;">
+                    <h3>Create database and dummy data</h3>
+                    <div class="mb-3 mt-5 ">
+                        <button type="button" class="btn btn-primary" id="startmigration">Start Migrations</button>
+                    </div>
+                </div>
+                <div class="col-md-12 wizard text-center mt-4">
                     <h3>Start Installation Wizard</h3>
-                    <div class="mb-3 mt-5"> 
-                        <button type="button" class="btn btn-primary" id="startinstaller">Next</button> 
+                    <div class="mb-3 mt-5 ">
+                        <button type="button" class="btn btn-primary" id="startinstaller">Next</button>
                     </div>
                 </div>
                 <form id="step-form" style='display:none;'>
-                    <div class="col-md-12 stepdiv" >
+                    <div class="col-md-12 stepdiv">
                         <h3>Basic info</h3>
-                        <div class="mb-3">
+                        <div class="mb-3 mt-3">
                             <label for="field1" class="form-label">Company Name</label>
                             <input type="text" class="form-control" id="field1" name="company_name" required>
                         </div>
                         <div class="mb-3">
                             <label for="field1" class="form-label">Email</label>
                             <input type="email" class="form-control" id="field1" name="email" required>
-                        </div> 
-                    </div>
-                    <div class="col-md-12 stepdiv" >
-                        <h3>Upload Company Logo</h3>
-                        <div class="mb-3">
-                            <input type="file" id="imageInput" accept="image/*">
-                            <img id="image" src="" alt="Cropped Image">
-                            <button type="button" class="btn btn-success mt-2" id="cropButton">Crop</button> 
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-md-12 stepdiv">
                         <h3>Database/Assets</h3>
-                        <div class="mb-3">
-                            <label for="field1" class="form-label">Assets Directory</label>
-                            <input type="text" class="form-control" id="field1" name="directory" required>
+                        <div class="mb-3 mt-3">
+                            <label for="directory_name" class="form-label">Assets Directory</label>
+                            <input type="text" class="form-control" id="directory_name" name="directory_name" required>
+                            <div class="existmessage text-danger mt-2" style="display: none;">Directory exist !</div>
+                            <div class="can_create mt-2 text-success" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="field2" class="form-label">Database</label>
-                            <input type="text" class="form-control" id="field2" name="database" required>
+                            <label for="database_name" class="form-label">Database</label>
+                            <input type="text" class="form-control" id="database_name" name="database" required>
+                            <div class="databaseExistmessage text-danger mt-2" style="display: none;">Database exist !</div>
+                            <div class="can_create_two mt-2 text-success" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
-                            <label for="field3" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="field3" name="username" required>
+                            <label for="database_username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="database_username" name="username" required>
+                            <div class="databaseExistmessage_three text-danger mt-2" style="display: none;">Database Username exist !</div>
+                            <div class="can_create_two_three mt-2 text-success" style="display: none;"></div>
+                        </div> 
+                    </div>
+                    <div class="col-md-12 stepdiv">
+                        <h3>Upload Company Logo</h3>
+                        <div class="mb-3 mt-3">
+                            <input type="file" id="imageInput" accept="image/*">
+                            <div class="  logoDiv">
+                                <img id="logo" src="" alt="Cropped Image">
+                                {{-- <button type="button" class="btn btn-success mt-2" id="cropButton">Crop</button>
+                                --}}
+                            </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="field4" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="field4" name="password" required>
-                        </div>
-                    </div> 
+                    </div>
                     <div class="row">
                         <div class="col-md-6 ">
                             <button type="button" class="btn btn-primary" id="prev-step">Previous</button>
@@ -73,26 +92,161 @@
                         </div>
                     </div>
                 </form>
-                    {{-- <div class="text-center">
-                        <button type="submit" class="btn btn-success" id="submit-form">Submit</button>
-                    </div> --}}
-                </div>
+                {{-- <div class="text-center">
+                    <button type="submit" class="btn btn-success" id="submit-form">Submit</button>
+                </div> --}}
             </div>
         </div>
+    </div>
 
-        <!-- Navigation buttons -->
+    <!-- Navigation buttons -->
 </div>
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
 <script>
-    // JavaScript code for handling step navigation
     $(document).ready(function () {
+        var err = false;
+        $(document).on('input','#directory_name',function(){
+            checkdir();
+        });
+        $(document).on('blur','#directory_name',function(){
+            checkdir();
+        });
+        $(document).on('input','#database_name',function(){
+            checkdatabase();
+        });
+        $(document).on('blur','#database_name',function(){
+            checkdatabase();
+        });
+        $(document).on('input','#database_username',function(){
+            checkusername()();
+        });
+        $(document).on('blur','#database_username',function(){
+            checkusername()();
+        });
+
+        function checkdir(){
+            var sanitizedValue =  $('#directory_name').val().replace(/ /g, '');
+            var sanitizedValue = sanitizedValue.replace(/\/\//g, '/');
+            $('#directory_name').val(sanitizedValue);
+            var path = sanitizedValue; 
+            if(path){
+                $('#next-step').attr('disabled',true);
+                $('.can_create').hide();
+                $('.existmessage').hide(); 
+                $.ajax({
+                    url: '{{url("checkDirectoryExist")}}', 
+                    type: 'GET',  
+                    data: { path: path },  
+                    success: function(response) { 
+                        if(response == 1){
+                            $('.existmessage').show();  
+                            $('.can_create').hide(); 
+                            err = true;
+                        }else{
+                            $('.existmessage').hide(); 
+                            $('.can_create').show();
+                            $('.can_create').html('--path : public_html/storage/app/public/admin-directory/'+path); 
+                        }
+                    },
+                    error: function(xhr, status, error) { 
+                        console.error(error);
+                    }
+                }); 
+            }else{
+                $('.can_create').html('');
+                $('.can_create').hide();
+                $('.existmessage').hide(); 
+                $('#next-step').attr('disabled',true);
+            }
+        }
+
+        function checkdatabase(){
+            var sanitizedValue =  $('#database_name').val().replace(/ /g, '');
+            var sanitizedValue = sanitizedValue.replace(/[^a-zA-Z0-9]/g, '');
+            $('#database_name').val(sanitizedValue);
+            var database = sanitizedValue; 
+            if(database){
+                $('#next-step').attr('disabled',true);
+                $('.can_create_two').hide();
+                $('.databaseExistmessage').hide(); 
+                $.ajax({
+                    url: '{{url("checkDatabaseExist")}}', 
+                    type: 'GET',  
+                    data: { database: database },  
+                    success: function(response) { 
+                        if(response == 1){
+                            $('.databaseExistmessage').show();  
+                            $('.can_create_two').html('--database : '+database+' already exist !');
+                            err = true;
+                        }else{
+                            $('.databaseExistmessage').hide();
+                            $('#next-step').attr('disabled',false);
+                            $('.can_create_two').show();
+                            $('.can_create_two').html('--database : '+database+' can be created'); 
+                        }
+                    },
+                    error: function(xhr, status, error) { 
+                        console.error(error);
+                    }
+                }); 
+            }else{
+                $('.can_create_two').html('');
+                $('.can_create_two').hide();
+                $('.databaseExistmessage').hide(); 
+                $('#next-step').attr('disabled',true);
+            }
+        }
+
+        function checkusername(){
+            var sanitizedValue =  $('#database_username').val().replace(/ /g, '');
+            var sanitizedValue = sanitizedValue.replace(/[^a-zA-Z0-9]/g, '');
+            $('#database_username').val(sanitizedValue);
+            var username = sanitizedValue; 
+            if(username){
+                $('#next-step').attr('disabled',true);
+                $('.can_create_two_three').hide();
+                $('.databaseExistmessage_three').hide(); 
+                $.ajax({
+                    url: '{{url("checkUsernameExist")}}', 
+                    type: 'GET',  
+                    data: { username: username },  
+                    success: function(response) { 
+                        if(response == 1){
+                            $('.databaseExistmessage_three').show(); 
+                            err = true;
+                            $('.can_create_two_three').html('--username : '+username+' already exist !');
+                        }else{
+                            $('.databaseExistmessage_three').hide(); 
+                            $('.can_create_two_three').show();
+                            $('.can_create_two_three').html('--username : '+username+' can be created'); 
+                        }
+                    },
+                    error: function(xhr, status, error) { 
+                        console.error(error);
+                    }
+                }); 
+            }else{
+                $('.can_create_two_three').html('');
+                $('.can_create_two_three').hide();
+                $('.databaseExistmessage_three').hide(); 
+                $('#next-step').attr('disabled',true);
+            }
+        }
         
-        const image = document.getElementById('image');
-        const cropper = new Cropper(image, {
-            aspectRatio: 16 / 9, // Set the desired aspect ratio (e.g., 16:9)
-            viewMode: 1,
+        const image = document.getElementById('logo');
+        const cropper = new Cropper(image, { 
+            dragMode: 'move',
+            aspectRatio: 16 / 9,
+            autoCropArea: 0.65,
+            restore: false,
+            guides: false,
+            center: false,
+            highlight: false,
+            cropBoxMovable: true,
+            cropBoxResizable: false,
+            toggleDragModeOnDblclick: false,
         });
         
         const imageInput = document.getElementById('imageInput'); 
@@ -102,38 +256,47 @@
                 const reader = new FileReader();
                 reader.onload = function () {
                     image.src = reader.result;
-                    cropper.replace(reader.result); // Load the image into Cropper.js
+                    cropper.replace(reader.result); 
                 };
                 reader.readAsDataURL(files[0]);
             }
+            $('.logoDiv').show();
         });
         
-        const cropButton = document.getElementById('cropButton');
-        
-        cropButton.addEventListener('click', function () {
+        $(document).on('click','.cropButton', function () {
             // Get the cropped image data
             // const croppedData = cropper.getCroppedCanvas().toDataURL('image/jpeg');
-            if (cropper) {
-            // Get the cropped image data
+            if (cropper) { 
             const croppedCanvas = cropper.getCroppedCanvas();
-
-            // Convert the canvas to a Blob (you can change the format and quality)
-            croppedCanvas.toBlob(function (blob) {
-                // Create a FormData object and append the Blob to it
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            var company_name = $('input[name="company_name"]').val();
+            var email = $('input[name="email"]').val();
+            var directory_name = $('input[name="directory_name"]').val();
+            var database = $('input[name="database"]').val();
+            var username = $('input[name="username"]').val(); 
+            croppedCanvas.toBlob(function (blob) { 
                 const formData = new FormData();
-                formData.append('image', blob, 'cropped_image.jpg'); // Adjust the file name if needed
-
-                // Send the FormData to your server (adjust the URL and method as needed)
-                fetch('/upload-url', {
+                formData.append('image', blob, 'cropped_image.jpg');   
+                formData.append('company_name', company_name);   
+                formData.append('email', email);   
+                formData.append('directory_name', directory_name);   
+                formData.append('database', database);   
+                formData.append('username', username);   
+                fetch('{{url("setupadmin")}}', {
                     method: 'POST',
                     body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': csrfToken,  
+                        'Content-Type': 'application/json', 
+                    },
                 })
-                .then(response => {
-                    // Handle the server response as needed
-                    if (response.ok) {
-                        console.log('Image uploaded successfully.');
+                .then(response => { 
+                    if (response.status == 200) {
+                        $('.startdatabaseMigration').show(); 
+                        $('#submit-form').hide(); 
                     } else {
-                        console.error('Image upload failed.');
+                        $('.startdatabaseMigration').hide();
+                        $('#submit-form').show(); 
                     }
                 })
                 .catch(error => {
@@ -147,13 +310,13 @@
         const startinstalled = $("#startinstaller");
         const form = $("#step-form");
         const wizard =  $('.wizard');
+        $('.logoDiv').hide();
         startinstalled.click(function(){
             form.show()
             wizard.hide()
         });
         const prevButton = $("#prev-step");
-        const nextButton = $("#next-step");
-        const submitButton = $("#submit-form");
+        const nextButton = $("#next-step"); 
         const steps = form.find(".stepdiv");
         prevButton.hide();
         let currentStep = 0;
@@ -164,13 +327,76 @@
 
         // Handle "Next" button click
         nextButton.click(function () {
-            prevButton.show();
+            if(!validateInputs()){
+                return;
+            }
+            prevButton.show(); 
+            if(currentStep == 0){ 
+                checkdir();checkdatabase();checkusername(); 
+            } 
+            if (currentStep == 1) { 
+                if(err){
+                    $('#next-step').attr('disabled',true); 
+                    return;
+                }else{
+                    $('#next-step').attr('disabled',false); 
+                }
+                nextButton.addClass('cropButton');
+                nextButton.attr('id','');
+            }else{
+                nextButton.removeClass('cropButton');
+                nextButton.attr('id','next-step');
+            }
             if (currentStep < steps.length - 1) {
                 $(steps[currentStep]).hide();
                 currentStep++;
                 $(steps[currentStep]).show();
-            }
+            }  
         });
+        
+        $('input[name="company_name"]').on('input',function(){
+           var val =  $(this).val();
+           val = val.replace(/\s/g, '').toLowerCase();
+           $('#directory_name').val(val) 
+           $('input[name="database"]').val(val) 
+           $('input[name="username"]').val(val) 
+        });
+        function isEmailValid(email) {
+            // Regular expression pattern to match an email address
+            const emailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+            // Use the test() method to check if the email matches the pattern
+            return emailPattern.test(email);
+        }
+        function validateInputs(){
+            $('.errormessage').hide();
+            if($('input[name="company_name"]').val() == ''){ 
+                $('input[name="company_name"]').after('<span class="text-danger errormessage">Company Name is required</span>');
+                return 0;
+            }
+            if($('input[name="email"]').val() == ''){
+                $('input[name="email"]').after('<span class="text-danger errormessage">Email is required</span>');
+                return 0;
+            }
+            var validate = isEmailValid($('input[name="email"]').val());
+            if(!validate){
+                $('input[name="email"]').after('<span class="text-danger errormessage">Please check email address is incorrect !</span>');
+                return 0;
+            } 
+            if($('input[name="directory_name"]').val() == ''){
+                $('input[name="directory_name"]').after('<span class="text-danger errormessage">Directory name is required</span>');
+                return 0;
+            }
+            if($('input[name="database"]').val() == ''){
+                $('input[name="database"]').after('<span class="text-danger errormessage">Database name is required</span>');
+                return 0;
+            }
+            if($('input[name="username"]').val() == ''){
+                $('input[name="username"]').after('<span class="text-danger errormessage">Database user name is required</span>');
+                return 0;
+            }
+            return 1;
+        }
 
         // Handle "Previous" button click
         prevButton.click(function () { 
@@ -183,11 +409,9 @@
                 prevButton.hide();
             }
         });
-
-        // Handle form submission (you can customize this)
+ 
         form.submit(function (e) {
-            e.preventDefault();
-            // You can handle the form submission here
+            e.preventDefault(); 
         });
     });
 </script>
