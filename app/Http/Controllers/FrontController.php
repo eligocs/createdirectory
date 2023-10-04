@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Config; 
 use Illuminate\Http\Request;
 use File;
 use Session;
 use Storage;
+use App\Models\Credentials;
 use DB; 
 class FrontController extends Controller
 {
@@ -173,10 +174,10 @@ class FrontController extends Controller
             ]); 
         }
         if ($request->hasFile('image')) { 
-            $imageFile = $request->file('image');  
-            $tempPath = $imageFile->store('temp', 'local'); 
+            $imageFile = $request->file('image');   
             $imagePath = $folderName.'/' . $imageFile->getClientOriginalName();
-            Storage::disk('public')->move($tempPath, $imagePath);
+            $newFileName = uniqid() . '.' . $imageFile->getClientOriginalExtension(); 
+            $moved = Storage::disk('public')->putFileAs($imagePath, $imageFile, $newFileName); 
         }else{
             return response()->json([
                 'status'=>500,
@@ -188,7 +189,7 @@ class FrontController extends Controller
         $directory_name = $request->directory_name ?? '';
         $database = $request->database ?? '';
         $username = $request->username ?? '';
-        $password = $password = str_random(10); 
+        $password  = $this->generateRandomPassword(); 
 
         // Create the database
         DB::statement("CREATE DATABASE IF NOT EXISTS $database"); 
@@ -197,10 +198,10 @@ class FrontController extends Controller
         if(!$res){
             return response()->json([
                 'status'=>500,
-                'message'=>'Fail to create database adn user!'
+                'message'=>'Fail to create database user!'
             ]); 
         }
-        
+
         $res = Credentials::create([
             'company_name'=>$company_name,
             'email'=>$email,
@@ -209,12 +210,12 @@ class FrontController extends Controller
             'username'=>$username,
             'password'=>$password,
         ]);
-        
+        $this->runMigrations($database,$username,$password);
         return response()->json([
             'status'=>200,
             'company_name'=>$company_name,
             'email'=>$email,
-            'directory_name'=>$folder,
+            'directory_name'=>$directory_name,
             'logo_path'=>$imagePath,
             'database'=>$database,
             'username'=>$username,
@@ -223,15 +224,50 @@ class FrontController extends Controller
 
     }
 
-    public function runMigrations(Request $request)
+    public function generateRandomPassword($length = 10) {
+        $characters = '0123456789!@#$&*'; // Include any other characters you want in the password
+    
+        $password = '';
+        $max = strlen($characters) - 1;
+    
+        for ($i = 0; $i < $length; $i++) {
+            $password .= $characters[random_int(0, $max)];
+        }
+    
+        return $password;
+    }
+    
+ 
+
+
+    public function runMigrations($database,$username,$password)
     {
-        // You can run migrations using Artisan's migrate command
-        Artisan::call('migrate');
+        // Define the new database connection configuration
+        $newConnectionName = 'new_connection';
+        $newConnectionConfig = [
+            'driver' => 'mysql',
+            'host' => 'localhost',
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+        ];
 
-        // Optionally, you can capture the output of the command
-        $output = Artisan::output();
+        // Set the new database connection configuration
+        Config::set("database.connections.$newConnectionName", $newConnectionConfig);
 
-        // You can then return a response or use the output as needed
+        // Use the new connection to run migrations
+        Config::set("database.default", $newConnectionName);
+
+        // Run migrations using Artisan
+        $migrationPath = 'database/migrations/software';
+
+        // Run migrations for specific tables using Artisan with --path option
+        Artisan::call('migrate', ['--path' => $migrationPath]);
+    
+
+        // Optionally, revert back to the original/default connection
+        Config::set("database.default", 'mysql');
+
         return response()->json(['message' => 'Migrations executed successfully', 'output' => $output]);
     }
 

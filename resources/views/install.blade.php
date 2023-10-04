@@ -62,15 +62,17 @@
                         <div class="mb-3">
                             <label for="database_name" class="form-label">Database</label>
                             <input type="text" class="form-control" id="database_name" name="database" required>
-                            <div class="databaseExistmessage text-danger mt-2" style="display: none;">Database exist !</div>
+                            <div class="databaseExistmessage text-danger mt-2" style="display: none;">Database exist !
+                            </div>
                             <div class="can_create_two mt-2 text-success" style="display: none;"></div>
                         </div>
                         <div class="mb-3">
                             <label for="database_username" class="form-label">Username</label>
                             <input type="text" class="form-control" id="database_username" name="username" required>
-                            <div class="databaseExistmessage_three text-danger mt-2" style="display: none;">Database Username exist !</div>
+                            <div class="databaseExistmessage_three text-danger mt-2" style="display: none;">Database
+                                Username exist !</div>
                             <div class="can_create_two_three mt-2 text-success" style="display: none;"></div>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-md-12 stepdiv">
                         <h3>Upload Company Logo</h3>
@@ -107,8 +109,9 @@
 <script>
     $(document).ready(function () {
         var err = false;
+        
         $(document).on('input','#directory_name',function(){
-            checkdir();
+            checkdir(); 
         });
         $(document).on('blur','#directory_name',function(){
             checkdir();
@@ -120,10 +123,10 @@
             checkdatabase();
         });
         $(document).on('input','#database_username',function(){
-            checkusername()();
+            checkusername();
         });
         $(document).on('blur','#database_username',function(){
-            checkusername()();
+            checkusername();
         });
 
         function checkdir(){
@@ -144,10 +147,12 @@
                             $('.existmessage').show();  
                             $('.can_create').hide(); 
                             err = true;
+                            $('#next-step').attr('disabled',true); 
                         }else{
                             $('.existmessage').hide(); 
                             $('.can_create').show();
                             $('.can_create').html('--path : public_html/storage/app/public/admin-directory/'+path); 
+                            $('#next-step').attr('disabled',false); 
                         }
                     },
                     error: function(xhr, status, error) { 
@@ -180,11 +185,12 @@
                             $('.databaseExistmessage').show();  
                             $('.can_create_two').html('--database : '+database+' already exist !');
                             err = true;
+                            $('#next-step').attr('disabled',true); 
                         }else{
                             $('.databaseExistmessage').hide();
                             $('#next-step').attr('disabled',false);
                             $('.can_create_two').show();
-                            $('.can_create_two').html('--database : '+database+' can be created'); 
+                            $('.can_create_two').html('--database : '+database+' can be created');  
                         }
                     },
                     error: function(xhr, status, error) { 
@@ -217,10 +223,12 @@
                             $('.databaseExistmessage_three').show(); 
                             err = true;
                             $('.can_create_two_three').html('--username : '+username+' already exist !');
+                            $('#next-step').attr('disabled',true); 
                         }else{
                             $('.databaseExistmessage_three').hide(); 
                             $('.can_create_two_three').show();
                             $('.can_create_two_three').html('--username : '+username+' can be created'); 
+                            $('#next-step').attr('disabled',false); 
                         }
                     },
                     error: function(xhr, status, error) { 
@@ -251,6 +259,7 @@
         
         const imageInput = document.getElementById('imageInput'); 
         imageInput.addEventListener('change', function (event) {
+            $('.errormessage').hide();
             const files = event.target.files;
             if (files && files.length > 0) {
                 const reader = new FileReader();
@@ -266,8 +275,9 @@
         $(document).on('click','.cropButton', function () {
             // Get the cropped image data
             // const croppedData = cropper.getCroppedCanvas().toDataURL('image/jpeg');
-            if (cropper) { 
             const croppedCanvas = cropper.getCroppedCanvas();
+            console.log(croppedCanvas)
+            if (croppedCanvas) { 
             const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             var company_name = $('input[name="company_name"]').val();
             var email = $('input[name="email"]').val();
@@ -276,7 +286,7 @@
             var username = $('input[name="username"]').val(); 
             croppedCanvas.toBlob(function (blob) { 
                 const formData = new FormData();
-                formData.append('image', blob, 'cropped_image.jpg');   
+                formData.append('image', blob);   
                 formData.append('company_name', company_name);   
                 formData.append('email', email);   
                 formData.append('directory_name', directory_name);   
@@ -287,22 +297,28 @@
                     body: formData,
                     headers: {
                         'X-CSRF-TOKEN': csrfToken,  
-                        'Content-Type': 'application/json', 
                     },
+                    'Content-Type': 'application/json', 
+                    'Accept': 'application/json', 
                 })
                 .then(response => { 
+                    console.log(response)
                     if (response.status == 200) {
                         $('.startdatabaseMigration').show(); 
-                        $('#submit-form').hide(); 
+                        $('#step-form').hide(); 
                     } else {
                         $('.startdatabaseMigration').hide();
-                        $('#submit-form').show(); 
+                        $('#step-form').show(); 
+                        $('#imageInput').after('<span class="text-danger errormessage">'+response.message+'!</span>');
                     }
                 })
                 .catch(error => {
                     console.error('Image upload error:', error);
                 });
             }, 'image/jpeg', 0.9); // Adjust the format and quality as needed
+            }else{
+                $('#imageInput').after('<span class="text-danger errormessage">Please select company logo!</span>');
+                return 0;
             }
         });
 
@@ -334,19 +350,19 @@
             if(currentStep == 0){ 
                 checkdir();checkdatabase();checkusername(); 
             } 
-            if (currentStep == 1) { 
-                if(err){
-                    $('#next-step').attr('disabled',true); 
-                    return;
-                }else{
-                    $('#next-step').attr('disabled',false); 
-                }
-                nextButton.addClass('cropButton');
-                nextButton.attr('id','');
+            if(err){
+                $('#next-step').attr('disabled',true); 
+                return;
             }else{
-                nextButton.removeClass('cropButton');
-                nextButton.attr('id','next-step');
+                // $('#next-step').attr('disabled',false); 
             }
+            if (currentStep == 1) { 
+                setTimeout(() => {
+                    nextButton.addClass('cropButton');
+                    nextButton.attr('id','');
+                }, 1000);
+            } 
+            
             if (currentStep < steps.length - 1) {
                 $(steps[currentStep]).hide();
                 currentStep++;
@@ -371,7 +387,7 @@
         function validateInputs(){
             $('.errormessage').hide();
             if($('input[name="company_name"]').val() == ''){ 
-                $('input[name="company_name"]').after('<span class="text-danger errormessage">Company Name is required</span>');
+                $('input[name="company_name"]').after('<span class="text-danger errormessage">Company Name is required!</span>');
                 return 0;
             }
             if($('input[name="email"]').val() == ''){
@@ -380,19 +396,19 @@
             }
             var validate = isEmailValid($('input[name="email"]').val());
             if(!validate){
-                $('input[name="email"]').after('<span class="text-danger errormessage">Please check email address is incorrect !</span>');
+                $('input[name="email"]').after('<span class="text-danger errormessage">Please check email address is incorrect!</span>');
                 return 0;
             } 
             if($('input[name="directory_name"]').val() == ''){
-                $('input[name="directory_name"]').after('<span class="text-danger errormessage">Directory name is required</span>');
+                $('input[name="directory_name"]').after('<span class="text-danger errormessage">Directory name is required!</span>');
                 return 0;
             }
             if($('input[name="database"]').val() == ''){
-                $('input[name="database"]').after('<span class="text-danger errormessage">Database name is required</span>');
+                $('input[name="database"]').after('<span class="text-danger errormessage">Database name is required!</span>');
                 return 0;
             }
             if($('input[name="username"]').val() == ''){
-                $('input[name="username"]').after('<span class="text-danger errormessage">Database user name is required</span>');
+                $('input[name="username"]').after('<span class="text-danger errormessage">Database user name is required!</span>');
                 return 0;
             }
             return 1;
