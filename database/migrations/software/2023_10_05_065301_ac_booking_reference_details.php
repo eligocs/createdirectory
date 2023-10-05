@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testdb', function (Blueprint $table) {
+        Schema::create('ac_booking_reference_details', function (Blueprint $table) {
             $table->id();
-            $table->string('company_name');
-            $table->string('email')->unique(); 
-            $table->string('directory_name'); 
-            $table->string('database');
-            $table->string('username');
-            $table->string('password'); 
+            $table->string('cus_account_id')->comment('ac_customer_accounts.id')->nullable(); 
+            $table->string('iti_id')->nullable(); 
+            $table->string('lead_id')->nullable(); 
+            $table->string('close_account')->default(0)->comment('1=closed'); 
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('testdb');
+        Schema::dropIfExists('ac_booking_reference_details');
     }
 };

@@ -111,12 +111,14 @@
 
         $('.finishsetup').click(function(e){
             e.preventDefault(); 
-            Swal.fire(
-                'Good job!',
-                'Setup Complete',
-                'success'
-            )
-            window.location.reload();
+            setTimeout(() => {
+                Swal.fire(
+                    'Good job!',
+                    'Setup Complete',
+                    'success'
+                )
+                window.location.reload();
+            }, 3000);
         });
 
         var err = false;
