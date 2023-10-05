@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attraction_images', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('attraction_id');
-            $table->string('attraction_images', 255);
-
+            $table->string('name', 100);
+            $table->string('image_url', 200);
+            $table->integer('client_view')->comment('0=false,1=true');
+            $table->integer('del_status')->default(0);
+            $table->integer('agent_id');
             $table->timestamps();
-
-            $table->foreign('attraction_id')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attraction_images');
+        Schema::dropIfExists('images');
     }
 };

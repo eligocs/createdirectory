@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attraction_images', function (Blueprint $table) {
+        Schema::create('hooney_moon_kit', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('attraction_id');
-            $table->string('attraction_images', 255);
-
+            $table->string('inclusion_name', 50);
             $table->timestamps();
-
-            $table->foreign('attraction_id')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
         });
     }
 
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attraction_images');
+        Schema::dropIfExists('hooney_moon_kit');
     }
 };

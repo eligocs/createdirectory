@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('attraction_images', function (Blueprint $table) {
+        Schema::create('customer_type', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('attraction_id');
-            $table->string('attraction_images', 255);
-
+            $table->string('name', 255);
+            $table->unsignedBigInteger('added_by');
+            $table->integer('del_status')->default(0);
             $table->timestamps();
-
-            $table->foreign('attraction_id')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
+            $table->timestamp('updated')->default(now())->onUpdate(now());
+            $table->timestamp('created')->default(now());
         });
     }
 
@@ -27,6 +27,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('attraction_images');
+        Schema::dropIfExists('customer_type');
+
     }
 };
