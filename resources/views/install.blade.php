@@ -20,17 +20,16 @@
         margin-top: 8px;
     }
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"> 
 
 <div class="container">
     <div class="row">
         <div class="card mainform ">
             <div class="card-body">
                 <div class="col-md-12 startdatabaseMigration text-center mt-4" style="display:none;">
-                    <h3>Create database and dummy data</h3>
+                    <h3>Finish Setup</h3>
                     <div class="mb-3 mt-5 ">
-                        <button type="button" class="btn btn-primary" id="startmigration">Start Migrations</button>
+                        <button type="button" class="btn btn-primary finishsetup">Finish Setup</button>
                     </div>
                 </div>
                 <div class="col-md-12 wizard text-center mt-4">
@@ -106,8 +105,20 @@
 @endsection
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     $(document).ready(function () {
+
+        $('.finishsetup').click(function(e){
+            e.preventDefault(); 
+            Swal.fire(
+                'Good job!',
+                'Setup Complete',
+                'success'
+            )
+            window.location.reload();
+        });
+
         var err = false;
         
         $(document).on('input','#directory_name',function(){
@@ -286,7 +297,7 @@
             var username = $('input[name="username"]').val(); 
             croppedCanvas.toBlob(function (blob) { 
                 const formData = new FormData();
-                formData.append('image', blob);   
+                formData.append('image', blob,'logo.jpg');   
                 formData.append('company_name', company_name);   
                 formData.append('email', email);   
                 formData.append('directory_name', directory_name);   
@@ -429,6 +440,8 @@
         form.submit(function (e) {
             e.preventDefault(); 
         });
+
+        
     });
 </script>
 @endsection

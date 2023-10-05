@@ -8,6 +8,7 @@ use Session;
 use Storage;
 use App\Models\Credentials;
 use DB; 
+use Artisan;
 class FrontController extends Controller
 {
     public function index()
@@ -268,7 +269,7 @@ class FrontController extends Controller
         // Optionally, revert back to the original/default connection
         Config::set("database.default", 'mysql');
 
-        return response()->json(['message' => 'Migrations executed successfully', 'output' => $output]);
+        return true;
     }
 
 }  
