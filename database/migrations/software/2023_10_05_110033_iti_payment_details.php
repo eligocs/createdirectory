@@ -56,7 +56,7 @@ return new class extends Migration
             $table->integer('iti_close_status')->default(0)->comment('1=closed');
             $table->tinyInteger('approved_by_account_team')->default(0)->comment('1 = approved by accounts team and proceed to hotel booking');
             $table->integer('payment_confirmed_status')->default(0)->comment('1=confirmed');
-            $table->timestamp('last_payment_received_date')->default('0000-00-00 00:00:00')->comment('last payment received date');
+            $table->text('last_payment_received_date')->default('0000-00-00 00:00:00')->comment('last payment received date');
             $table->timestamps(0); // Disable Laravel's default created_at and updated_at columns
             $table->integer('is_invoice_created')->default(0);
             $table->integer('tsxTotal')->nullable();

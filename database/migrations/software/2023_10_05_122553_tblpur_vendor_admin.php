@@ -17,8 +17,8 @@ return new class extends Migration
             $table->datetime('date_assigned');
 
             // Add foreign key constraints if needed
-            $table->foreign('staff_id')->references('id')->on('your_staff_table');
-            $table->foreign('vendor_id')->references('userid')->on('tblpur_vendor');
+            //$table->foreign('staff_id')->references('id')->on('your_staff_table');
+            //$table->foreign('vendor_id')->references('userid')->on('tblpur_vendor');
 
             // Add primary key if needed
             // $table->primary(['staff_id', 'vendor_id']);

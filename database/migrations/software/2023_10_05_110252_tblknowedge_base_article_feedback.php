@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('ip', 40);
             $table->datetime('date');
 
-            $table->foreign('articleanswerid')->references('id')->on('your_article_answer_table_name_here');
-            $table->foreign('articleid')->references('id')->on('your_article_table_name_here');
-            $table->foreign('answer')->references('id')->on('your_answer_table_name_here');
+            //$table->foreign('articleanswerid')->references('id')->on('your_article_answer_table_name_here');
+            //$table->foreign('articleid')->references('id')->on('your_article_table_name_here');
+            //$table->foreign('answer')->references('id')->on('your_answer_table_name_here');
             // Add foreign key constraints for other columns as needed
 
             $table->timestamps();

@@ -65,13 +65,13 @@ return new class extends Migration
             $table->string('signature', 40)->nullable();
             $table->string('short_link', 100)->nullable();
 
-            $table->foreign('clientid')->references('id')->on('clients'); // Replace 'clients' with your actual clients table name
-            $table->foreign('currency')->references('id')->on('currencies'); // Replace 'currencies' with your actual currencies table name
-            $table->foreign('addedfrom')->references('id')->on('users'); // Replace 'users' with your actual users table name
-            $table->foreign('invoiceid')->references('id')->on('invoices'); // Replace 'invoices' with your actual invoices table name
-            $table->foreign('sale_agent')->references('id')->on('users'); // Replace 'users' with your actual users table name
-            $table->foreign('billing_country')->references('id')->on('countries'); // Replace 'countries' with your actual countries table name
-            $table->foreign('shipping_country')->references('id')->on('countries'); // Replace 'countries' with your actual countries table name
+            //$table->foreign('clientid')->references('id')->on('clients'); // Replace 'clients' with your actual clients table name
+            //$table->foreign('currency')->references('id')->on('currencies'); // Replace 'currencies' with your actual currencies table name
+            //$table->foreign('addedfrom')->references('id')->on('users'); // Replace 'users' with your actual users table name
+            //$table->foreign('invoiceid')->references('id')->on('invoices'); // Replace 'invoices' with your actual invoices table name
+            //$table->foreign('sale_agent')->references('id')->on('users'); // Replace 'users' with your actual users table name
+            //$table->foreign('billing_country')->references('id')->on('countries'); // Replace 'countries' with your actual countries table name
+            //$table->foreign('shipping_country')->references('id')->on('countries'); // Replace 'countries' with your actual countries table name
 
             $table->timestamps();
         });

@@ -27,9 +27,9 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('transfer_funds_from')->references('id')->on('your_source_account_table_name');
-            // $table->foreign('transfer_funds_to')->references('id')->on('your_destination_account_table_name');
-            // $table->foreign('addedfrom')->references('id')->on('your_addedfrom_table_name');
+            // //$table->foreign('transfer_funds_from')->references('id')->on('your_source_account_table_name');
+            // //$table->foreign('transfer_funds_to')->references('id')->on('your_destination_account_table_name');
+            // //$table->foreign('addedfrom')->references('id')->on('your_addedfrom_table_name');
         });
     }
 

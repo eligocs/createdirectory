@@ -15,10 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name', 255);
             $table->unsignedBigInteger('added_by');
-            $table->integer('del_status')->default(0);
-            $table->timestamps();
-            $table->timestamp('updated')->default(now())->onUpdate(now());
-            $table->timestamp('created')->default(now());
+            $table->integer('del_status')->default(0); 
+            $table->date('updated');
+            $table->date('created');
         });
     }
 

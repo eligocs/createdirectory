@@ -21,8 +21,8 @@ return new class extends Migration
             $table->timestamps();
 
             // Add foreign key constraints if needed
-            // $table->foreign('ticketid')->references('ticketid')->on('tbltickets');
-            // $table->foreign('replyid')->references('id')->on('tblreplies');
+            // //$table->foreign('ticketid')->references('ticketid')->on('tbltickets');
+            // //$table->foreign('replyid')->references('id')->on('tblreplies');
         });
     }
 

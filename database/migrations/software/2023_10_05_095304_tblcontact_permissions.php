@@ -21,8 +21,8 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('permission_id')->references('id')->on('your_permission_table_name');
-            // $table->foreign('userid')->references('id')->on('your_user_table_name');
+            // //$table->foreign('permission_id')->references('id')->on('your_permission_table_name');
+            // //$table->foreign('userid')->references('id')->on('your_user_table_name');
         });
     }
     /**

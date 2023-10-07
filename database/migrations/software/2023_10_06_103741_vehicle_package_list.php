@@ -19,10 +19,10 @@ return new class extends Migration
             $table->timestamps(); // Adds created_at and updated_at columns
 
             // Define foreign key constraint
-            $table->foreign('state_id')
-                ->references('id')
-                ->on('states')
-                ->onDelete('cascade');
+            //$table->foreign('state_id')
+                // ->references('id')
+                // ->on('states')
+                // ->onDelete('cascade');
         });
     }
 

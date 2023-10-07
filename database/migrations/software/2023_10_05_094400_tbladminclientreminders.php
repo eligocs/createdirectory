@@ -26,9 +26,9 @@ return new class extends Migration
             // $table->engine = 'MyISAM';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('clientid')->references('id')->on('your_client_table_name');
-            // $table->foreign('staff')->references('id')->on('your_staff_table_name');
-            // $table->foreign('creator')->references('id')->on('your_creator_table_name');
+            // //$table->foreign('clientid')->references('id')->on('your_client_table_name');
+            // //$table->foreign('staff')->references('id')->on('your_staff_table_name');
+            // //$table->foreign('creator')->references('id')->on('your_creator_table_name');
         });
     }
 

@@ -24,8 +24,8 @@ return new class extends Migration
             $table->unsignedBigInteger('agent_id')->default(0);
             $table->timestamps();
 
-            $table->foreign('iti_id')->references('id')->on('itineraries');
-            $table->foreign('acc_id')->references('id')->on('accommodations');
+            //$table->foreign('iti_id')->references('id')->on('itineraries');
+            //$table->foreign('acc_id')->references('id')->on('accommodations');
         });
     }
 

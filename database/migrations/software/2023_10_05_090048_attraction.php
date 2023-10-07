@@ -21,9 +21,9 @@ return new class extends Migration
             $table->unsignedBigInteger('country_id')->nullable();
             $table->timestamps();
 
-            $table->foreign('state')->references('id')->on('states'); // Assuming you have a 'states' table
-            $table->foreign('city')->references('id')->on('cities'); // Assuming you have a 'cities' table
-            $table->foreign('country_id')->references('id')->on('countries'); // Assuming you have a 'countries' table
+            //$table->foreign('state')->references('id')->on('states'); // Assuming you have a 'states' table
+            //$table->foreign('city')->references('id')->on('cities'); // Assuming you have a 'cities' table
+            //$table->foreign('country_id')->references('id')->on('countries'); // Assuming you have a 'countries' table
         });
     }
 

@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('addedfrom');
             $table->datetime('dateadded');
             
-            $table->foreign('leadid')->references('id')->on('your_lead_table_name')->onDelete('cascade');
-            $table->foreign('addedfrom')->references('id')->on('your_users_table_name')->onDelete('cascade');
+            //$table->foreign('leadid')->references('id')->on('your_lead_table_name')->onDelete('cascade');
+            //$table->foreign('addedfrom')->references('id')->on('your_users_table_name')->onDelete('cascade');
             
             $table->timestamps();
         });

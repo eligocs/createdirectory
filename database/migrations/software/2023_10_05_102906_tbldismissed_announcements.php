@@ -18,9 +18,9 @@ return new class extends Migration
             $table->unsignedBigInteger('userid');
 
             // Define foreign key constraints
-            $table->foreign('announcementid')->references('announcementid')->on('tblannouncements');
-            $table->foreign('staff')->references('id')->on('tblstaff');
-            $table->foreign('userid')->references('userid')->on('tblusers');
+            //$table->foreign('announcementid')->references('announcementid')->on('tblannouncements');
+            //$table->foreign('staff')->references('id')->on('tblstaff');
+            //$table->foreign('userid')->references('userid')->on('tblusers');
 
             $table->timestamps();
             

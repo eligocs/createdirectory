@@ -27,10 +27,10 @@ return new class extends Migration
             $table->unsignedBigInteger('notified')->default(0);
 
             // Define foreign key constraints if needed
-            // $table->foreign('goal_type')->references('id')->on('goal_type_table');
-            // $table->foreign('achievement')->references('id')->on('achievement_table');
-            // $table->foreign('addedfrom')->references('id')->on('users');
-            // $table->foreign('assigned')->references('id')->on('assigned_table');
+            // //$table->foreign('goal_type')->references('id')->on('goal_type_table');
+            // //$table->foreign('achievement')->references('id')->on('achievement_table');
+            // //$table->foreign('addedfrom')->references('id')->on('users');
+            // //$table->foreign('assigned')->references('id')->on('assigned_table');
 
             $table->timestamps();
         });

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('trans_address', 500);
             $table->string('trans_cars_list', 200);
             $table->integer('del_status')->default(0);
-            $table->timestamp('created')->default(now())->onUpdate(now());
+            $table->timestamp('created');
         });
     }
 

@@ -16,8 +16,7 @@ return new class extends Migration
             $table->string('payment_link', 255);
             $table->tinyInteger('del_status')->default(0);
             $table->timestamps(6); // Adds 'Created_date' with microseconds
-
-            $table->primary('id'); // Define 'id' as the primary key
+ 
         });
     }
 

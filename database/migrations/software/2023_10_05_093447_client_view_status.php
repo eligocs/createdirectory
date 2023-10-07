@@ -19,9 +19,9 @@ return new class extends Migration
             $table->timestamp('last_visit')->default(now());
             $table->unsignedInteger('inactive_status')->default(0);
 
-            $table->foreign('client_id')->references('id')->on('clients'); // Assuming you have a 'clients' table
-            $table->foreign('agent_id')->references('id')->on('agents'); // Assuming you have an 'agents' table
-            $table->foreign('iti_id')->references('id')->on('itineraries'); // Assuming you have an 'itineraries' table
+            //$table->foreign('client_id')->references('id')->on('clients'); // Assuming you have a 'clients' table
+            //$table->foreign('agent_id')->references('id')->on('agents'); // Assuming you have an 'agents' table
+            //$table->foreign('iti_id')->references('id')->on('itineraries'); // Assuming you have an 'itineraries' table
         });
     }
 

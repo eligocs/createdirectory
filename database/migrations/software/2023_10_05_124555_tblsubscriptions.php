@@ -38,8 +38,8 @@ return new class extends Migration
             $table->integer('in_test_environment')->nullable();
             $table->timestamps();
 
-            $table->foreign('clientid')->references('id')->on('clients');
-            $table->foreign('currency')->references('id')->on('currencies');
+            //$table->foreign('clientid')->references('id')->on('clients');
+            //$table->foreign('currency')->references('id')->on('currencies');
         });
     }
 

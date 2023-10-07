@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('attraction_id')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
+            //$table->foreign('attraction_id')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
         });
     }
 

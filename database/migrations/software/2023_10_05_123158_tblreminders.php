@@ -23,9 +23,9 @@ return new class extends Migration
             $table->integer('creator');
             
             // Add foreign key constraints if necessary
-            // $table->foreign('rel_id')->references('id')->on('related_table');
-            // $table->foreign('staff')->references('id')->on('staff_table');
-            // $table->foreign('creator')->references('id')->on('creator_table');
+            // //$table->foreign('rel_id')->references('id')->on('related_table');
+            // //$table->foreign('staff')->references('id')->on('staff_table');
+            // //$table->foreign('creator')->references('id')->on('creator_table');
             
             $table->timestamps();
         });

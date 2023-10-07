@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('login_date', 100);
             $table->timestamps(); // Adds 'created_at' and 'updated_at' columns
             $table->tinyInteger('admin_approved')->default(0)->comment('0=approved, 1=unapproved'); 
-            $table->foreign('agent_id')->references('id')->on('agents'); // Assuming you have an 'agents' table
+            //$table->foreign('agent_id')->references('id')->on('agents'); // Assuming you have an 'agents' table
         });
     }
 

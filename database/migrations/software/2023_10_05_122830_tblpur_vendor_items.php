@@ -20,8 +20,8 @@ return new class extends Migration
             $table->date('datecreate')->nullable();
 
             // Add foreign key constraints if necessary
-            $table->foreign('vendor')->references('id')->on('tblpur_vendor');
-            $table->foreign('add_from')->references('id')->on('your_reference_table');
+            //$table->foreign('vendor')->references('id')->on('tblpur_vendor');
+            //$table->foreign('add_from')->references('id')->on('your_reference_table');
 
             $table->timestamps();
         });

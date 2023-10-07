@@ -22,7 +22,7 @@ return new class extends Migration
             $table->integer('article_order')->default(0);
             $table->integer('staff_article')->default(0);
 
-            $table->foreign('articlegroup')->references('id')->on('your_articlegroups_table_name_here');
+            //$table->foreign('articlegroup')->references('id')->on('your_articlegroups_table_name_here');
             // Add foreign key constraints for other columns as needed
 
             $table->timestamps();

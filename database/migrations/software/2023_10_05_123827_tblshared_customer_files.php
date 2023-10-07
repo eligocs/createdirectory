@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedInteger('contact_id');
             
             // Define foreign key constraint
-            $table->foreign('contact_id')
-                  ->references('id')
-                  ->on('contacts')
-                  ->onDelete('cascade'); // Cascade delete if contact is deleted
+            //$table->foreign('contact_id')
+                //   ->references('id')
+                //   ->on('contacts')
+                //   ->onDelete('cascade'); // Cascade delete if contact is deleted
             
             $table->timestamps(); // Optional timestamps for created_at and updated_at
         });

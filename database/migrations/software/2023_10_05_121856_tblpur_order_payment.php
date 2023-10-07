@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('note');
             $table->mediumText('transactionid')->nullable();
 
-            $table->foreign('pur_order')->references('id')->on('tblpur_orders')->onDelete('cascade');
+            //$table->foreign('pur_order')->references('id')->on('tblpur_orders')->onDelete('cascade');
             // Add any other foreign keys here if necessary
 
             $table->timestamps();

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('iti_id')->nullable();
             $table->timestamps(6);
 
-            $table->foreign('cus_id')->references('id')->on('customers');
-            $table->foreign('iti_id')->references('id')->on('itineraries');
+            //$table->foreign('cus_id')->references('id')->on('customers');
+            //$table->foreign('iti_id')->references('id')->on('itineraries');
         });
     }
 

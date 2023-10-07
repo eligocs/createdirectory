@@ -46,7 +46,7 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('userid')->references('id')->on('your_user_table_name');
+            // //$table->foreign('userid')->references('id')->on('your_user_table_name');
         });
     }
 

@@ -22,30 +22,30 @@ return new class extends Migration
             $table->unsignedBigInteger('resultsetid');
 
             // Define foreign key constraints
-            $table->foreign('boxid')
-                ->references('boxid')
-                ->on('tblform_question_box')
-                ->onDelete('cascade');
+            //$table->foreign('boxid')
+                // ->references('boxid')
+                // ->on('tblform_question_box')
+                // ->onDelete('cascade');
 
-            $table->foreign('boxdescriptionid')
-                ->references('questionboxdescriptionid')
-                ->on('tblform_question_box_description')
-                ->onDelete('cascade');
+            //$table->foreign('boxdescriptionid')
+                // ->references('questionboxdescriptionid')
+                // ->on('tblform_question_box_description')
+                // ->onDelete('cascade');
 
-            $table->foreign('rel_id')
-                ->references('id')
-                ->on('your_rel_id_table') // Replace with your related table name
-                ->onDelete('cascade');
+            //$table->foreign('rel_id')
+                // ->references('id')
+                // ->on('your_rel_id_table') // Replace with your related table name
+                // ->onDelete('cascade');
 
-            $table->foreign('questionid')
-                ->references('questionid')
-                ->on('tblform_questions')
-                ->onDelete('cascade');
+            //$table->foreign('questionid')
+                // ->references('questionid')
+                // ->on('tblform_questions')
+                // ->onDelete('cascade');
 
-            $table->foreign('resultsetid')
-                ->references('resultsetid')
-                ->on('your_resultsetid_table') // Replace with your related table name
-                ->onDelete('cascade');
+            //$table->foreign('resultsetid')
+                // ->references('resultsetid')
+                // ->on('your_resultsetid_table') // Replace with your related table name
+                // ->onDelete('cascade');
 
             $table->timestamps();
         });

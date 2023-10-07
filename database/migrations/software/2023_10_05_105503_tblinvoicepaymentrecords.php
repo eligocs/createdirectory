@@ -25,9 +25,9 @@ return new class extends Migration
             $table->unsignedBigInteger('iti_id')->nullable();
 
             // Define foreign key constraints
-            $table->foreign('invoiceid')->references('id')->on('tblinvoices')->onDelete('set null');
-            $table->foreign('cust_id')->references('id')->on('tblcustomers')->onDelete('set null');
-            $table->foreign('iti_id')->references('id')->on('tblinvoice_items')->onDelete('set null');
+            //$table->foreign('invoiceid')->references('id')->on('tblinvoices')->onDelete('set null');
+            //$table->foreign('cust_id')->references('id')->on('tblcustomers')->onDelete('set null');
+            //$table->foreign('iti_id')->references('id')->on('tblinvoice_items')->onDelete('set null');
 
             $table->timestamps();
         });

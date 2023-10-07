@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('date_assigned');
 
             // Define foreign key constraints if needed.
-            // $table->foreign('staff_id')->references('id')->on('staff_table_name');
-            // $table->foreign('customer_id')->references('id')->on('customer_table_name');
+            // //$table->foreign('staff_id')->references('id')->on('staff_table_name');
+            // //$table->foreign('customer_id')->references('id')->on('customer_table_name');
 
             // If you want to set the charset and engine:
             // $table->charset = 'utf8';

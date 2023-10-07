@@ -36,10 +36,10 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('account')->references('id')->on('your_account_table_name');
-            // $table->foreign('expense_account')->references('id')->on('your_expense_account_table_name');
-            // $table->foreign('income_account')->references('id')->on('your_income_account_table_name');
-            // $table->foreign('addedfrom')->references('id')->on('your_addedfrom_table_name');
+            // //$table->foreign('account')->references('id')->on('your_account_table_name');
+            // //$table->foreign('expense_account')->references('id')->on('your_expense_account_table_name');
+            // //$table->foreign('income_account')->references('id')->on('your_income_account_table_name');
+            // //$table->foreign('addedfrom')->references('id')->on('your_addedfrom_table_name');
         });
     }
 

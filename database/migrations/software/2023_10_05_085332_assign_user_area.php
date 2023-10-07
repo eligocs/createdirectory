@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('city');
             $table->string('place', 255);
             $table->string('category', 100);
-            $table->timestamp('date')->default(now())->onUpdate(now());
+            $table->timestamp('date');
             $table->timestamps(); // Adds 'created_at' and 'updated_at' columns
         });
     }

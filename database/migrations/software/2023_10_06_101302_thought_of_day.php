@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('content');
             $table->integer('status')->default(0)->comment('1=disabled');
             $table->integer('updated_by');
-            $table->timestamp('updated')->default(now())->onUpdate(now());
+            $table->timestamp('updated');
 
             // Additional indexes or foreign key constraints can be added if needed.
         });

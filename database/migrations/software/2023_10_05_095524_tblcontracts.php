@@ -43,10 +43,10 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('client')->references('id')->on('your_client_table_name');
-            // $table->foreign('contract_type')->references('id')->on('your_contract_type_table_name');
-            // $table->foreign('project_id')->references('id')->on('your_project_table_name');
-            // $table->foreign('addedfrom')->references('id')->on('your_user_table_name');
+            // //$table->foreign('client')->references('id')->on('your_client_table_name');
+            // //$table->foreign('contract_type')->references('id')->on('your_contract_type_table_name');
+            // //$table->foreign('project_id')->references('id')->on('your_project_table_name');
+            // //$table->foreign('addedfrom')->references('id')->on('your_user_table_name');
         });
     }
 

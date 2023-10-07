@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('hrr_iti_amendment_temp', function (Blueprint $table) {
             $table->id('id_temp');
-            $table->timestamp('check_in_date')->default('0000-00-00 00:00:00');
-            $table->timestamp('check_out_date')->default('0000-00-00 00:00:00');
+            $table->text('check_in_date')->default('0000-00-00 00:00:00');
+            $table->text('check_out_date')->default('0000-00-00 00:00:00');
             $table->integer('city_id');
             $table->integer('mealsPlan');
             $table->integer('no_of_room');

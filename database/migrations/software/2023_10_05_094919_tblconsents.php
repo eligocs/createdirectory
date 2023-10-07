@@ -28,9 +28,9 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('contact_id')->references('id')->on('your_contact_table_name');
-            // $table->foreign('lead_id')->references('id')->on('your_lead_table_name');
-            // $table->foreign('purpose_id')->references('id')->on('your_purpose_table_name');
+            // //$table->foreign('contact_id')->references('id')->on('your_contact_table_name');
+            // //$table->foreign('lead_id')->references('id')->on('your_lead_table_name');
+            // //$table->foreign('purpose_id')->references('id')->on('your_purpose_table_name');
         });
     }
 

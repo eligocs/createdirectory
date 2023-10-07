@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('item_id');
             
             // Add foreign key constraints if necessary
-            // $table->foreign('rel_id')->references('id')->on('related_table');
-            // $table->foreign('item_id')->references('id')->on('item_table');
+            // //$table->foreign('rel_id')->references('id')->on('related_table');
+            // //$table->foreign('item_id')->references('id')->on('item_table');
             
             $table->timestamps();
         });
@@ -37,8 +37,8 @@ return new class extends Migration
             $table->integer('item_id');
             
             // Add foreign key constraints if necessary
-            // $table->foreign('rel_id')->references('id')->on('related_table');
-            // $table->foreign('item_id')->references('id')->on('item_table');
+            // //$table->foreign('rel_id')->references('id')->on('related_table');
+            // //$table->foreign('item_id')->references('id')->on('item_table');
             
             $table->timestamps();
         });

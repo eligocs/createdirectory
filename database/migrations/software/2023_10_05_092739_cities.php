@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 30);
             $table->unsignedBigInteger('state_id');
 
-            $table->foreign('state_id')->references('id')->on('states'); // Assuming you have a 'states' table
+            //$table->foreign('state_id')->references('id')->on('states'); // Assuming you have a 'states' table
         });
     }
 

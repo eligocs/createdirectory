@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('newsletter_templates', function (Blueprint $table) {
             $table->increments('id');
             $table->longText('template');
-            $table->timestamps();
-            $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
+            $table->timestamps(); 
         });
     }
 

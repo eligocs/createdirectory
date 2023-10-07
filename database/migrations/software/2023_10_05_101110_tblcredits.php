@@ -19,14 +19,14 @@ return new class extends Migration
             $table->date('date');
             $table->datetime('date_applied');
             $table->decimal('amount', 15, 2);
-
+            $table->timestamps();
             // If you want to set the charset and engine:
             // $table->charset = 'utf8';
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('invoice_id')->references('id')->on('tblinvoices');
-            // $table->foreign('staff_id')->references('id')->on('your_staff_table_name');
+            // //$table->foreign('invoice_id')->references('id')->on('tblinvoices');
+            // //$table->foreign('staff_id')->references('id')->on('your_staff_table_name');
         });
     }
 

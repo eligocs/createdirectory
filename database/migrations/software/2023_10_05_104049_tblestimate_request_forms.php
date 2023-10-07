@@ -32,10 +32,10 @@ return new class extends Migration
             $table->unsignedBigInteger('responsible')->nullable();
             $table->unsignedBigInteger('notify_request_submitted')->default(0);
 
-            $table->foreign('recaptcha')->references('id')->on('your_recaptcha_table_name'); // Replace 'your_recaptcha_table_name' with the actual name of your reCAPTCHA table
-            $table->foreign('status')->references('id')->on('your_status_table_name'); // Replace 'your_status_table_name' with the actual name of your status table
-            $table->foreign('submit_action')->references('id')->on('your_submit_action_table_name'); // Replace 'your_submit_action_table_name' with the actual name of your submit action table
-            $table->foreign('responsible')->references('id')->on('your_responsible_table_name'); // Replace 'your_responsible_table_name' with the actual name of your responsible table
+            //$table->foreign('recaptcha')->references('id')->on('your_recaptcha_table_name'); // Replace 'your_recaptcha_table_name' with the actual name of your reCAPTCHA table
+            //$table->foreign('status')->references('id')->on('your_status_table_name'); // Replace 'your_status_table_name' with the actual name of your status table
+            //$table->foreign('submit_action')->references('id')->on('your_submit_action_table_name'); // Replace 'your_submit_action_table_name' with the actual name of your submit action table
+            //$table->foreign('responsible')->references('id')->on('your_responsible_table_name'); // Replace 'your_responsible_table_name' with the actual name of your responsible table
 
             $table->timestamps();
         });

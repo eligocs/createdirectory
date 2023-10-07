@@ -18,9 +18,9 @@ return new class extends Migration
             $table->integer('target')->default(10)->comment('total target for month');
             $table->integer('incentive_view')->default(0)->comment('incentive page visits by agents');
             $table->unsignedBigInteger('target_assigned_by');
-            $table->timestamp('updated')->default(now())->onUpdate(now()); 
-            $table->foreign('user_id')->references('id')->on('users'); // Assuming you have a 'users' table
-            $table->foreign('target_assigned_by')->references('id')->on('users'); // Assuming you have a 'users' table
+            $table->timestamp('updated'); 
+            // //$table->foreign('user_id')->references('id')->on('users'); // Assuming you have a 'users' table
+            // //$table->foreign('target_assigned_by')->references('id')->on('users'); // Assuming you have a 'users' table
 
             $table->timestamps();
         });

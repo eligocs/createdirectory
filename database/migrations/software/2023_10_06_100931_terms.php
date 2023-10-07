@@ -29,7 +29,7 @@ return new class extends Migration
             $table->longText('payment_policy')->comment('after receiving booking cost')->nullable();
             $table->text('booking_benefits_terms')->nullable();
             $table->longText('hotel_inclusion');
-            $table->timestamp('updated')->default(now())->onUpdate(now());
+            $table->timestamp('updated');
 
             // Additional indexes or foreign key constraints can be added if needed.
         });

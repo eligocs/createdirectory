@@ -42,14 +42,14 @@ return new class extends Migration
             $table->unsignedBigInteger('state_id')->nullable();
             $table->unsignedBigInteger('city_id')->nullable();
 
-            $table->foreign('iti_id')->references('id')->on('itineraries');
-            $table->foreign('customer_id')->references('id')->on('customers');
-            $table->foreign('cab_id')->references('id')->on('cabs');
-            $table->foreign('transporter_id')->references('id')->on('transporters');
-            $table->foreign('agent_id')->references('id')->on('agents');
-            $table->foreign('country_id')->references('id')->on('countries');
-            $table->foreign('state_id')->references('id')->on('states');
-            $table->foreign('city_id')->references('id')->on('cities');
+            //$table->foreign('iti_id')->references('id')->on('itineraries');
+            //$table->foreign('customer_id')->references('id')->on('customers');
+            //$table->foreign('cab_id')->references('id')->on('cabs');
+            //$table->foreign('transporter_id')->references('id')->on('transporters');
+            //$table->foreign('agent_id')->references('id')->on('agents');
+            //$table->foreign('country_id')->references('id')->on('countries');
+            //$table->foreign('state_id')->references('id')->on('states');
+            //$table->foreign('city_id')->references('id')->on('cities');
         });
     }
 

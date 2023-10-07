@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('payment_status')->default(0)->comment('0=not paid, 1=paid, 2=partially paid');
             $table->date('payment_due_date')->nullable();
 
-            $table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
+            //$table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
         });
     }
 

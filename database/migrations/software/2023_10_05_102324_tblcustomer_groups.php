@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('customer_id');
 
             // Define foreign key constraints if needed.
-            // $table->foreign('groupid')->references('id')->on('group_table_name');
-            // $table->foreign('customer_id')->references('id')->on('customer_table_name');
+            // //$table->foreign('groupid')->references('id')->on('group_table_name');
+            // //$table->foreign('customer_id')->references('id')->on('customer_table_name');
 
             // If you want to set the charset and engine:
             // $table->charset = 'utf8';

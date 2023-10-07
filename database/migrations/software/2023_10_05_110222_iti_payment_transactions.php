@@ -21,8 +21,8 @@ return new class extends Migration
             $table->unsignedBigInteger('agent_id');
             $table->timestamps(0); // Disable Laravel's default created_at and updated_at columns
 
-            $table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
-            $table->foreign('agent_id')->references('id')->on('agents'); // Assuming 'agents' is the related table
+            //$table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
+            //$table->foreign('agent_id')->references('id')->on('agents'); // Assuming 'agents' is the related table
         });
     }
 

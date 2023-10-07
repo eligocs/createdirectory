@@ -47,7 +47,7 @@ return new class extends Migration
             $table->float('old_cost_per_seat', 20, 2);
             $table->float('cost_per_seat_return_trip', 20, 2);
             $table->float('old_cost_per_seat_return_trip', 20, 2);
-            $table->timestamp('created')->default(now())->onUpdate(now());
+            $table->timestamp('created');
             $table->integer('adults')->nullable();
             $table->integer('child')->nullable();
             $table->integer('Infant')->nullable();

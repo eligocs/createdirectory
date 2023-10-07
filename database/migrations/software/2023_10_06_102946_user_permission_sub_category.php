@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('sub_permission_name', 50)->nullable();
             $table->timestamps();
 
-            $table->foreign('category_id')
-                ->references('id')
-                ->on('user_permission_category')
-                ->onDelete('set null');
+            //$table->foreign('category_id')
+                // ->references('id')
+                // ->on('user_permission_category')
+                // ->onDelete('set null');
         });
     }
 

@@ -17,10 +17,10 @@ return new class extends Migration
             $table->unsignedBigInteger('questionid');
 
             // Define foreign key constraint
-            $table->foreign('questionid')
-                ->references('questionid')
-                ->on('tblform_questions')
-                ->onDelete('cascade');
+            //$table->foreign('questionid')
+                // ->references('questionid')
+                // ->on('tblform_questions')
+                // ->onDelete('cascade');
 
             $table->timestamps();
         });

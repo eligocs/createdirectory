@@ -18,8 +18,8 @@ return new class extends Migration
             $table->longText('msg');
             $table->timestamp('date')->default(now());
 
-            $table->foreign('sender')->references('id')->on('users'); // Replace 'users' with your sender table name
-            $table->foreign('receiver')->references('id')->on('users'); // Replace 'users' with your receiver table name
+            //$table->foreign('sender')->references('id')->on('users'); // Replace 'users' with your sender table name
+            //$table->foreign('receiver')->references('id')->on('users'); // Replace 'users' with your receiver table name
         });
     }
 

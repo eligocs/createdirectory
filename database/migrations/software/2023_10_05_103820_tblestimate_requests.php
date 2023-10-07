@@ -23,10 +23,10 @@ return new class extends Migration
             $table->unsignedBigInteger('default_language');
             $table->dateTime('date_added');
 
-            $table->foreign('from_form_id')->references('id')->on('your_form_table_name'); // Replace 'your_form_table_name' with the actual name of your form's table
-            $table->foreign('assigned')->references('id')->on('users'); // Replace 'users' with your actual users table name
-            $table->foreign('status')->references('id')->on('your_status_table_name'); // Replace 'your_status_table_name' with the actual name of your status table
-            $table->foreign('default_language')->references('id')->on('your_language_table_name'); // Replace 'your_language_table_name' with the actual name of your language table
+            //$table->foreign('from_form_id')->references('id')->on('your_form_table_name'); // Replace 'your_form_table_name' with the actual name of your form's table
+            //$table->foreign('assigned')->references('id')->on('users'); // Replace 'users' with your actual users table name
+            //$table->foreign('status')->references('id')->on('your_status_table_name'); // Replace 'your_status_table_name' with the actual name of your status table
+            //$table->foreign('default_language')->references('id')->on('your_language_table_name'); // Replace 'your_language_table_name' with the actual name of your language table
 
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name', 30);
             $table->string('emp_code', 30);
             $table->integer('country_id')->default(1);
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            //$table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
         });
     }
 

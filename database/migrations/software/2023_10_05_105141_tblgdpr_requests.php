@@ -23,9 +23,9 @@ return new class extends Migration
             $table->text('description')->nullable();
 
             // Define foreign key constraints if needed
-            // $table->foreign('clientid')->references('id')->on('clients');
-            // $table->foreign('contact_id')->references('id')->on('contacts');
-            // $table->foreign('lead_id')->references('id')->on('leads');
+            // //$table->foreign('clientid')->references('id')->on('clients');
+            // //$table->foreign('contact_id')->references('id')->on('contacts');
+            // //$table->foreign('lead_id')->references('id')->on('leads');
 
             $table->timestamps();
         });

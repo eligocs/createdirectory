@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('itemid');
             $table->integer('qty');
 
-            $table->foreign('estimateid')->references('id')->on('your_estimate_table_name_here')->onDelete('cascade');
-            $table->foreign('itemid')->references('id')->on('your_item_table_name_here')->onDelete('cascade');
+            //$table->foreign('estimateid')->references('id')->on('your_estimate_table_name_here')->onDelete('cascade');
+            //$table->foreign('itemid')->references('id')->on('your_item_table_name_here')->onDelete('cascade');
 
             $table->timestamps();
 

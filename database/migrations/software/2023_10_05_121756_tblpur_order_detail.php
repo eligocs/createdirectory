@@ -30,7 +30,7 @@ return new class extends Migration
             $table->text('tax_name')->nullable();
             $table->text('item_name')->nullable();
 
-            $table->foreign('pur_order')->references('id')->on('tblpur_orders')->onDelete('cascade');
+            //$table->foreign('pur_order')->references('id')->on('tblpur_orders')->onDelete('cascade');
             // Add any other foreign keys here if necessary
 
             $table->timestamps();

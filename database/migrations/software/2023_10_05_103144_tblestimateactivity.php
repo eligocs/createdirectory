@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('staffid', 11)->nullable();
             $table->datetime('date');
 
-            $table->foreign('estimateid')->references('id')->on('your_estimate_table_name_here')->onDelete('cascade');
+            //$table->foreign('estimateid')->references('id')->on('your_estimate_table_name_here')->onDelete('cascade');
 
             $table->timestamps();
 

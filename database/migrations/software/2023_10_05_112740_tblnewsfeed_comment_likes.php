@@ -20,9 +20,9 @@ return new class extends Migration
             $table->timestamps();
 
             // Define foreign keys
-            $table->foreign('postid')->references('id')->on('tblnewsfeed_posts')->onDelete('cascade');
-            $table->foreign('commentid')->references('id')->on('tblnewsfeed_comments')->onDelete('cascade');
-            $table->foreign('userid')->references('id')->on('tblusers')->onDelete('cascade');
+            //$table->foreign('postid')->references('id')->on('tblnewsfeed_posts')->onDelete('cascade');
+            //$table->foreign('commentid')->references('id')->on('tblnewsfeed_comments')->onDelete('cascade');
+            //$table->foreign('userid')->references('id')->on('tblusers')->onDelete('cascade');
         });
     }
 

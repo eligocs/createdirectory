@@ -20,7 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('taskid');
             $table->timestamps();
 
-            $table->foreign('taskid')->references('id')->on('your_task_table_name')->onDelete('cascade');
+            //$table->foreign('taskid')->references('id')->on('your_task_table_name')->onDelete('cascade');
         });
     }
 

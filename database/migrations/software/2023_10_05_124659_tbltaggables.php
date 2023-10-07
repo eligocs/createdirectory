@@ -21,7 +21,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->index(['rel_id', 'rel_type']);
-            $table->foreign('tag_id')->references('id')->on('tbltags')->onDelete('cascade');
+            //$table->foreign('tag_id')->references('id')->on('tbltags')->onDelete('cascade');
         });
     }
 

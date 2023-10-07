@@ -27,8 +27,8 @@ return new class extends Migration
             $table->integer('vtf_Volvo_booking_status')->default(0);
             $table->integer('all_booking_done')->default(0);
 
-            $table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
-            $table->foreign('agent_id')->references('id')->on('agents'); // Assuming 'agents' is the related table for agents
+            //$table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
+            //$table->foreign('agent_id')->references('id')->on('agents'); // Assuming 'agents' is the related table for agents
         });
 
     }

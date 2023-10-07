@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('invoice_no')->nullable();  
             $table->string('lead_id')->nullable();  
             $table->string('agent_id')->nullable();  
-            $table->timestamp('created')->default('default_value'); 
+            $table->timestamp('created')->nullable(); 
         }); 
     }
 

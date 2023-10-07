@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('itemid')->references('id')->on('tblitems');
+            //$table->foreign('itemid')->references('id')->on('tblitems');
             // Add foreign key constraints for other columns as needed
         });
     }

@@ -32,7 +32,7 @@ return new class extends Migration
             $table->longText('multicity_data')->nullable();
             $table->unsignedBigInteger('amdId');
 
-            $table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
+            //$table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
         });
 
     }

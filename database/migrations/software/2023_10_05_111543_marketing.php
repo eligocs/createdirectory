@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('website', 255);
             $table->integer('del_status')->default(0);
             $table->integer('agent_id');
-            $table->timestamps();
-            $table->timestamp('updated_at')->useCurrent();
+            $table->timestamps(); 
         });
     }
 

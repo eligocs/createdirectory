@@ -26,8 +26,8 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('from_currency_id')->references('id')->on('tblcurrencies');
-            // $table->foreign('to_currency_id')->references('id')->on('tblcurrencies');
+            // //$table->foreign('from_currency_id')->references('id')->on('tblcurrencies');
+            // //$table->foreign('to_currency_id')->references('id')->on('tblcurrencies');
         });
     }
 

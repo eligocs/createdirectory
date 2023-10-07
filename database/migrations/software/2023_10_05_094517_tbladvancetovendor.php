@@ -30,8 +30,8 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('hotel_id')->references('id')->on('your_hotel_table_name');
-            // $table->foreign('transporters_id')->references('id')->on('your_transporters_table_name');
+            // //$table->foreign('hotel_id')->references('id')->on('your_hotel_table_name');
+            // //$table->foreign('transporters_id')->references('id')->on('your_transporters_table_name');
         });
     }
 

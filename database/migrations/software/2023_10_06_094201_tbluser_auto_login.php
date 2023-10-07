@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('staff');
 
             $table->primary('key_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            //$table->foreign('user_id')->references('id')->on('users');
             // Add any additional foreign key constraints if needed
 
             $table->timestamps();

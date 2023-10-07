@@ -25,11 +25,11 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('payment_mode_id')->references('id')->on('your_payment_mode_table_name');
-            // $table->foreign('payment_account')->references('id')->on('your_payment_account_table_name');
-            // $table->foreign('deposit_to')->references('id')->on('your_deposit_to_table_name');
-            // $table->foreign('expense_payment_account')->references('id')->on('your_expense_payment_account_table_name');
-            // $table->foreign('expense_deposit_to')->references('id')->on('your_expense_deposit_to_table_name');
+            // //$table->foreign('payment_mode_id')->references('id')->on('your_payment_mode_table_name');
+            // //$table->foreign('payment_account')->references('id')->on('your_payment_account_table_name');
+            // //$table->foreign('deposit_to')->references('id')->on('your_deposit_to_table_name');
+            // //$table->foreign('expense_payment_account')->references('id')->on('your_expense_payment_account_table_name');
+            // //$table->foreign('expense_deposit_to')->references('id')->on('your_expense_deposit_to_table_name');
         });
     }
 

@@ -22,8 +22,8 @@ return new class extends Migration
             $table->tinyInteger('custom_activity')->default(0);
 
             // Define foreign key constraints
-            $table->foreign('leadid')->references('id')->on('tblleads')->onDelete('cascade');
-            $table->foreign('staffid')->references('id')->on('tblstaff')->onDelete('cascade');
+            //$table->foreign('leadid')->references('id')->on('tblleads')->onDelete('cascade');
+            //$table->foreign('staffid')->references('id')->on('tblstaff')->onDelete('cascade');
 
             $table->timestamps();
         });

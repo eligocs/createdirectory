@@ -27,9 +27,9 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('account_history_id')->references('id')->on('your_account_history_table_name');
-            // $table->foreign('rel_id')->references('id')->on('your_rel_table_name');
-            // $table->foreign('company')->references('id')->on('your_company_table_name');
+            // //$table->foreign('account_history_id')->references('id')->on('your_account_history_table_name');
+            // //$table->foreign('rel_id')->references('id')->on('your_rel_table_name');
+            // //$table->foreign('company')->references('id')->on('your_company_table_name');
         });
     }
 

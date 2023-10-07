@@ -20,8 +20,8 @@ return new class extends Migration
             $table->unsignedBigInteger('emailid');
 
             // Define foreign key constraints
-            $table->foreign('leadid')->references('id')->on('tblleads')->onDelete('cascade');
-            $table->foreign('emailid')->references('id')->on('tblemails')->onDelete('cascade');
+            //$table->foreign('leadid')->references('id')->on('tblleads')->onDelete('cascade');
+            //$table->foreign('emailid')->references('id')->on('tblemails')->onDelete('cascade');
 
             $table->timestamps();
         });

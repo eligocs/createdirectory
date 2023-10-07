@@ -19,15 +19,15 @@ return new class extends Migration
             $table->string('payment_mode', 40);
             $table->text('note')->nullable();
             $table->decimal('amount', 15, 2);
-            $table->datetime('created_at')->nullable();
+            $table->timestamps();
 
             // If you want to set the charset and engine:
             // $table->charset = 'utf8';
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('credit_note_id')->references('id')->on('tblcreditnotes');
-            // $table->foreign('staff_id')->references('id')->on('your_staff_table_name');
+            // //$table->foreign('credit_note_id')->references('id')->on('tblcreditnotes');
+            // //$table->foreign('staff_id')->references('id')->on('your_staff_table_name');
         });
     }
 

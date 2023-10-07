@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('message');
             $table->timestamps();
 
-            $table->foreign('client_id')->references('id')->on('clients'); // Assuming you have a 'clients' table
+            //$table->foreign('client_id')->references('id')->on('clients'); // Assuming you have a 'clients' table
         });
     }
 

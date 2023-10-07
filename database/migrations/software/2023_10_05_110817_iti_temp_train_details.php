@@ -32,7 +32,7 @@ return new class extends Migration
             $table->text('return_train_name')->nullable();
             $table->unsignedBigInteger('amdId');
 
-            $table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
+            //$table->foreign('iti_id')->references('iti_id')->on('itinerary'); // Assuming 'itinerary' is the related table
         });
     }
 

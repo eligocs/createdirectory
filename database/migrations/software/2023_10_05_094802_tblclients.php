@@ -51,9 +51,9 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('country')->references('id')->on('your_country_table_name');
-            // $table->foreign('leadid')->references('id')->on('your_lead_table_name');
-            // $table->foreign('default_currency')->references('id')->on('your_currency_table_name');
+            // //$table->foreign('country')->references('id')->on('your_country_table_name');
+            // //$table->foreign('leadid')->references('id')->on('your_lead_table_name');
+            // //$table->foreign('default_currency')->references('id')->on('your_currency_table_name');
         });
     }
 

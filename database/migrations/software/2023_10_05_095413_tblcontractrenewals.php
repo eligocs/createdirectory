@@ -28,8 +28,8 @@ return new class extends Migration
             // $table->engine = 'MyISAM';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('contractid')->references('id')->on('your_contract_table_name');
-            // $table->foreign('renewed_by')->references('id')->on('your_user_table_name');
+            // //$table->foreign('contractid')->references('id')->on('your_contract_table_name');
+            // //$table->foreign('renewed_by')->references('id')->on('your_user_table_name');
         });
 
     }

@@ -25,7 +25,7 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraint for budget_id if needed.
-            // $table->foreign('budget_id')->references('id')->on('tblacc_budgets');
+            // //$table->foreign('budget_id')->references('id')->on('tblacc_budgets');
         });
     }
 

@@ -33,8 +33,8 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('addedfrom')->references('id')->on('your_addedfrom_table_name');
-            // $table->foreign('bank_id')->references('id')->on('your_bank_table_name');
+            // //$table->foreign('addedfrom')->references('id')->on('your_addedfrom_table_name');
+            // //$table->foreign('bank_id')->references('id')->on('your_bank_table_name');
         });
     }
 

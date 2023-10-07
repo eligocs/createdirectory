@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('order')->nullable();
             
             // Define foreign key constraint
-            $table->foreign('account_type_id')->references('id')->on('account_types')->onDelete('cascade');
+            //$table->foreign('account_type_id')->references('id')->on('account_types')->onDelete('cascade');
             
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('att_name', 255)->nullable();
             $table->timestamps();
 
-            $table->foreign('attractionId')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
+            //$table->foreign('attractionId')->references('id')->on('attraction'); // Assuming you have an 'attraction' table
         });
     }
 

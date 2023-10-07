@@ -24,7 +24,7 @@ return new class extends Migration
             $table->unsignedInteger('del_status')->default(0);
             $table->timestamps();
 
-            $table->foreign('agent_id')->references('id')->on('agents'); // Assuming you have an 'agents' table
+            //$table->foreign('agent_id')->references('id')->on('agents'); // Assuming you have an 'agents' table
         });
     }
 

@@ -39,14 +39,14 @@ return new class extends Migration
             $table->timestamps();
 
             // Add any foreign key constraints if needed
-            // $table->foreign('admin')->references('id')->on('admin_table');
-            // $table->foreign('userid')->references('id')->on('user_table');
-            // $table->foreign('contactid')->references('id')->on('contact_table');
-            // $table->foreign('department')->references('id')->on('department_table');
-            // $table->foreign('priority')->references('id')->on('priority_table');
-            // $table->foreign('status')->references('id')->on('status_table');
-            // $table->foreign('service')->references('id')->on('service_table');
-            // $table->foreign('project_id')->references('id')->on('project_table');
+            // //$table->foreign('admin')->references('id')->on('admin_table');
+            // //$table->foreign('userid')->references('id')->on('user_table');
+            // //$table->foreign('contactid')->references('id')->on('contact_table');
+            // //$table->foreign('department')->references('id')->on('department_table');
+            // //$table->foreign('priority')->references('id')->on('priority_table');
+            // //$table->foreign('status')->references('id')->on('status_table');
+            // //$table->foreign('service')->references('id')->on('service_table');
+            // //$table->foreign('project_id')->references('id')->on('project_table');
         });
     }
 

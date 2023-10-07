@@ -24,10 +24,10 @@ return new class extends Migration
             // $table->engine = 'InnoDB';
 
             // Define foreign key constraints if needed.
-            // $table->foreign('item_id')->references('id')->on('your_item_table_name');
-            // $table->foreign('inventory_asset_account')->references('id')->on('your_inventory_asset_account_table_name');
-            // $table->foreign('income_account')->references('id')->on('your_income_account_table_name');
-            // $table->foreign('expense_account')->references('id')->on('your_expense_account_table_name');
+            // //$table->foreign('item_id')->references('id')->on('your_item_table_name');
+            // //$table->foreign('inventory_asset_account')->references('id')->on('your_inventory_asset_account_table_name');
+            // //$table->foreign('income_account')->references('id')->on('your_income_account_table_name');
+            // //$table->foreign('expense_account')->references('id')->on('your_expense_account_table_name');
         });
     }
 

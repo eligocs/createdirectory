@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('datecreated');
 
             // Define foreign key constraint
-            $table->foreign('invoiceid')->references('id')->on('tblinvoices')->onDelete('cascade');
+            //$table->foreign('invoiceid')->references('id')->on('tblinvoices')->onDelete('cascade');
 
             $table->timestamps();
         });
