@@ -154,8 +154,7 @@ class FrontController extends Controller
         return view('install');
     }
 
-    public function setupadmin(Request $request){
-        
+    public function setupadmin(Request $request){ 
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'company_name' => 'required',
@@ -176,7 +175,7 @@ class FrontController extends Controller
         }
         if ($request->hasFile('image')) { 
             $imageFile = $request->file('image');   
-            $imagePath = $folderName.'/' . $imageFile->getClientOriginalName();
+            $imagePath = $folderName;
             $newFileName = uniqid() . '.' . $imageFile->getClientOriginalExtension(); 
             $moved = Storage::disk('public')->putFileAs($imagePath, $imageFile, $newFileName); 
         }else{
@@ -191,9 +190,8 @@ class FrontController extends Controller
         $database = $request->database ?? '';
         $username = $request->username ?? '';
         $password  = $this->generateRandomPassword(); 
-
         // Create the database
-        DB::statement("CREATE DATABASE IF NOT EXISTS $database"); 
+        DB::statement("CREATE DATABASE IF NOT EXISTS $database");  
         DB::statement("CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'");
         $res = DB::statement("GRANT ALL PRIVILEGES ON $database.* TO '$username'@'localhost'"); 
         if(!$res){

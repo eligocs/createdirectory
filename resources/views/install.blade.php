@@ -19,13 +19,34 @@
     .cropper-container.cropper-bg {
         margin-top: 8px;
     }
+
+    .opacity_zero {
+        opacity: 0;
+    }
+
+    div#spinner {
+        height: 15px;
+        width: 15px;
+    }
+
+    #progress-container {
+        width: 100%;
+        background-color: #f0f0f0;
+    }
+
+    #progress-bar {
+        width: 0%;
+        height: 30px;
+        background-color: #4caf50;
+        transition: width 0.3s;
+    }
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
 
 <div class="container">
     <div class="row">
         <div class="card mainform ">
-            <div class="card-body">
+            <div class="card-body"> 
                 <div class="col-md-12 startdatabaseMigration text-center mt-4" style="display:none;">
                     <h3>Finish Setup</h3>
                     <div class="mb-3 mt-5 ">
@@ -40,39 +61,36 @@
                 </div>
                 <form id="step-form" style='display:none;'>
                     <div class="col-md-12 stepdiv">
-                        <h3>Basic info</h3>
+                        <h3>Enter information</h3>
                         <div class="mb-3 mt-3">
                             <label for="field1" class="form-label">Company Name</label>
-                            <input type="text" class="form-control" id="field1" name="company_name" required>
+                            <input type="text" class="form-control" id="company_name" name="company_name" required>
                         </div>
                         <div class="mb-3">
                             <label for="field1" class="form-label">Email</label>
                             <input type="email" class="form-control" id="field1" name="email" required>
                         </div>
-                    </div>
-                    <div class="col-md-12 stepdiv">
-                        <h3>Database/Assets</h3>
                         <div class="mb-3 mt-3">
                             <label for="directory_name" class="form-label">Assets Directory</label>
-                            <input type="text" class="form-control" id="directory_name" name="directory_name" required>
-                            <div class="existmessage text-danger mt-2" style="display: none;">Directory exist !</div>
-                            <div class="can_create mt-2 text-success" style="display: none;"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="database_name" class="form-label">Database</label>
-                            <input type="text" class="form-control" id="database_name" name="database" required>
-                            <div class="databaseExistmessage text-danger mt-2" style="display: none;">Database exist !
+                            <div id="spinner" class="spinner-border text-primary" role="status" style="display:none;">
                             </div>
+                            <input type="text" class="form-control" id="directory_name" name="directory_name" required>
+                            <div class="can_create mt-2 text-success" style="display: none;"></div>
                             <div class="can_create_two mt-2 text-success" style="display: none;"></div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="database_username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="database_username" name="username" required>
-                            <div class="databaseExistmessage_three text-danger mt-2" style="display: none;">Database
-                                Username exist !</div>
                             <div class="can_create_two_three mt-2 text-success" style="display: none;"></div>
                         </div>
+                        <div class="mb-3 opacity_zero">
+                            <label for="database_name" class="form-label">Database</label>
+                            <input type="hidden" class="form-control" id="database_name" name="database" required>
+                        </div>
+                        <div class="mb-3 opacity_zero">
+                            <label for="database_username" class="form-label">Username</label>
+                            <input type="hidden" class="form-control" id="database_username" name="username" required>
+                        </div>
                     </div>
+                    {{-- <div class="col-md-12 stepdiv">
+                        <h3>Database/Assets</h3>
+                    </div> --}}
                     <div class="col-md-12 stepdiv">
                         <h3>Upload Company Logo</h3>
                         <div class="mb-3 mt-3">
@@ -85,6 +103,11 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-md-12 m-3">
+                            <div id="progress-container">
+                                <div id="progress-bar"></div>
+                            </div>
+                        </div>
                         <div class="col-md-6 ">
                             <button type="button" class="btn btn-primary" id="prev-step">Previous</button>
                         </div>
@@ -121,51 +144,32 @@
             }, 3000);
         });
 
-        var err = false;
         
-        $(document).on('input','#directory_name',function(){
-            checkdir(); 
-        });
-        $(document).on('blur','#directory_name',function(){
-            checkdir();
-        });
-        $(document).on('input','#database_name',function(){
-            checkdatabase();
-        });
-        $(document).on('blur','#database_name',function(){
-            checkdatabase();
-        });
-        $(document).on('input','#database_username',function(){
-            checkusername();
-        });
-        $(document).on('blur','#database_username',function(){
-            checkusername();
-        });
-
+        $(document).on('blur','#company_name',function(){ 
+            checkdir();  
+        }); 
+        
         function checkdir(){
+            var err = false;
+            $('#spinner').show();
+            $('#next-step').attr('disabled',true);
             var sanitizedValue =  $('#directory_name').val().replace(/ /g, '');
             var sanitizedValue = sanitizedValue.replace(/\/\//g, '/');
             $('#directory_name').val(sanitizedValue);
             var path = sanitizedValue; 
             if(path){
-                $('#next-step').attr('disabled',true);
-                $('.can_create').hide();
-                $('.existmessage').hide(); 
+                $('.can_create').hide(); 
                 $.ajax({
                     url: '{{url("checkDirectoryExist")}}', 
                     type: 'GET',  
                     data: { path: path },  
                     success: function(response) { 
-                        if(response == 1){
-                            $('.existmessage').show();  
-                            $('.can_create').hide(); 
-                            err = true;
-                            $('#next-step').attr('disabled',true); 
-                        }else{
-                            $('.existmessage').hide(); 
-                            $('.can_create').show();
-                            $('.can_create').html('--path : public_html/storage/app/public/admin-directory/'+path); 
-                            $('#next-step').attr('disabled',false); 
+                        $('.can_create').show();
+                        if(response == 1){ 
+                            $('.can_create').addClass('text-danger').html('1) Directory Path : public_html/storage/app/public/admin-directory/'+path+' Already exist !');  
+                            err = true; 
+                        }else{  
+                            $('.can_create').removeClass('text-danger').html('1) Directory Path : public_html/storage/app/public/admin-directory/'+path);  
                         }
                     },
                     error: function(xhr, status, error) { 
@@ -174,36 +178,25 @@
                 }); 
             }else{
                 $('.can_create').html('');
-                $('.can_create').hide();
-                $('.existmessage').hide(); 
-                $('#next-step').attr('disabled',true);
+                $('.can_create').hide();  
             }
-        }
-
-        function checkdatabase(){
             var sanitizedValue =  $('#database_name').val().replace(/ /g, '');
             var sanitizedValue = sanitizedValue.replace(/[^a-zA-Z0-9]/g, '');
             $('#database_name').val(sanitizedValue);
             var database = sanitizedValue; 
-            if(database){
-                $('#next-step').attr('disabled',true);
-                $('.can_create_two').hide();
-                $('.databaseExistmessage').hide(); 
+            if(database){ 
+                $('.can_create_two').hide(); 
                 $.ajax({
                     url: '{{url("checkDatabaseExist")}}', 
                     type: 'GET',  
                     data: { database: database },  
                     success: function(response) { 
-                        if(response == 1){
-                            $('.databaseExistmessage').show();  
-                            $('.can_create_two').html('--database : '+database+' already exist !');
-                            err = true;
-                            $('#next-step').attr('disabled',true); 
-                        }else{
-                            $('.databaseExistmessage').hide();
-                            $('#next-step').attr('disabled',false);
-                            $('.can_create_two').show();
-                            $('.can_create_two').html('--database : '+database+' can be created');  
+                        $('.can_create_two').show();
+                        if(response == 1){ 
+                            $('.can_create_two').addClass('text-danger').html('2) Database : '+database+' already exist !');
+                            err = true; 
+                        }else{  
+                            $('.can_create_two').removeClass('text-danger').html('2) Database : '+database+' can be created');  
                         }
                     },
                     error: function(xhr, status, error) { 
@@ -212,36 +205,25 @@
                 }); 
             }else{
                 $('.can_create_two').html('');
-                $('.can_create_two').hide();
-                $('.databaseExistmessage').hide(); 
-                $('#next-step').attr('disabled',true);
+                $('.can_create_two').hide();  
             }
-        }
-
-        function checkusername(){
             var sanitizedValue =  $('#database_username').val().replace(/ /g, '');
             var sanitizedValue = sanitizedValue.replace(/[^a-zA-Z0-9]/g, '');
             $('#database_username').val(sanitizedValue);
             var username = sanitizedValue; 
-            if(username){
-                $('#next-step').attr('disabled',true);
-                $('.can_create_two_three').hide();
-                $('.databaseExistmessage_three').hide(); 
+            if(username){ 
+                $('.can_create_two_three').hide(); 
                 $.ajax({
                     url: '{{url("checkUsernameExist")}}', 
                     type: 'GET',  
                     data: { username: username },  
                     success: function(response) { 
-                        if(response == 1){
-                            $('.databaseExistmessage_three').show(); 
+                        $('.can_create_two_three').show();
+                        if(response == 1){ 
                             err = true;
-                            $('.can_create_two_three').html('--username : '+username+' already exist !');
-                            $('#next-step').attr('disabled',true); 
-                        }else{
-                            $('.databaseExistmessage_three').hide(); 
-                            $('.can_create_two_three').show();
-                            $('.can_create_two_three').html('--username : '+username+' can be created'); 
-                            $('#next-step').attr('disabled',false); 
+                            $('.can_create_two_three').addClass('text-danger').html('3) Database User : '+username+' already exist !'); 
+                        }else{ 
+                            $('.can_create_two_three').removeClass('text-danger').html('3) Database User : '+username+' can be created');  
                         }
                     },
                     error: function(xhr, status, error) { 
@@ -250,11 +232,21 @@
                 }); 
             }else{
                 $('.can_create_two_three').html('');
-                $('.can_create_two_three').hide();
-                $('.databaseExistmessage_three').hide(); 
-                $('#next-step').attr('disabled',true);
+                $('.can_create_two_three').hide();  
             }
+            console.log(err)
+            setTimeout(() => {
+                if(err){
+                    $('#next-step').attr('disabled',true); 
+                }else{
+                    $('#next-step').attr('disabled',false); 
+                }
+                $('#spinner').hide();
+            }, 3000);
         }
+
+        
+ 
         
         const image = document.getElementById('logo');
         const cropper = new Cropper(image, { 
@@ -284,56 +276,95 @@
             }
             $('.logoDiv').show();
         });
-        
-        $(document).on('click','.cropButton', function () {
-            // Get the cropped image data
-            // const croppedData = cropper.getCroppedCanvas().toDataURL('image/jpeg');
-            const croppedCanvas = cropper.getCroppedCanvas();
-            console.log(croppedCanvas)
-            if (croppedCanvas) { 
-            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            var company_name = $('input[name="company_name"]').val();
-            var email = $('input[name="email"]').val();
-            var directory_name = $('input[name="directory_name"]').val();
-            var database = $('input[name="database"]').val();
-            var username = $('input[name="username"]').val(); 
-            croppedCanvas.toBlob(function (blob) { 
-                const formData = new FormData();
-                formData.append('image', blob,'logo.jpg');   
-                formData.append('company_name', company_name);   
-                formData.append('email', email);   
-                formData.append('directory_name', directory_name);   
-                formData.append('database', database);   
-                formData.append('username', username);   
-                fetch('{{url("setupadmin")}}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': csrfToken,  
-                    },
-                    'Content-Type': 'application/json', 
-                    'Accept': 'application/json', 
-                })
-                .then(response => { 
-                    console.log(response)
-                    if (response.status == 200) {
-                        $('.startdatabaseMigration').show(); 
-                        $('#step-form').hide(); 
-                    } else {
-                        $('.startdatabaseMigration').hide();
-                        $('#step-form').show(); 
-                        $('#imageInput').after('<span class="text-danger errormessage">'+response.message+'!</span>');
-                    }
-                })
-                .catch(error => {
-                    console.error('Image upload error:', error);
-                });
-            }, 'image/jpeg', 0.9); // Adjust the format and quality as needed
+
+      
+                    
+        $(document).on('click','.cropButton', function () {  
+            const croppedData = cropper.getCroppedCanvas().toDataURL('image/jpeg');
+            const croppedCanvas = cropper.getCroppedCanvas(); 
+            if (croppedCanvas) {  
+                var company_name = $('input[name="company_name"]').val();
+                var email = $('input[name="email"]').val();
+                var directory_name = $('input[name="directory_name"]').val();
+                var database = $('input[name="database"]').val();
+                var username = $('input[name="username"]').val(); 
+                croppedCanvas.toBlob(function (blob) {  
+                    const formData = new FormData();
+                    formData.append('image', blob,'logo.jpg');   
+                    formData.append('company_name', company_name);   
+                    formData.append('email', email);   
+                    formData.append('directory_name', directory_name);   
+                    formData.append('database', database);   
+                    formData.append('username', username);
+                    makeAjaxRequest(formData);   
+                    // fetch('{{url("setupadmin")}}', {
+                    //     method: 'POST',
+                    //     body: formData,
+                    //     headers: {
+                    //         'X-CSRF-TOKEN': csrfToken,  
+                    //     },
+                    //     'Content-Type': 'application/json', 
+                    //     'Accept': 'application/json', 
+                    // })
+                    // .then(response => { 
+                    //     console.log(response)
+                    //     if (response.status == 200) {
+                    //         $('.startdatabaseMigration').show(); 
+                    //         $('#step-form').hide(); 
+                    //     } else {
+                    //         $('.startdatabaseMigration').hide();
+                    //         $('#step-form').show(); 
+                    //         $('#imageInput').after('<span class="text-danger errormessage">'+response.message+'!</span>');
+                    //     }
+                    // })
+                    // .catch(error => {
+                    //     console.error('Image upload error:', error);
+                    // });
+                }, 'image/jpeg', 0.9); // Adjust the format and quality as needed
             }else{
                 $('#imageInput').after('<span class="text-danger errormessage">Please select company logo!</span>');
                 return 0;
             }
         });
+
+
+          function makeAjaxRequest(formData) {
+            var xhr = new XMLHttpRequest();
+            var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            xhr.open("POST", "{{url('setupadmin')}}", true);
+            xhr.setRequestHeader("X-CSRF-TOKEN", csrfToken);
+            // Add an event listener to track progress
+            xhr.addEventListener("progress", function(event) {
+                if (event.lengthComputable) {
+                var percentComplete = (event.loaded / event.total) * 100;
+                document.getElementById("progress-bar").style.width = percentComplete + "%";
+                }
+            });
+            // Define a callback function to handle the response
+            xhr.onreadystatechange = function () {
+            // Check if the request is complete
+                if (xhr.readyState === 4) {
+                    // Check the HTTP status code
+                    if (xhr.status === 200) {
+                    // Request was successful; handle the response data here
+                    var response = JSON.parse(xhr.responseText);
+                    console.log(response);
+                    } else {
+                    // Request failed; handle the error here
+                    console.error("Request failed with status: " + xhr.status);
+                    }
+                }
+            }; 
+            
+            
+            // Handle the AJAX response when it's complete
+            xhr.addEventListener("load", function(res) {
+                // Handle the response here
+                console.log(res)
+            });
+
+            xhr.send(formData); 
+        }
 
 
         const startinstalled = $("#startinstaller");
@@ -355,21 +386,12 @@
         $(steps[0]).show();
 
         // Handle "Next" button click
-        nextButton.click(function () {
+        nextButton.click(function () { 
             if(!validateInputs()){
                 return;
             }
-            prevButton.show(); 
-            if(currentStep == 0){ 
-                checkdir();checkdatabase();checkusername(); 
-            } 
-            if(err){
-                $('#next-step').attr('disabled',true); 
-                return;
-            }else{
-                // $('#next-step').attr('disabled',false); 
-            }
-            if (currentStep == 1) { 
+            prevButton.show();   
+            if (currentStep == 0) { 
                 setTimeout(() => {
                     nextButton.addClass('cropButton');
                     nextButton.attr('id','');
@@ -398,6 +420,7 @@
             return emailPattern.test(email);
         }
         function validateInputs(){
+            $('.can_create,.can_create_two,.can_create_two_three').hide();
             $('.errormessage').hide();
             if($('input[name="company_name"]').val() == ''){ 
                 $('input[name="company_name"]').after('<span class="text-danger errormessage">Company Name is required!</span>');
@@ -430,6 +453,8 @@
         // Handle "Previous" button click
         prevButton.click(function () { 
             if (currentStep > 0) {
+                nextButton.removeClass('cropButton');
+                nextButton.attr('id','#next-step');
                 $(steps[currentStep]).hide();
                 currentStep--;
                 $(steps[currentStep]).show();
