@@ -59,8 +59,8 @@ return new class extends Migration
 
             
         // Set the auto-increment starting value to 1000
-        DB::statement('ALTER TABLE travel_booking AUTO_INCREMENT = 1000;');
-        }); 
+    }); 
+    DB::statement('ALTER TABLE travel_booking AUTO_INCREMENT = 1000;');
     }
 
     /**

@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('text_template', function (Blueprint $table) {
             $table->id();
-            $table->string('slug', 100);
-            $table->timestamp('created_at')->default(now());
-            $table->timestamp('updated_at')->default('0000-00-00 00:00:00')->onUpdate(now());
+            $table->string('slug', 100); 
             $table->string('greeting', 100);
             $table->string('welcome_note', 100);
             $table->string('day_wis_Iti', 2000);
@@ -24,7 +22,7 @@ return new class extends Migration
             $table->string('hotel_price', 300);
             $table->integer('template_type')->default(1)->comment('2=accommodation, 1=holiday');
             $table->string('offer', 100);
-
+            $table->timestamps();
         });
     }
 

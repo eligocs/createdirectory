@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('payment_mode', 40)->nullable();
             $table->text('note')->nullable();
             $table->decimal('amount', 15, 2)->nullable();
-            $table->datetime('created_at')->nullable();
+            // $table->datetime('created_at')->nullable();
+            $table->timestamps();
         });
     }
 

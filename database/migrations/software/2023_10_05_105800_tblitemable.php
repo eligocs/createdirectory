@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tblitems', function (Blueprint $table) {
+        Schema::create('tblitemable', function (Blueprint $table) {
             $table->id();
             $table->mediumText('description')->nullable();
             $table->text('long_description')->nullable();
@@ -58,6 +58,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tblitems');
+        Schema::dropIfExists('tblitemable');
     }
 };

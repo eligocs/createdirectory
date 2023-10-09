@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('reference', 64);
             $table->integer('invoice_id');
-            $table->string('amount', 25);
-            $table->datetime('created_at');
+            $table->string('amount', 25); 
             $table->timestamps();
         });
     }
