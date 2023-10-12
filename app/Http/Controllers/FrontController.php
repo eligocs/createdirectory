@@ -155,6 +155,16 @@ class FrontController extends Controller
     }
 
     public function setupadmin(Request $request){ 
+        $total = 100;
+        for ($i = 1; $i <= $total; $i++) { 
+            usleep(100000); 
+            $progress = ($i / $total) * 100;
+              
+            echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
+            ob_flush();
+            flush();
+        }
+        
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'company_name' => 'required',
@@ -210,6 +220,15 @@ class FrontController extends Controller
             'password'=>$password,
         ]);
         $this->runMigrations($database,$username,$password);
+        $total = 100;
+        for ($i = 1; $i <= $total; $i++) { 
+            usleep(10000); 
+            $progress = ($i / $total) * 100;
+              
+            echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
+            ob_flush();
+            flush();
+        }
         return response()->json([
             'status'=>200,
             'company_name'=>$company_name,
@@ -219,7 +238,19 @@ class FrontController extends Controller
             'database'=>$database,
             'username'=>$username,
             'password'=>$password,
+            'message'=>'Done',
+            'n'=>$total,
         ]); 
+        // return response()->json([
+        //     'status'=>200,
+        //     'company_name'=>$company_name,
+        //     'email'=>$email,
+        //     'directory_name'=>$directory_name,
+        //     'logo_path'=>$imagePath,
+        //     'database'=>$database,
+        //     'username'=>$username,
+        //     'password'=>$password,
+        // ]); 
 
     }
 

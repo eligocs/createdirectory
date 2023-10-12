@@ -37,9 +37,10 @@
     #progress-bar {
         width: 0%;
         height: 30px;
-        background-color: #4caf50;
-        transition: width 0.3s;
+        background-color: linear;
+        transition: width 0.6s;
     }
+   
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
 
@@ -91,7 +92,7 @@
                     {{-- <div class="col-md-12 stepdiv">
                         <h3>Database/Assets</h3>
                     </div> --}}
-                    <div class="col-md-12 stepdiv">
+                    <div class="col-md-12 stepdiv logodiv_section">
                         <h3>Upload Company Logo</h3>
                         <div class="mb-3 mt-3">
                             <input type="file" id="imageInput" accept="image/*">
@@ -104,9 +105,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 m-3">
-                            <div id="progress-container">
-                                <div id="progress-bar"></div>
-                            </div>
+                            <progress id="progress-bar" max="100" value="0"></progress>
+                            <p id="progress-label">0%</p> 
                         </div>
                         <div class="col-md-6 ">
                             <button type="button" class="btn btn-primary" id="prev-step">Previous</button>
@@ -278,7 +278,8 @@
         });
 
       
-                    
+        $("#progress-bar").hide() 
+        $("#progress-label").hide() 
         $(document).on('click','.cropButton', function () {  
             const croppedData = cropper.getCroppedCanvas().toDataURL('image/jpeg');
             const croppedCanvas = cropper.getCroppedCanvas(); 
@@ -296,74 +297,67 @@
                     formData.append('directory_name', directory_name);   
                     formData.append('database', database);   
                     formData.append('username', username);
-                    makeAjaxRequest(formData);   
-                    // fetch('{{url("setupadmin")}}', {
-                    //     method: 'POST',
-                    //     body: formData,
-                    //     headers: {
-                    //         'X-CSRF-TOKEN': csrfToken,  
-                    //     },
-                    //     'Content-Type': 'application/json', 
-                    //     'Accept': 'application/json', 
-                    // })
-                    // .then(response => { 
-                    //     console.log(response)
-                    //     if (response.status == 200) {
-                    //         $('.startdatabaseMigration').show(); 
-                    //         $('#step-form').hide(); 
-                    //     } else {
-                    //         $('.startdatabaseMigration').hide();
-                    //         $('#step-form').show(); 
-                    //         $('#imageInput').after('<span class="text-danger errormessage">'+response.message+'!</span>');
-                    //     }
-                    // })
-                    // .catch(error => {
-                    //     console.error('Image upload error:', error);
-                    // });
+                    makeAjaxRequest(formData);    
                 }, 'image/jpeg', 0.9); // Adjust the format and quality as needed
             }else{
                 $('#imageInput').after('<span class="text-danger errormessage">Please select company logo!</span>');
                 return 0;
             }
         });
+        
 
-
+       
           function makeAjaxRequest(formData) {
+            $("#prev-step").hide() 
+            $("#next-step").hide() 
+            $(".cropButton").hide() 
+            $("#progress-bar").show() 
+            $("#progress-label").show() 
+            const progressBar = document.getElementById("progress-bar"); 
+            const progressLabel = document.getElementById("progress-label"); 
             var xhr = new XMLHttpRequest();
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
             xhr.open("POST", "{{url('setupadmin')}}", true);
             xhr.setRequestHeader("X-CSRF-TOKEN", csrfToken);
-            // Add an event listener to track progress
-            xhr.addEventListener("progress", function(event) {
+            xhr.responseType = "blob";
+            xhr.onprogress = function (event) { 
                 if (event.lengthComputable) {
-                var percentComplete = (event.loaded / event.total) * 100;
-                document.getElementById("progress-bar").style.width = percentComplete + "%";
+                    const percentComplete = (event.loaded / event.total) * 100;
+                    progressBar.value = percentComplete;
+                    progressLabel.innerText = percentComplete.toFixed(2) + "%";
+                } else { 
+                    const percentComplete = (event.loaded / (1024 * 1024)) * 1000;  
+                    progressBar.value = percentComplete;
+                    var valpro = percentComplete.toFixed(2);
+                    progressLabel.innerText = valpro + "%";
+                    progressBar.style.width = valpro + "%"; 
+                    if(valpro > 1 && valpro < 20){
+                        progressLabel.innerText =  "Starting setup "+ valpro + "%"; 
+                    }else if(valpro > 20 && valpro < 45){
+                        progressLabel.innerText =  "Setting up credentials "+ valpro + "%"; 
+                    }else if(valpro > 45 && valpro < 85){
+                        progressLabel.innerText =  "Installing Database "+ valpro + "%"; 
+                    }else if(valpro > 85 && valpro < 95){
+                        progressLabel.innerText =  "Setting up demo data.. "+valpro + "%"; 
+                    }else if(valpro > 95){
+                        progressLabel.innerText =  "Finishing... "+ valpro + "%"; 
+                        progressBar.style.width = "100%"; 
+                    }  
                 }
-            });
-            // Define a callback function to handle the response
-            xhr.onreadystatechange = function () {
-            // Check if the request is complete
-                if (xhr.readyState === 4) {
-                    // Check the HTTP status code
-                    if (xhr.status === 200) {
-                    // Request was successful; handle the response data here
-                    var response = JSON.parse(xhr.responseText);
-                    console.log(response);
-                    } else {
-                    // Request failed; handle the error here
+            };
+            xhr.onload = function () {
+                if (xhr.status === 200) { 
+                    progressLabel.innerText = 100 + "%";
+                    progressBar.style.width = 100 + "%"; 
+                    $("#progress-bar").after('Done.')
+                    $("#progress-bar").hide() 
+                    $("#progress-label").hide()  
+                    $(".logodiv_section").hide() 
+                } else {
                     console.error("Request failed with status: " + xhr.status);
-                    }
-                }
-            }; 
-            
-            
-            // Handle the AJAX response when it's complete
-            xhr.addEventListener("load", function(res) {
-                // Handle the response here
-                console.log(res)
-            });
-
-            xhr.send(formData); 
+                } 
+            };
+            xhr.send(formData);   
         }
 
 
