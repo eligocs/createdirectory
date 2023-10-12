@@ -353,8 +353,14 @@
                     $("#progress-bar").hide() 
                     $("#progress-label").hide()  
                     $(".logodiv_section").hide() 
+                    Swal.fire(
+                        'Good job!',
+                        'Setup Complete',
+                        'success'
+                    )
+                    // window.location.reload(); 
                 } else {
-                    console.error("Request failed with status: " + xhr.status);
+                    console.error("Request failed with status: " + xhr.status+' : '+ xhr.message);
                 } 
             };
             xhr.send(formData);   

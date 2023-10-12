@@ -154,17 +154,7 @@ class FrontController extends Controller
         return view('install');
     }
 
-    public function setupadmin(Request $request){ 
-        $total = 100;
-        for ($i = 1; $i <= $total; $i++) { 
-            usleep(100000); 
-            $progress = ($i / $total) * 100;
-              
-            echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
-            ob_flush();
-            flush();
-        }
-        
+    public function setupadmin(Request $request){  
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'company_name' => 'required',
@@ -173,6 +163,15 @@ class FrontController extends Controller
             'database' => 'required',
             'username' => 'required',
         ]);
+        $total = 100;
+        for ($i = 1; $i <= $total; $i++) { 
+            usleep(100000); 
+            $progress = ($i / $total) * 100;
+              
+            echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
+            ob_flush();
+            flush();
+        } 
         $folderName = '/admin-directory'.'/'.$request->input('directory_name'); 
         if (!Storage::disk('public')->exists($folderName)) {
             Storage::disk('public')->makeDirectory($folderName);  
@@ -209,8 +208,7 @@ class FrontController extends Controller
                 'status'=>500,
                 'message'=>'Fail to create database user!'
             ]); 
-        }
-
+        } 
         $res = Credentials::create([
             'company_name'=>$company_name,
             'email'=>$email,
@@ -219,16 +217,7 @@ class FrontController extends Controller
             'username'=>$username,
             'password'=>$password,
         ]);
-        $this->runMigrations($database,$username,$password);
-        $total = 100;
-        for ($i = 1; $i <= $total; $i++) { 
-            usleep(10000); 
-            $progress = ($i / $total) * 100;
-              
-            echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
-            ob_flush();
-            flush();
-        }
+        $this->runMigrations($database,$username,$password); 
         return response()->json([
             'status'=>200,
             'company_name'=>$company_name,
@@ -239,31 +228,17 @@ class FrontController extends Controller
             'username'=>$username,
             'password'=>$password,
             'message'=>'Done',
-            'n'=>$total,
         ]); 
-        // return response()->json([
-        //     'status'=>200,
-        //     'company_name'=>$company_name,
-        //     'email'=>$email,
-        //     'directory_name'=>$directory_name,
-        //     'logo_path'=>$imagePath,
-        //     'database'=>$database,
-        //     'username'=>$username,
-        //     'password'=>$password,
-        // ]); 
 
     }
 
     public function generateRandomPassword($length = 10) {
-        $characters = '0123456789!@#$&*'; // Include any other characters you want in the password
-    
+        $characters = '0123456789!@#$&*'; // Include any other characters you want in the password 
         $password = '';
-        $max = strlen($characters) - 1;
-    
+        $max = strlen($characters) - 1; 
         for ($i = 0; $i < $length; $i++) {
             $password .= $characters[random_int(0, $max)];
-        }
-    
+        } 
         return $password;
     }
     
@@ -280,24 +255,26 @@ class FrontController extends Controller
             'database' => $database,
             'username' => $username,
             'password' => $password,
-        ];
-
+        ]; 
         // Set the new database connection configuration
-        Config::set("database.connections.$newConnectionName", $newConnectionConfig);
-
+        Config::set("database.connections.$newConnectionName", $newConnectionConfig); 
         // Use the new connection to run migrations
-        Config::set("database.default", $newConnectionName);
-
+        Config::set("database.default", $newConnectionName); 
         // Run migrations using Artisan
-        $migrationPath = 'database/migrations/software';
-
+        $migrationPath = 'database/migrations/software'; 
         // Run migrations for specific tables using Artisan with --path option
         Artisan::call('migrate', ['--path' => $migrationPath]);
-    
-
+        $this->runSpecificSeeders(); 
         // Optionally, revert back to the original/default connection
-        Config::set("database.default", 'mysql');
+        Config::set("database.default", 'mysql'); 
+        return true;
+    }
 
+    public function runSpecificSeeders()
+    {
+        // Run specific seeders using the Artisan command
+        Artisan::call('db:seed', ['--class' => 'DummyDataSeeder']); 
+        // Add more seeders as needed 
         return true;
     }
 
