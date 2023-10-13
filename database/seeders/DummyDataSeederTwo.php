@@ -8398,5 +8398,4684 @@ class DummyDataSeederTwo extends Seeder
         INSERT INTO tbloptions VALUES(531, 'upgraded_from_version', '104', 1);
         ";
         DB::statement($queryFourtyFive);
+
+
+        $queryFourtySix = "INSERT INTO tblpayment_modes VALUES(2, 'Cash', 'Cash in Hand\r\n', 0, 0, 0, 0, 1);
+        INSERT INTO tblpayment_modes VALUES(3, 'State Bank Of India', 'state bank of india 89009898900', 0, 0, 0, 0, 1);
+        INSERT INTO tblpayment_modes VALUES(4, 'icici bank', '', 0, 0, 0, 0, 1);
+        INSERT INTO tblpayment_modes VALUES(5, 'HDFC Bank', '', 0, 0, 0, 0, 1);";
+        DB::statement($queryFourtySix);
+
+
+        $queryFourtySeven = "INSERT INTO tblpurchase_option VALUES(1, 'purchase_order_setting', '1', 1);
+        INSERT INTO tblpurchase_option VALUES(2, 'pur_order_prefix', '#PO', 1);
+        INSERT INTO tblpurchase_option VALUES(3, 'next_po_number', '22', 1);
+        INSERT INTO tblpurchase_option VALUES(4, 'date_reset_number', '', 1);
+        INSERT INTO tblpurchase_option VALUES(5, 'pur_request_prefix', '#PR', 1);
+        INSERT INTO tblpurchase_option VALUES(6, 'next_pr_number', '1', 1);
+        INSERT INTO tblpurchase_option VALUES(7, 'date_reset_pr_number', '', 1);
+        INSERT INTO tblpurchase_option VALUES(8, 'pur_inv_prefix', '#INV', 1);
+        INSERT INTO tblpurchase_option VALUES(9, 'next_inv_number', '143', 1);
+        INSERT INTO tblpurchase_option VALUES(10, 'create_invoice_by', 'contract', 1);
+        INSERT INTO tblpurchase_option VALUES(11, 'item_by_vendor', '0', 1);
+        INSERT INTO tblpurchase_option VALUES(12, 'terms_and_conditions', '', 1);
+        INSERT INTO tblpurchase_option VALUES(13, 'vendor_note', '', 1);";
+        DB::statement($queryFourtySeven);
+
+
+        $queryFourtyEight = "INSERT INTO tblpur_vendor_cate VALUES(1, 'Cab', '', 0);
+        INSERT INTO tblpur_vendor_cate VALUES(2, 'Bus ', '', 0);
+        INSERT INTO tblpur_vendor_cate VALUES(3, 'Train', '', 0);
+        INSERT INTO tblpur_vendor_cate VALUES(4, 'Flight', '', 0);
+        INSERT INTO tblpur_vendor_cate VALUES(5, 'Hotel', '', 0);
+        INSERT INTO tblpur_vendor_cate VALUES(6, 'Others', NULL, 0);";
+        DB::statement($queryFourtyEight);
+
+
+        $queryFourtyNine = "INSERT INTO tblroles VALUES(1, 'Employee', NULL);";
+        DB::statement($queryFourtyNine);
+
+
+        $queryFifty = "INSERT INTO tblsales_activity VALUES(10, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-05-22 12:54:22');
+        INSERT INTO tblsales_activity VALUES(11, 'invoice', 2, 'invoice_estimate_activity_updated_item_rate', 'a:2:{i:0;s:7:\"9000.00\";i:1;s:7:\"4000.00\";}', '1', 'Hem  singh', '2022-05-22 13:02:00');
+        INSERT INTO tblsales_activity VALUES(12, 'estimate', 1, 'estimate_activity_created', '', '1', 'Hem  singh', '2022-05-22 13:10:16');
+        INSERT INTO tblsales_activity VALUES(13, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-05-22 13:12:00');
+        INSERT INTO tblsales_activity VALUES(14, 'estimate', 1, 'estimate_activity_converted', 'a:1:{i:0;s:81:\"<a href=\"http://localhost/perfexNew/admin/invoices/list_invoices/3\">INV-DRAFT</a>\";}', '1', 'Hem  singh', '2022-05-22 13:12:00');
+        INSERT INTO tblsales_activity VALUES(15, 'invoice', 3, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>6</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '1', 'Hem  singh', '2022-05-22 13:16:37');
+        INSERT INTO tblsales_activity VALUES(16, 'invoice', 3, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:12:\" Rs 7,350.00\";i:1;s:84:\"<a href=\"http://localhost/perfexNew/admin/payments/payment/2\" target=\"_blank\">#2</a>\";}', '1', 'Hem  singh', '2022-05-22 13:16:37');
+        INSERT INTO tblsales_activity VALUES(17, 'estimate', 2, 'estimate_activity_created', '', '1', 'Hem  singh', '2022-05-22 13:22:01');
+        INSERT INTO tblsales_activity VALUES(19, 'estimate', 2, 'estimate_activity_converted', 'a:1:{i:0;s:81:\"<a href=\"http://localhost/perfexNew/admin/invoices/list_invoices/4\">INV-DRAFT</a>\";}', '1', 'Hem  singh', '2022-05-22 13:23:05');
+        INSERT INTO tblsales_activity VALUES(23, 'estimate', 3, 'estimate_activity_created', '', '1', 'Hem  singh', '2022-05-23 11:34:21');
+        INSERT INTO tblsales_activity VALUES(24, 'estimate', 3, 'estimate_activity_marked', 'a:1:{i:0;s:18:\"<status>2</status>\";}', '1', 'Hem  singh', '2022-05-23 11:35:44');
+        INSERT INTO tblsales_activity VALUES(26, 'estimate', 3, 'estimate_activity_converted', 'a:1:{i:0;s:81:\"<a href=\"http://localhost/perfexNew/admin/invoices/list_invoices/6\">INV-DRAFT</a>\";}', '1', 'Hem  singh', '2022-05-23 11:35:57');
+        INSERT INTO tblsales_activity VALUES(32, 'estimate', 4, 'estimate_activity_created', '', '1', 'Hem  singh', '2022-05-25 15:28:40');
+        INSERT INTO tblsales_activity VALUES(33, 'estimate', 4, 'estimate_activity_marked', 'a:1:{i:0;s:18:\"<status>4</status>\";}', '1', 'Hem  singh', '2022-05-25 15:32:01');
+        INSERT INTO tblsales_activity VALUES(34, 'estimate', 4, 'estimate_activity_marked', 'a:1:{i:0;s:18:\"<status>2</status>\";}', '1', 'Hem  singh', '2022-05-25 15:32:17');
+        INSERT INTO tblsales_activity VALUES(36, 'estimate', 4, 'estimate_activity_converted', 'a:1:{i:0;s:81:\"<a href=\"http://localhost/perfexNew/admin/invoices/list_invoices/8\">INV-DRAFT</a>\";}', '1', 'Hem  singh', '2022-05-25 15:32:22');
+        INSERT INTO tblsales_activity VALUES(39, 'estimate', 5, 'estimate_activity_created', '', '1', 'Hem  singh', '2022-05-25 15:36:23');
+        INSERT INTO tblsales_activity VALUES(41, 'estimate', 5, 'estimate_activity_converted', 'a:1:{i:0;s:81:\"<a href=\"http://localhost/perfexNew/admin/invoices/list_invoices/9\">INV-DRAFT</a>\";}', '1', 'Hem  singh', '2022-05-25 15:36:41');
+        INSERT INTO tblsales_activity VALUES(59, 'invoice', 13, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-06 19:42:42');
+        INSERT INTO tblsales_activity VALUES(60, 'invoice', 13, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>6</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '1', 'Hem  singh', '2022-06-06 19:43:23');
+        INSERT INTO tblsales_activity VALUES(61, 'invoice', 13, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:12:\" Rs 4,450.00\";i:1;s:86:\"<a href=\"http://localhost/perfexNew/admin/payments/payment/15\" target=\"_blank\">#15</a>\";}', '1', 'Hem  singh', '2022-06-06 19:43:23');
+        INSERT INTO tblsales_activity VALUES(62, 'invoice', 13, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:12:\" Rs 3,999.00\";i:1;s:86:\"<a href=\"http://localhost/perfexNew/admin/payments/payment/16\" target=\"_blank\">#16</a>\";}', '1', 'Hem  singh', '2022-06-07 14:12:16');
+        INSERT INTO tblsales_activity VALUES(65, 'invoice', 13, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:12:\" Rs 1,001.00\";i:1;s:86:\"<a href=\"http://localhost/perfexNew/admin/payments/payment/19\" target=\"_blank\">#19</a>\";}', '1', 'Hem  singh', '2022-06-07 14:25:45');
+        INSERT INTO tblsales_activity VALUES(66, 'invoice', 14, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-16 14:46:09');
+        INSERT INTO tblsales_activity VALUES(67, 'invoice', 15, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-16 14:53:21');
+        INSERT INTO tblsales_activity VALUES(69, 'invoice', 14, 'invoice_activity_marked_as_cancelled', '', '1', 'Hem  singh', '2022-06-16 15:03:01');
+        INSERT INTO tblsales_activity VALUES(70, 'invoice', 15, 'invoice_activity_marked_as_cancelled', '', '1', 'Hem  singh', '2022-06-16 15:03:01');
+        INSERT INTO tblsales_activity VALUES(79, 'invoice', 19, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-25 18:49:39');
+        INSERT INTO tblsales_activity VALUES(80, 'invoice', 20, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-25 19:22:59');
+        INSERT INTO tblsales_activity VALUES(81, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 11:16:36');
+        INSERT INTO tblsales_activity VALUES(82, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 11:22:30');
+        INSERT INTO tblsales_activity VALUES(84, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 12:22:38');
+        INSERT INTO tblsales_activity VALUES(85, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 13:10:19');
+        INSERT INTO tblsales_activity VALUES(93, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 17:29:46');
+        INSERT INTO tblsales_activity VALUES(94, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 17:30:11');
+        INSERT INTO tblsales_activity VALUES(101, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 17:38:00');
+        INSERT INTO tblsales_activity VALUES(102, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 17:41:27');
+        INSERT INTO tblsales_activity VALUES(105, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-28 19:28:30');
+        INSERT INTO tblsales_activity VALUES(107, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 10:32:24');
+        INSERT INTO tblsales_activity VALUES(108, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 10:58:11');
+        INSERT INTO tblsales_activity VALUES(117, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 12:04:59');
+        INSERT INTO tblsales_activity VALUES(118, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '1', 'Hem  singh', '2022-06-29 12:05:29');
+        INSERT INTO tblsales_activity VALUES(119, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:12:\" Rs 1,001.00\";i:1;s:83:\"<a href=\"http://localhost/accounts/admin/payments/payment/5\" target=\"_blank\">#5</a>\";}', '1', 'Hem  singh', '2022-06-29 12:05:29');
+        INSERT INTO tblsales_activity VALUES(120, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 15:02:47');
+        INSERT INTO tblsales_activity VALUES(122, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 15:28:08');
+        INSERT INTO tblsales_activity VALUES(123, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '1', 'Hem  singh', '2022-06-29 15:28:54');
+        INSERT INTO tblsales_activity VALUES(124, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 301.00\";i:1;s:83:\"<a href=\"http://localhost/accounts/admin/payments/payment/2\" target=\"_blank\">#2</a>\";}', '1', 'Hem  singh', '2022-06-29 15:28:54');
+        INSERT INTO tblsales_activity VALUES(129, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 16:19:35');
+        INSERT INTO tblsales_activity VALUES(130, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:36:44');
+        INSERT INTO tblsales_activity VALUES(140, 'invoice', 13, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:42:27');
+        INSERT INTO tblsales_activity VALUES(141, 'invoice', 14, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:42:40');
+        INSERT INTO tblsales_activity VALUES(142, 'invoice', 15, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:43:04');
+        INSERT INTO tblsales_activity VALUES(146, 'invoice', 19, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:43:58');
+        INSERT INTO tblsales_activity VALUES(147, 'invoice', 20, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:44:07');
+        INSERT INTO tblsales_activity VALUES(148, 'invoice', 21, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:45:10');
+        INSERT INTO tblsales_activity VALUES(149, 'invoice', 22, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:45:18');
+        INSERT INTO tblsales_activity VALUES(150, 'invoice', 23, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:45:27');
+        INSERT INTO tblsales_activity VALUES(151, 'invoice', 24, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:45:36');
+        INSERT INTO tblsales_activity VALUES(152, 'invoice', 25, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:46:08');
+        INSERT INTO tblsales_activity VALUES(153, 'invoice', 26, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:46:36');
+        INSERT INTO tblsales_activity VALUES(154, 'invoice', 27, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:50:06');
+        INSERT INTO tblsales_activity VALUES(155, 'invoice', 28, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:50:11');
+        INSERT INTO tblsales_activity VALUES(156, 'invoice', 29, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:51:43');
+        INSERT INTO tblsales_activity VALUES(157, 'invoice', 30, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-29 19:52:11');
+        INSERT INTO tblsales_activity VALUES(169, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-30 12:21:45');
+        INSERT INTO tblsales_activity VALUES(171, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-30 12:27:34');
+        INSERT INTO tblsales_activity VALUES(172, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-30 12:28:07');
+        INSERT INTO tblsales_activity VALUES(182, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-06-30 12:50:20');
+        INSERT INTO tblsales_activity VALUES(185, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 13:10:57');
+        INSERT INTO tblsales_activity VALUES(188, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 17:42:00');
+        INSERT INTO tblsales_activity VALUES(190, 'invoice', 2, 'invoice_activity_marked_as_cancelled', '', '1', 'Hem  singh', '2022-07-01 17:44:21');
+        INSERT INTO tblsales_activity VALUES(191, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 17:44:21');
+        INSERT INTO tblsales_activity VALUES(194, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 17:49:24');
+        INSERT INTO tblsales_activity VALUES(197, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 17:52:33');
+        INSERT INTO tblsales_activity VALUES(202, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 19:57:54');
+        INSERT INTO tblsales_activity VALUES(203, 'invoice', 2, 'invoice_activity_marked_as_cancelled', '', '1', 'Hem  singh', '2022-07-01 19:58:45');
+        INSERT INTO tblsales_activity VALUES(204, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-01 19:58:45');
+        INSERT INTO tblsales_activity VALUES(216, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 10:48:41');
+        INSERT INTO tblsales_activity VALUES(219, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:36:04');
+        INSERT INTO tblsales_activity VALUES(220, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:36:35');
+        INSERT INTO tblsales_activity VALUES(230, 'invoice', 13, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:43:43');
+        INSERT INTO tblsales_activity VALUES(231, 'invoice', 14, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:45:21');
+        INSERT INTO tblsales_activity VALUES(232, 'invoice', 15, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:45:40');
+        INSERT INTO tblsales_activity VALUES(236, 'invoice', 19, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:49:02');
+        INSERT INTO tblsales_activity VALUES(237, 'invoice', 20, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:49:13');
+        INSERT INTO tblsales_activity VALUES(238, 'invoice', 21, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:49:33');
+        INSERT INTO tblsales_activity VALUES(239, 'invoice', 22, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:49:59');
+        INSERT INTO tblsales_activity VALUES(240, 'invoice', 23, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:50:25');
+        INSERT INTO tblsales_activity VALUES(241, 'invoice', 24, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:50:32');
+        INSERT INTO tblsales_activity VALUES(242, 'invoice', 25, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:52:06');
+        INSERT INTO tblsales_activity VALUES(243, 'invoice', 26, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:52:36');
+        INSERT INTO tblsales_activity VALUES(244, 'invoice', 27, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:52:44');
+        INSERT INTO tblsales_activity VALUES(245, 'invoice', 28, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:53:05');
+        INSERT INTO tblsales_activity VALUES(246, 'invoice', 29, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 11:53:41');
+        INSERT INTO tblsales_activity VALUES(248, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-02 12:37:48');
+        INSERT INTO tblsales_activity VALUES(251, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-04 19:07:20');
+        INSERT INTO tblsales_activity VALUES(252, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-04 19:07:45');
+        INSERT INTO tblsales_activity VALUES(253, 'invoice', 2, 'invoice_activity_marked_as_cancelled', '', '1', 'Hem  singh', '2022-07-04 19:08:11');
+        INSERT INTO tblsales_activity VALUES(254, 'invoice', 3, 'invoice_activity_marked_as_cancelled', '', '1', 'Hem  singh', '2022-07-04 19:08:11');
+        INSERT INTO tblsales_activity VALUES(263, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-08 10:49:53');
+        INSERT INTO tblsales_activity VALUES(269, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-08 16:28:33');
+        INSERT INTO tblsales_activity VALUES(277, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-08 18:02:52');
+        INSERT INTO tblsales_activity VALUES(280, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-09 11:31:18');
+        INSERT INTO tblsales_activity VALUES(281, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-09 11:35:35');
+        INSERT INTO tblsales_activity VALUES(291, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-09 12:07:32');
+        INSERT INTO tblsales_activity VALUES(292, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '1', 'Hem  singh', '2022-07-09 12:07:39');
+        INSERT INTO tblsales_activity VALUES(293, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 250.00\";i:1;s:83:\"<a href=\"http://localhost/accounts/admin/payments/payment/2\" target=\"_blank\">#2</a>\";}', '1', 'Hem  singh', '2022-07-09 12:07:39');
+        INSERT INTO tblsales_activity VALUES(294, 'invoice', 3, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-09 12:10:42');
+        INSERT INTO tblsales_activity VALUES(295, 'invoice', 3, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '1', 'Hem  singh', '2022-07-09 12:10:48');
+        INSERT INTO tblsales_activity VALUES(296, 'invoice', 3, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 260.00\";i:1;s:83:\"<a href=\"http://localhost/accounts/admin/payments/payment/3\" target=\"_blank\">#3</a>\";}', '1', 'Hem  singh', '2022-07-09 12:10:48');
+        INSERT INTO tblsales_activity VALUES(311, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-09 16:57:25');
+        INSERT INTO tblsales_activity VALUES(436, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-12 16:46:24');
+        INSERT INTO tblsales_activity VALUES(439, 'invoice', 2, 'invoice_activity_created', '', '1', 'Hem  singh', '2022-07-18 11:18:13');
+        INSERT INTO tblsales_activity VALUES(440, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '1', 'Hem  singh', '2022-07-18 11:18:39');
+        INSERT INTO tblsales_activity VALUES(441, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '1', 'Hem  singh', '2022-07-18 11:18:46');
+        INSERT INTO tblsales_activity VALUES(442, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 100.00\";i:1;s:83:\"<a href=\"http://localhost/accounts/admin/payments/payment/3\" target=\"_blank\">#3</a>\";}', '1', 'Hem  singh', '2022-07-18 11:18:46');
+        INSERT INTO tblsales_activity VALUES(445, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-07-26 16:34:02');
+        INSERT INTO tblsales_activity VALUES(451, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-04 11:28:49');
+        INSERT INTO tblsales_activity VALUES(452, 'invoice', 2, 'invoice_estimate_activity_added_item', 'a:1:{i:0;s:0:\"\";}', '327', 'admin sing', '2022-08-04 11:29:47');
+        INSERT INTO tblsales_activity VALUES(453, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>2</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-08-04 11:29:47');
+        INSERT INTO tblsales_activity VALUES(454, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '327', 'admin sing', '2022-08-04 11:30:25');
+        INSERT INTO tblsales_activity VALUES(455, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 100.00\";i:1;s:98:\"<a href=\"http://192.168.1.10/trackitv1.9/accounts/admin/payments/payment/6\" target=\"_blank\">#6</a>\";}', '327', 'admin sing', '2022-08-04 11:30:25');
+        INSERT INTO tblsales_activity VALUES(457, 'invoice', 2, 'invoice_activity_created', '', '331', 'accounts accounts', '2022-08-07 19:00:53');
+        INSERT INTO tblsales_activity VALUES(458, 'invoice', 3, 'invoice_activity_created', '', '332', 'acc ', '2022-08-08 12:19:30');
+        INSERT INTO tblsales_activity VALUES(478, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-18 15:53:02');
+        INSERT INTO tblsales_activity VALUES(479, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-08-18 15:54:30');
+        INSERT INTO tblsales_activity VALUES(480, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '327', 'admin sing', '2022-08-18 15:54:36');
+        INSERT INTO tblsales_activity VALUES(481, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:9:\" Rs 15.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/8\" target=\"_blank\">#8</a>\";}', '327', 'admin sing', '2022-08-18 15:54:36');
+        INSERT INTO tblsales_activity VALUES(482, 'invoice', 3, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-18 15:55:00');
+        INSERT INTO tblsales_activity VALUES(483, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '327', 'admin sing', '2022-08-18 15:55:34');
+        INSERT INTO tblsales_activity VALUES(484, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 485.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/9\" target=\"_blank\">#9</a>\";}', '327', 'admin sing', '2022-08-18 15:55:34');
+        INSERT INTO tblsales_activity VALUES(489, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-18 16:22:07');
+        INSERT INTO tblsales_activity VALUES(490, 'invoice', 3, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-18 16:26:30');
+        INSERT INTO tblsales_activity VALUES(491, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-08-18 16:27:00');
+        INSERT INTO tblsales_activity VALUES(492, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '327', 'admin sing', '2022-08-18 16:28:22');
+        INSERT INTO tblsales_activity VALUES(493, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 573.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/4\" target=\"_blank\">#4</a>\";}', '327', 'admin sing', '2022-08-18 16:28:22');
+        INSERT INTO tblsales_activity VALUES(495, 'invoice', 1, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-18 16:33:29');
+        INSERT INTO tblsales_activity VALUES(496, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-08-18 16:34:25');
+        INSERT INTO tblsales_activity VALUES(497, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '327', 'admin sing', '2022-08-18 16:34:31');
+        INSERT INTO tblsales_activity VALUES(498, 'invoice', 1, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 510.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/1\" target=\"_blank\">#1</a>\";}', '327', 'admin sing', '2022-08-18 16:34:31');
+        INSERT INTO tblsales_activity VALUES(499, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-18 16:35:39');
+        INSERT INTO tblsales_activity VALUES(500, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-08-18 16:36:11');
+        INSERT INTO tblsales_activity VALUES(501, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '327', 'admin sing', '2022-08-18 16:37:16');
+        INSERT INTO tblsales_activity VALUES(502, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 210.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/2\" target=\"_blank\">#2</a>\";}', '327', 'admin sing', '2022-08-18 16:37:16');
+        INSERT INTO tblsales_activity VALUES(503, 'invoice', 3, 'invoice_activity_from_expense', '', '327', 'admin sing', '2022-08-18 19:45:05');
+        INSERT INTO tblsales_activity VALUES(504, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '327', 'admin sing', '2022-08-18 19:56:53');
+        INSERT INTO tblsales_activity VALUES(505, 'invoice', 1, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:9:\" Rs 18.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/3\" target=\"_blank\">#3</a>\";}', '327', 'admin sing', '2022-08-18 19:56:53');
+        INSERT INTO tblsales_activity VALUES(513, 'invoice', 1, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-24 18:58:25');
+        INSERT INTO tblsales_activity VALUES(514, 'invoice', 1, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-24 19:01:10');
+        INSERT INTO tblsales_activity VALUES(515, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-08-24 19:01:27');
+        INSERT INTO tblsales_activity VALUES(516, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '327', 'admin sing', '2022-08-24 19:01:32');
+        INSERT INTO tblsales_activity VALUES(517, 'invoice', 1, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 426.10\";i:1;s:96:\"<a href=\"http://localhost/trackitKavya/accounts/admin/payments/payment/3\" target=\"_blank\">#3</a>\";}', '327', 'admin sing', '2022-08-24 19:01:32');
+        INSERT INTO tblsales_activity VALUES(518, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-29 12:58:08');
+        INSERT INTO tblsales_activity VALUES(519, 'invoice', 3, 'invoice_activity_created', '', '327', 'admin sing', '2022-08-29 12:58:39');
+        INSERT INTO tblsales_activity VALUES(528, 'invoice', 1, 'invoice_activity_created', '', '327', 'admin sing', '2022-09-06 14:55:48');
+        INSERT INTO tblsales_activity VALUES(529, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-09-06 15:46:13');
+        INSERT INTO tblsales_activity VALUES(530, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>3</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-09-06 16:06:10');
+        INSERT INTO tblsales_activity VALUES(531, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '327', 'admin sing', '2022-09-06 16:06:22');
+        INSERT INTO tblsales_activity VALUES(532, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:9:\" Rs 75.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/3\" target=\"_blank\">#3</a>\";}', '327', 'admin sing', '2022-09-06 16:06:22');
+        INSERT INTO tblsales_activity VALUES(533, 'invoice', 2, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:10:\" Rs 800.00\";i:1;s:91:\"<a href=\"http://localhost/trackit/accounts/admin/payments/payment/4\" target=\"_blank\">#4</a>\";}', '327', 'admin sing', '2022-09-07 10:49:35');
+        INSERT INTO tblsales_activity VALUES(534, 'invoice', 1, 'invoice_activity_created', '', '327', 'admin sing', '2022-10-29 18:24:47');
+        INSERT INTO tblsales_activity VALUES(535, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>2</original_status>\";i:1;s:26:\"<new_status>1</new_status>\";}', '327', 'admin sing', '2022-10-30 11:49:19');
+        INSERT INTO tblsales_activity VALUES(536, 'invoice', 1, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>2</new_status>\";}', '327', 'admin sing', '2022-10-30 11:49:40');
+        INSERT INTO tblsales_activity VALUES(537, 'invoice', 1, 'invoice_activity_payment_made_by_staff', 'a:2:{i:0;s:8:\" Rs 0.00\";i:1;s:97:\"<a href=\"http://localhost/trackitv2.0/accounts/admin/payments/payment/14\" target=\"_blank\">#14</a>\";}', '327', 'admin sing', '2022-10-30 11:49:40');
+        INSERT INTO tblsales_activity VALUES(538, 'invoice', 2, 'invoice_activity_created', '', '327', 'admin sing', '2022-10-31 09:28:24');
+        INSERT INTO tblsales_activity VALUES(539, 'invoice', 3, 'invoice_activity_created', '', '327', 'admin sing', '2022-11-01 12:51:14');
+        INSERT INTO tblsales_activity VALUES(543, 'invoice', 1, 'invoice_activity_created', '', '327', 'mct ', '2022-12-23 17:08:11');
+        INSERT INTO tblsales_activity VALUES(544, 'invoice', 1, 'invoice_activity_created', '', '327', 'mct ', '2023-02-02 17:43:08');
+        INSERT INTO tblsales_activity VALUES(545, 'invoice', 2, 'invoice_activity_created', '', '327', 'mct ', '2023-02-03 15:01:24');
+        INSERT INTO tblsales_activity VALUES(546, 'invoice', 2, 'invoice_activity_applied_credits', 'a:2:{i:0;s:12:\" Rs 1,700.00\";i:1;s:9:\"CN-000006\";}', '327', 'mct ', '2023-02-07 14:05:41');
+        INSERT INTO tblsales_activity VALUES(547, 'invoice', 2, 'invoice_activity_applied_credits', 'a:2:{i:0;s:12:\" Rs 1,700.00\";i:1;s:9:\"CN-000007\";}', '327', 'mct ', '2023-02-07 14:16:06');
+        INSERT INTO tblsales_activity VALUES(548, 'invoice', 3, 'invoice_activity_created', '', '327', 'mct ', '2023-02-10 13:05:06');
+        INSERT INTO tblsales_activity VALUES(549, 'invoice', 1, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-02-14 12:38:01');
+        INSERT INTO tblsales_activity VALUES(550, 'invoice', 1, 'invoice_activity_created', '', '339', 'pranav sharma', '2023-02-15 15:44:36');
+        INSERT INTO tblsales_activity VALUES(551, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '327', 'trackitinerary singh', '2023-02-24 13:21:08');
+        INSERT INTO tblsales_activity VALUES(552, 'invoice', 2, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-02-24 13:21:08');
+        INSERT INTO tblsales_activity VALUES(553, 'invoice', 1, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-03-20 13:50:43');
+        INSERT INTO tblsales_activity VALUES(554, 'invoice', 2, 'invoice_activity_status_updated', 'a:2:{i:0;s:36:\"<original_status>1</original_status>\";i:1;s:26:\"<new_status>3</new_status>\";}', '327', 'trackitinerary singh', '2023-03-21 16:41:58');
+        INSERT INTO tblsales_activity VALUES(555, 'invoice', 2, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-03-21 16:41:58');
+        INSERT INTO tblsales_activity VALUES(556, 'invoice', 3, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-03-24 18:23:19');
+        INSERT INTO tblsales_activity VALUES(570, 'invoice', 13, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:47:22');
+        INSERT INTO tblsales_activity VALUES(571, 'invoice', 14, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:47:34');
+        INSERT INTO tblsales_activity VALUES(572, 'invoice', 15, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:47:51');
+        INSERT INTO tblsales_activity VALUES(576, 'invoice', 19, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:52:20');
+        INSERT INTO tblsales_activity VALUES(577, 'invoice', 20, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:52:37');
+        INSERT INTO tblsales_activity VALUES(578, 'invoice', 21, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:52:46');
+        INSERT INTO tblsales_activity VALUES(579, 'invoice', 22, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:53:07');
+        INSERT INTO tblsales_activity VALUES(580, 'invoice', 23, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:54:55');
+        INSERT INTO tblsales_activity VALUES(581, 'invoice', 24, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:55:01');
+        INSERT INTO tblsales_activity VALUES(582, 'invoice', 25, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:55:56');
+        INSERT INTO tblsales_activity VALUES(583, 'invoice', 26, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:56:13');
+        INSERT INTO tblsales_activity VALUES(584, 'invoice', 27, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:56:39');
+        INSERT INTO tblsales_activity VALUES(585, 'invoice', 28, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:58:07');
+        INSERT INTO tblsales_activity VALUES(586, 'invoice', 29, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 11:59:10');
+        INSERT INTO tblsales_activity VALUES(587, 'invoice', 30, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:00:33');
+        INSERT INTO tblsales_activity VALUES(588, 'invoice', 31, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:01:00');
+        INSERT INTO tblsales_activity VALUES(589, 'invoice', 32, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:03:41');
+        INSERT INTO tblsales_activity VALUES(590, 'invoice', 33, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:04:34');
+        INSERT INTO tblsales_activity VALUES(591, 'invoice', 34, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:05:06');
+        INSERT INTO tblsales_activity VALUES(592, 'invoice', 35, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:05:35');
+        INSERT INTO tblsales_activity VALUES(593, 'invoice', 36, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:06:09');
+        INSERT INTO tblsales_activity VALUES(594, 'invoice', 37, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:06:41');
+        INSERT INTO tblsales_activity VALUES(595, 'invoice', 38, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:07:32');
+        INSERT INTO tblsales_activity VALUES(596, 'invoice', 39, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:07:57');
+        INSERT INTO tblsales_activity VALUES(597, 'invoice', 40, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:08:46');
+        INSERT INTO tblsales_activity VALUES(598, 'invoice', 41, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:09:39');
+        INSERT INTO tblsales_activity VALUES(599, 'invoice', 42, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:09:52');
+        INSERT INTO tblsales_activity VALUES(600, 'invoice', 43, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:10:25');
+        INSERT INTO tblsales_activity VALUES(601, 'invoice', 44, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:10:31');
+        INSERT INTO tblsales_activity VALUES(602, 'invoice', 45, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:10:46');
+        INSERT INTO tblsales_activity VALUES(603, 'invoice', 46, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:10:57');
+        INSERT INTO tblsales_activity VALUES(604, 'invoice', 47, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:12:23');
+        INSERT INTO tblsales_activity VALUES(605, 'invoice', 48, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:13:51');
+        INSERT INTO tblsales_activity VALUES(606, 'invoice', 49, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:14:02');
+        INSERT INTO tblsales_activity VALUES(607, 'invoice', 50, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:14:49');
+        INSERT INTO tblsales_activity VALUES(608, 'invoice', 51, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:14:57');
+        INSERT INTO tblsales_activity VALUES(609, 'invoice', 52, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:15:14');
+        INSERT INTO tblsales_activity VALUES(610, 'invoice', 53, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:15:32');
+        INSERT INTO tblsales_activity VALUES(611, 'invoice', 54, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:17:05');
+        INSERT INTO tblsales_activity VALUES(612, 'invoice', 55, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:17:12');
+        INSERT INTO tblsales_activity VALUES(613, 'invoice', 56, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:17:30');
+        INSERT INTO tblsales_activity VALUES(614, 'invoice', 57, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:17:40');
+        INSERT INTO tblsales_activity VALUES(615, 'invoice', 58, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:18:14');
+        INSERT INTO tblsales_activity VALUES(617, 'invoice', 60, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:33:27');
+        INSERT INTO tblsales_activity VALUES(618, 'invoice', 61, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:43:55');
+        INSERT INTO tblsales_activity VALUES(619, 'invoice', 62, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:44:12');
+        INSERT INTO tblsales_activity VALUES(620, 'invoice', 63, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:45:23');
+        INSERT INTO tblsales_activity VALUES(621, 'invoice', 64, 'invoice_activity_created', '', '327', 'trackitinerary singh', '2023-04-03 12:46:56');
+        ";
+        DB::statement($queryFifty);
+
+
+        $queryFiftyOne = "INSERT INTO tblsessions VALUES('0sirt6mkl0mr4b9ci67ghlpm5mq9pcom', '::1', 1696593355, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"651fcf2c97ab3\";__ci_last_regenerate|i:1696593355;');
+        INSERT INTO tblsessions VALUES('agehuu8k96b5n2tedjkke3obdt32u4ev', '::1', 1696854269, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"6523dfbeb2a33\";__ci_last_regenerate|i:1696854253;');
+        INSERT INTO tblsessions VALUES('bnp2d99i0do3hkdrqgdan0aaa0adef0s', '::1', 1696489552, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"651e3a404f8b8\";__ci_last_regenerate|i:1696489542;Successfully|s:33:\"customer is Successfully Inserted\";__ci_vars|a:1:{s:12:\"Successfully\";s:3:\"old\";}');
+        INSERT INTO tblsessions VALUES('bs7eijrjuarnhavn9tjbr8hqv3illr37', '::1', 1696854253, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"6523dfbeb2a33\";__ci_last_regenerate|i:1696854253;');
+        INSERT INTO tblsessions VALUES('ediqvnhon4convl5n5tfipne4f4ntfcs', '::1', 1696593365, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"651fcf2c97ab3\";__ci_last_regenerate|i:1696593355;');
+        INSERT INTO tblsessions VALUES('l3d09q071fog4i0s6be2s0p27ft1i736', '::1', 1696590172, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"651fcf2c97ab3\";__ci_last_regenerate|i:1696590172;');
+        INSERT INTO tblsessions VALUES('nk5slaf09350kuj130d6fmp0vrpp3u16', '49.36.185.136', 1697110083, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"6527d840b4f99\";');
+        INSERT INTO tblsessions VALUES('nta5uvprk7m8fji1gmg2l4ps8t6o3cff', '::1', 1697017163, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"652621d3311fc\";__ci_last_regenerate|i:1697017163;');
+        INSERT INTO tblsessions VALUES('pc93pl2b0o3sue62vjqbf5noi6akhhju', '::1', 1696591778, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"651fcf2c97ab3\";__ci_last_regenerate|i:1696591778;');
+        INSERT INTO tblsessions VALUES('rt4eegpq46h365hh12480pkgrp8q6qp6', '::1', 1696913460, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"6524d8311b454\";');
+        INSERT INTO tblsessions VALUES('t9ck6khbrsfeks5q697reklfm3b8u975', '::1', 1697016860, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"652621d3311fc\";__ci_last_regenerate|i:1697016860;');
+        INSERT INTO tblsessions VALUES('vk9bsm1pr20o9j6imsbva6ropmb2u2e0', '::1', 1697017166, 'staff_user_id|s:3:\"327\";staff_logged_in|b:1;login_token|s:13:\"652621d3311fc\";__ci_last_regenerate|i:1697017163;');
+        ";
+        DB::statement($queryFiftyOne);
+
+
+        $queryFiftyThree = "INSERT INTO tblstaff VALUES(327, 'info.safarnamaholidays@gmail.com', 'SWAPNIL PATEL', '', NULL, NULL, NULL, NULL, '$2a$08$nPY4N1O7hFa4peSCcv1lh.bkkcBS6ZB9Etd2Jh2HFSPAAnLrhmooS', '2022-08-31 00:00:00', NULL, '49.36.185.136', '2023-10-12 16:58:02', '2023-10-12 16:58:02', NULL, NULL, NULL, 1, 99, 1, NULL, NULL, NULL, 0, '0.00', 0, NULL, NULL, NULL, NULL, 1, '6527d840b4f99');
+        ";
+        DB::statement($queryFiftyThree);
+
+
+        $queryFiftyFour = "INSERT INTO tbltasks VALUES(1, 'first test', '', 2, '2022-11-01 12:53:29', '2022-11-01', NULL, NULL, 327, 0, 4, NULL, NULL, 0, NULL, 0, 0, 0, NULL, 3, 'invoice', 0, 1, 0, 0, '900.00', 0, 1, 0, 0, 0);";
+        DB::statement($queryFiftyFour);
+
+        $queryFiftyFive = "INSERT INTO tbltaskstimers VALUES(1, 0, '1663939513', NULL, 327, '0.00', NULL);";
+        DB::statement($queryFiftyFive);
+
+        $queryFiftySix = "INSERT INTO tbltask_assigned VALUES(1, 327, 1, 327, 0);";
+        DB::statement($queryFiftySix);
+
+        $queryFiftyEight = "INSERT INTO tbltaxes VALUES(4, 'GST5', '5.00');
+        INSERT INTO tbltaxes VALUES(5, 'CGST2.5', '2.50');
+        INSERT INTO tbltaxes VALUES(6, 'SGST2.5', '2.50');
+        INSERT INTO tbltaxes VALUES(7, '18% GST', '18.00');";
+        DB::statement($queryFiftyEight);
+
+        $queryFiftyNine = "INSERT INTO tbluser_meta VALUES(1, 0, 0, 1, 'consent_key', '5c0ee96b565d1b17e0464ad7a9ed8ecc-66c464e2c543b57ac71eafbf48fcdd9a');
+        INSERT INTO tbluser_meta VALUES(2, 327, 0, 0, 'dashboard_widgets_order', 'a:8:{s:6:\"top-12\";a:0:{}s:13:\"middle-left-6\";a:0:{}s:14:\"middle-right-6\";a:0:{}s:6:\"left-8\";a:12:{i:0;s:16:\"widget-top_stats\";i:1;s:21:\"widget-projects_chart\";i:2;s:22:\"widget-purchase_widget\";i:3;s:18:\"widget-leads_chart\";i:4;s:23:\"widget-finance_overview\";i:5;s:16:\"widget-user_data\";i:6;s:12:\"widget-todos\";i:7;s:22:\"widget-upcoming_events\";i:8;s:15:\"widget-calendar\";i:9;s:21:\"widget-payments_chart\";i:10;s:25:\"widget-contracts_expiring\";i:11;s:21:\"widget-tickets_report\";}s:7:\"right-4\";a:2:{i:0;s:20:\"widget-tickets_chart\";i:1;s:24:\"widget-projects_activity\";}s:13:\"bottom-left-4\";a:0:{}s:15:\"bottom-middle-4\";a:0:{}s:14:\"bottom-right-4\";a:0:{}}');
+        INSERT INTO tbluser_meta VALUES(3, 327, 0, 0, 'dashboard_widgets_visibility', 'a:12:{i:0;a:2:{s:2:\"id\";s:9:\"top_stats\";s:7:\"visible\";s:1:\"1\";}i:1;a:2:{s:2:\"id\";s:14:\"projects_chart\";s:7:\"visible\";s:1:\"1\";}i:2;a:2:{s:2:\"id\";s:15:\"purchase_widget\";s:7:\"visible\";s:1:\"1\";}i:3;a:2:{s:2:\"id\";s:11:\"leads_chart\";s:7:\"visible\";s:1:\"1\";}i:4;a:2:{s:2:\"id\";s:16:\"finance_overview\";s:7:\"visible\";s:1:\"1\";}i:5;a:2:{s:2:\"id\";s:9:\"user_data\";s:7:\"visible\";s:1:\"1\";}i:6;a:2:{s:2:\"id\";s:5:\"todos\";s:7:\"visible\";s:1:\"0\";}i:7;a:2:{s:2:\"id\";s:8:\"calendar\";s:7:\"visible\";s:1:\"0\";}i:8;a:2:{s:2:\"id\";s:14:\"payments_chart\";s:7:\"visible\";s:1:\"1\";}i:9;a:2:{s:2:\"id\";s:18:\"contracts_expiring\";s:7:\"visible\";s:1:\"1\";}i:10;a:2:{s:2:\"id\";s:14:\"tickets_report\";s:7:\"visible\";s:1:\"1\";}i:11;a:2:{s:2:\"id\";s:17:\"projects_activity\";s:7:\"visible\";s:1:\"1\";}}');
+        INSERT INTO tbluser_meta VALUES(4, 327, 0, 0, 'recent_searches', '[]');
+        INSERT INTO tbluser_meta VALUES(5, 0, 0, 17, 'consent_key', '419bdd3aae5606a136b83e9dabd36a71-bd004ce93a273ac901854b6988105fe2');
+        INSERT INTO tbluser_meta VALUES(6, 0, 0, 24, 'consent_key', '6d70f2e09849ca09c1928abae56c6902-85385e212354bc410732fb1b35da8e5c');
+        INSERT INTO tbluser_meta VALUES(7, 0, 0, 41, 'consent_key', '9d486ce92912ec1f06643d0e2c3c1232-ca676384d1d5904b0944fa97340db120');";
+        DB::statement($queryFiftyNine);
+
+        $querysixty = "INSERT INTO tblware_unit_type VALUES(2, 'Per Day', 'per day', 'per day', 900, 1, '0');
+        INSERT INTO tblware_unit_type VALUES(3, 'Per Day', '0', '0', 0, 0, '0');
+        INSERT INTO tblware_unit_type VALUES(4, 'Cab', '0', '0', 0, 1, '0');
+        INSERT INTO tblware_unit_type VALUES(5, 'Rooms', '0', '0', 0, 1, '0');
+        INSERT INTO tblware_unit_type VALUES(6, 'Day', 'Day Wise', '0', 0, 1, '0');";
+        DB::statement($querysixty);
+
+        $querysixtyone = "INSERT INTO tblwh_sub_group VALUES(1, 'Alto', 'ALTO', 0, 1, '0', 2);
+        INSERT INTO tblwh_sub_group VALUES(2, 'Tata Tiago', 'TATA TIAGO', 0, 1, '0', 2);
+        INSERT INTO tblwh_sub_group VALUES(3, 'Renault Kwid', 'RENAULT KWID', 0, 1, '0', 2);
+        INSERT INTO tblwh_sub_group VALUES(4, 'Toyota Innova Crysta', 'Crysta', 0, 1, '0', 3);
+        INSERT INTO tblwh_sub_group VALUES(5, 'Maruti Suzuki Ertiga', 'Maruti Suzuki Ertiga', 0, 1, '0', 3);
+        INSERT INTO tblwh_sub_group VALUES(6, 'Hyundai Xcent', 'Hyundai Xcent', 0, 1, '0', 1);
+        INSERT INTO tblwh_sub_group VALUES(7, 'Maruti Suzuki Dzire', 'Maruti Suzuki Dzire', 0, 1, '0', 1);
+        INSERT INTO tblwh_sub_group VALUES(8, 'Standard Room', 'STANDARD ROOM', 0, 1, '0', 4);
+        INSERT INTO tblwh_sub_group VALUES(9, 'Delux Room', 'DELUX ROOM', 0, 1, '0', 4);
+        INSERT INTO tblwh_sub_group VALUES(10, 'Premium Room', 'PREMIUM ROOM', 0, 1, '0', 4);";
+        DB::statement($querysixtyone);
+
+        $querysixtyTwo = "INSERT INTO tbl_get_account_type_details VALUES(1, 1, 'Accounts Receivable (A/R)', 'Accounts receivable (also called A/R, Debtors, or Trade and other receivables) tracks money that customers owe you for products or services, and payments customers make.\r\n\r\nEach customer has a register, which functions like an Accounts receivable account ', 1);
+        INSERT INTO tbl_get_account_type_details VALUES(2, 2, 'Allowance for bad debts', 'Use Allowance for bad debts to estimate the part of Accounts Receivable that you think you might not collect.\r\nUse this only if you are keeping your books on the accrual basis.', 2);
+        INSERT INTO tbl_get_account_type_details VALUES(3, 2, 'Assets available for sale', 'Use Assets available for sale to track assets that are available for sale that are not expected to be held for a long period of time.', 3);
+        INSERT INTO tbl_get_account_type_details VALUES(4, 2, 'Development Costs', 'Use Development costs to track amounts you deposit or set aside to arrange for financing, such as an SBA loan, or for deposits in anticipation of the purchase of property or other assets.\r\nWhen the deposit is refunded, or the purchase takes place, remove ', 4);
+        INSERT INTO tbl_get_account_type_details VALUES(5, 2, 'Inventory', 'Use Inventory to track the cost of goods your business purchases for resale.\r\nWhen the goods are sold, assign the sale to a Cost of sales account.', 5);
+        INSERT INTO tbl_get_account_type_details VALUES(6, 2, 'Investments - Other', 'Use Investments - Other to track the value of investments not covered by other investment account types. Examples include publicly-traded shares, coins, or gold.', 6);
+        INSERT INTO tbl_get_account_type_details VALUES(7, 2, 'Loans To Officers', 'If you operate your business as a Corporation, use Loans to officers to track money loaned to officers of your business.', 7);
+        INSERT INTO tbl_get_account_type_details VALUES(8, 2, 'Loans To Others', 'Use Loans to others to track money your business loans to other people or businesses.\r\nThis type of account is also referred to as Notes Receivable.\r\n\r\nFor early salary payments to employees, use Employee cash advances, instead.', 8);
+        INSERT INTO tbl_get_account_type_details VALUES(9, 2, 'Loans To Shareholders', 'If you operate your business as a Corporation, use Loans to Shareholders to track money your business loans to its shareholders.', 9);
+        INSERT INTO tbl_get_account_type_details VALUES(10, 2, 'Other current assets', 'Use Other current assets for current assets not covered by the other types. Current assets are likely to be converted to cash or used up in a year.', 10);
+        INSERT INTO tbl_get_account_type_details VALUES(11, 2, 'Prepaid Expenses', 'Use Prepaid expenses to track payments for expenses that you won’t recognise until your next accounting period.\r\nWhen you recognise the expense, make a journal entry to transfer money from this account to the expense account.', 11);
+        INSERT INTO tbl_get_account_type_details VALUES(12, 2, 'Retainage', 'Use Retainage if your customers regularly hold back a portion of a contract amount until you have completed a project.\r\nThis type of account is often used in the construction industry, and only if you record income on an accrual basis.', 12);
+        INSERT INTO tbl_get_account_type_details VALUES(13, 2, 'Undeposited Funds', 'Use Undeposited funds for cash or cheques from sales that haven’t been deposited yet.\r\nFor petty cash, use Cash on hand, instead.', 13);
+        INSERT INTO tbl_get_account_type_details VALUES(14, 3, 'Bank', 'Use Bank accounts to track all your current activity, including debit card transactions.', 14);
+        INSERT INTO tbl_get_account_type_details VALUES(15, 3, 'Cash and cash equivalents', 'Use Cash and Cash Equivalents to track cash or assets that can be converted into cash immediately. For example, marketable securities and Treasury bills.', 15);
+        INSERT INTO tbl_get_account_type_details VALUES(16, 3, 'Cash on hand', 'Use a Cash on hand account to track cash your company keeps for occasional expenses, also called petty cash.\r\nTo track cash from sales that have not been deposited yet, use a pre-created account called Undeposited funds, instead.', 16);
+        INSERT INTO tbl_get_account_type_details VALUES(17, 3, 'Client trust account', 'Use Client trust accounts for money held by you for the benefit of someone else.\r\nFor example, trust accounts are often used by attorneys to keep track of expense money their customers have given them.\r\n\r\nOften, to keep the amount in a trust account from ', 17);
+        INSERT INTO tbl_get_account_type_details VALUES(18, 3, 'Money Market', 'Use Money market to track amounts in money market accounts.\r\nFor investments, see Current Assets, instead.', 18);
+        INSERT INTO tbl_get_account_type_details VALUES(19, 3, 'Rents Held in Trust', 'Use Rents held in trust to track deposits and rent held on behalf of the property owners.\r\nTypically only property managers use this type of account.', 19);
+        INSERT INTO tbl_get_account_type_details VALUES(20, 3, 'Savings', 'Use Savings accounts to track your savings and CD activity.\r\nEach savings account your company has at a bank or other financial institution should have its own Savings type account.\r\n\r\nFor investments, see Current Assets, instead.', 20);
+        INSERT INTO tbl_get_account_type_details VALUES(21, 4, 'Accumulated depletion', 'Use Accumulated depletion to track how much you deplete a natural resource.', 21);
+        INSERT INTO tbl_get_account_type_details VALUES(22, 4, 'Accumulated depreciation on property, plant and equipment', 'Use Accumulated depreciation on property, plant and equipment to track how much you depreciate a fixed asset (a physical asset you do not expect to convert to cash during one year of normal operations).', 22);
+        INSERT INTO tbl_get_account_type_details VALUES(23, 4, 'Buildings', 'Use Buildings to track the cost of structures you own and use for your business. If you have a business in your home, consult your accountant.\r\nUse a Land account for the land portion of any real property you own, splitting the cost of the property betwee', 23);
+        INSERT INTO tbl_get_account_type_details VALUES(24, 4, 'Depletable Assets', 'Use Depletable assets to track natural resources, such as timberlands, oil wells, and mineral deposits.', 24);
+        INSERT INTO tbl_get_account_type_details VALUES(25, 4, 'Furniture and Fixtures', 'Use Furniture and fixtures to track any furniture and fixtures your business owns and uses, like a dental chair or sales booth.', 25);
+        INSERT INTO tbl_get_account_type_details VALUES(26, 4, 'Land', 'Use Land to track assets that are not easily convertible to cash or not expected to become cash within the next year. For example, leasehold improvements.', 26);
+        INSERT INTO tbl_get_account_type_details VALUES(27, 4, 'Leasehold Improvements', 'Use Leasehold improvements to track improvements to a leased asset that increases the asset’s value. For example, if you carpet a leased office space and are not reimbursed, that’s a leasehold improvement.', 27);
+        INSERT INTO tbl_get_account_type_details VALUES(28, 4, 'Machinery and equipment', 'Use Machinery and equipment to track computer hardware, as well as any other non-furniture fixtures or devices owned and used for your business.\r\nThis includes equipment that you ride, like tractors and lawn mowers. Cars and lorries, however, should be tr', 28);
+        INSERT INTO tbl_get_account_type_details VALUES(29, 4, 'Other fixed assets', 'Use Other fixed asset for fixed assets that are not covered by other asset types.\r\nFixed assets are physical property that you use in your business and that you do not expect to convert to cash or be used up during one year of normal operations.', 29);
+        INSERT INTO tbl_get_account_type_details VALUES(30, 4, 'Vehicles', 'Use Vehicles to track the value of vehicles your business owns and uses for business. This includes off-road vehicles, air planes, helicopters, and boats.\r\nIf you use a vehicle for both business and personal use, consult your accountant to see how you sho', 30);
+        INSERT INTO tbl_get_account_type_details VALUES(31, 5, 'Accumulated amortisation of non-current assets', 'Use Accumulated amortisation of non-current assets to track how much you’ve amortised an asset whose type is Non-Current Asset.', 31);
+        INSERT INTO tbl_get_account_type_details VALUES(32, 5, 'Assets held for sale', 'Use Assets held for sale to track assets of a company that are available for sale that are not expected to be held for a long period of time.', 32);
+        INSERT INTO tbl_get_account_type_details VALUES(33, 5, 'Deferred tax', 'Use Deferred tax for tax liabilities or assets that are to be used in future accounting periods.', 33);
+        INSERT INTO tbl_get_account_type_details VALUES(34, 5, 'Goodwill', 'Use Goodwill only if you have acquired another company. It represents the intangible assets of the acquired company which gave it an advantage, such as favourable government relations, business name, outstanding credit ratings, location, superior manageme', 34);
+        INSERT INTO tbl_get_account_type_details VALUES(35, 5, 'Intangible Assets', 'Use Intangible assets to track intangible assets that you plan to amortise. Examples include franchises, customer lists, copyrights, and patents.', 35);
+        INSERT INTO tbl_get_account_type_details VALUES(36, 5, 'Lease Buyout', 'Use Lease buyout to track lease payments to be applied toward the purchase of a leased asset.\r\nYou don’t track the leased asset itself until you purchase it.', 36);
+        INSERT INTO tbl_get_account_type_details VALUES(37, 5, 'Licences', 'Use Licences to track non-professional licences for permission to engage in an activity, like selling alcohol or radio broadcasting.\r\nFor fees associated with professional licences granted to individuals, use a Legal and professional fees expense account,', 37);
+        INSERT INTO tbl_get_account_type_details VALUES(38, 5, 'Long-term investments', 'Use Long-term investments to track investments that have a maturity date of longer than one year.', 38);
+        INSERT INTO tbl_get_account_type_details VALUES(39, 5, 'Organisational Costs', 'Use Organisational costs to track costs incurred when forming a partnership or corporation.\r\nThe costs include the legal and accounting costs necessary to organise the company, facilitate the filings of the legal documents, and other paperwork.', 39);
+        INSERT INTO tbl_get_account_type_details VALUES(40, 5, 'Other non-current assets', 'Use Other non-current assets to track assets not covered by other types.\r\nNon-current assets are long-term assets that are expected to provide value for more than one year.', 40);
+        INSERT INTO tbl_get_account_type_details VALUES(41, 5, 'Security Deposits', 'Use Security deposits to track funds you’ve paid to cover any potential costs incurred by damage, loss, or theft.\r\nThe funds should be returned to you at the end of the contract.\r\n\r\nIf you accept down payments, advance payments, security deposits, or othe', 41);
+        INSERT INTO tbl_get_account_type_details VALUES(42, 6, 'Accounts Payable (A/P)', 'Accounts payable (also called A/P, Trade and other payables, or Creditors) tracks amounts you owe to your suppliers.', 42);
+        INSERT INTO tbl_get_account_type_details VALUES(43, 7, 'Credit Card', 'Credit card accounts track the balance due on your business credit cards.\r\nCreate one Credit card account for each credit card account your business uses.', 43);
+        INSERT INTO tbl_get_account_type_details VALUES(44, 8, 'Accrued liabilities', 'Use Accrued Liabilities to track expenses that a business has incurred but has not yet paid. For example, pensions for companies that contribute to a pension fund for their employees for their retirement.', 44);
+        INSERT INTO tbl_get_account_type_details VALUES(45, 8, 'Client Trust Accounts - Liabilities', 'Use Client Trust accounts - liabilities to offset Client Trust accounts in assets.\r\nAmounts in these accounts are held by your business on behalf of others. They do not belong to your business, so should not appear to be yours on your balance sheet. This ', 45);
+        INSERT INTO tbl_get_account_type_details VALUES(46, 8, 'Current Tax Liability', 'Use Current tax liability to track the total amount of taxes collected but not yet paid to the government.', 46);
+        INSERT INTO tbl_get_account_type_details VALUES(47, 8, 'Current portion of obligations under finance leases', 'Use Current portion of obligations under finance leases to track the value of lease payments due within the next 12 months.', 47);
+        INSERT INTO tbl_get_account_type_details VALUES(48, 8, 'Dividends payable', 'Use Dividends payable to track dividends that are owed to shareholders but have not yet been paid.', 48);
+        INSERT INTO tbl_get_account_type_details VALUES(50, 8, 'Income tax payable', 'Use Income tax payable to track monies that are due to pay the company’s income tax liabilties.', 50);
+        INSERT INTO tbl_get_account_type_details VALUES(51, 8, 'Insurance payable', 'Use Insurance payable to keep track of insurance amounts due.\r\nThis account is most useful for businesses with monthly recurring insurance expenses.', 51);
+        INSERT INTO tbl_get_account_type_details VALUES(52, 8, 'Line of Credit', 'Use Line of credit to track the balance due on any lines of credit your business has. Each line of credit your business has should have its own Line of credit account.', 52);
+        INSERT INTO tbl_get_account_type_details VALUES(53, 8, 'Loan Payable', 'Use Loan payable to track loans your business owes which are payable within the next twelve months.\r\nFor longer-term loans, use the Long-term liability called Notes payable, instead.', 53);
+        INSERT INTO tbl_get_account_type_details VALUES(54, 8, 'Other current liabilities', 'Use Other current liabilities to track monies owed by the company and due within one year.', 54);
+        INSERT INTO tbl_get_account_type_details VALUES(55, 8, 'Payroll Clearing', 'Use Payroll clearing to keep track of any non-tax amounts that you have deducted from employee paycheques or that you owe as a result of doing payroll. When you forward money to the appropriate suppliers, deduct the amount from the balance of this account', 55);
+        INSERT INTO tbl_get_account_type_details VALUES(56, 8, 'Payroll liabilities', 'Use Payroll liabilities to keep track of tax amounts that you owe to government agencies as a result of paying wages. This includes taxes withheld, health care premiums, employment insurance, government pensions, etc. When you forward the money to the gov', 56);
+        INSERT INTO tbl_get_account_type_details VALUES(58, 8, 'Prepaid Expenses Payable', 'Use Prepaid expenses payable to track items such as property taxes that are due, but not yet deductible as an expense because the period they cover has not yet passed.', 58);
+        INSERT INTO tbl_get_account_type_details VALUES(59, 8, 'Rents in trust - Liability', 'Use Rents in trust - liability to offset the Rents in trust amount in assets.\r\nAmounts in these accounts are held by your business on behalf of others. They do not belong to your business, so should not appear to be yours on your balance sheet. This &quot', 59);
+        INSERT INTO tbl_get_account_type_details VALUES(60, 8, 'Sales and service tax payable', 'Use Sales and service tax payable to track tax you have collected, but not yet remitted to your government tax agency. This includes value-added tax, goods and services tax, sales tax, and other consumption tax.', 60);
+        INSERT INTO tbl_get_account_type_details VALUES(61, 9, 'Accrued holiday payable', 'Use Accrued holiday payable to track holiday earned but that has not been paid out to employees.', 61);
+        INSERT INTO tbl_get_account_type_details VALUES(62, 9, 'Accrued non-current liabilities', 'Use Accrued Non-current liabilities to track expenses that a business has incurred but has not yet paid. For example, pensions for companies that contribute to a pension fund for their employees for their retirement.', 62);
+        INSERT INTO tbl_get_account_type_details VALUES(63, 9, 'Liabilities related to assets held for sale', 'Use Liabilities related to assets held for sale to track any liabilities that are directly related to assets being sold or written off.', 63);
+        INSERT INTO tbl_get_account_type_details VALUES(64, 9, 'Long-term debt', 'Use Long-term debt to track loans and obligations with a maturity of longer than one year. For example, mortgages.', 64);
+        INSERT INTO tbl_get_account_type_details VALUES(65, 9, 'Notes Payable', 'Use Notes payable to track the amounts your business owes in long-term (over twelve months) loans.\r\nFor shorter loans, use the Current liability account type called Loan payable, instead.', 65);
+        INSERT INTO tbl_get_account_type_details VALUES(66, 9, 'Other non-current liabilities', 'Use Other non-current liabilities to track liabilities due in more than twelve months that don’t fit the other Non-Current liability account types.', 66);
+        INSERT INTO tbl_get_account_type_details VALUES(67, 9, 'Shareholder Notes Payable', 'Use Shareholder notes payable to track long-term loan balances your business owes its shareholders.', 67);
+        INSERT INTO tbl_get_account_type_details VALUES(68, 10, 'Accumulated adjustment', 'Some corporations use this account to track adjustments to owner’s equity that are not attributable to net income.', 68);
+        INSERT INTO tbl_get_account_type_details VALUES(69, 10, 'Dividend disbursed', 'Use Dividend disbursed to track a payment given to its shareholders out of the company’s retained earnings.', 69);
+        INSERT INTO tbl_get_account_type_details VALUES(70, 10, 'Equity in earnings of subsidiaries', 'Use Equity in earnings of subsidiaries to track the original investment in shares of subsidiaries plus the share of earnings or losses from the operations of the subsidiary.', 70);
+        INSERT INTO tbl_get_account_type_details VALUES(71, 10, 'Opening Balance Equity', 'As you enter opening balances, System records the amounts in Opening balance equity. This ensures that you have a correct balance sheet for your company, even before you’ve finished entering all your company’s assets and liabilities.', 71);
+        INSERT INTO tbl_get_account_type_details VALUES(72, 10, 'Ordinary shares', 'Corporations use Ordinary shares to track its ordinary shares in the hands of shareholders. The amount in this account should be the stated (or par) value of the stock.', 72);
+        INSERT INTO tbl_get_account_type_details VALUES(73, 10, 'Other comprehensive income', 'Use Other comprehensive income to track the increases or decreases in income from various businesses that is not yet absorbed by the company.', 73);
+        INSERT INTO tbl_get_account_type_details VALUES(74, 10, 'Owner\'s Equity', 'Corporations use Owner’s equity to show the cumulative net income or loss of their business as of the beginning of the financial year.', 74);
+        INSERT INTO tbl_get_account_type_details VALUES(75, 10, 'Paid-in capital or surplus', 'Corporations use Paid-in capital to track amounts received from shareholders in exchange for shares that are over and above the shares’ stated (or par) value.', 75);
+        INSERT INTO tbl_get_account_type_details VALUES(76, 10, 'Partner Contributions', 'Partnerships use Partner contributions to track amounts partners contribute to the partnership during the year.', 76);
+        INSERT INTO tbl_get_account_type_details VALUES(77, 10, 'Partner Distributions', 'Partnerships use Partner distributions to track amounts distributed by the partnership to its partners during the year.\r\nDon’t use this for regular payments to partners for interest or service. For regular payments, use a Guaranteed payments account (a Ex', 77);
+        INSERT INTO tbl_get_account_type_details VALUES(78, 10, 'Partner\'s Equity', 'Partnerships use Partner’s equity to show the income remaining in the partnership for each partner as of the end of the prior year.', 78);
+        INSERT INTO tbl_get_account_type_details VALUES(79, 10, 'Preferred shares', 'Corporations use this account to track its preferred shares in the hands of shareholders. The amount in this account should be the stated (or par) value of the shares.', 79);
+        INSERT INTO tbl_get_account_type_details VALUES(80, 10, 'Retained Earnings', 'Retained earnings tracks net income from previous financial years.', 80);
+        INSERT INTO tbl_get_account_type_details VALUES(81, 10, 'Share capital', 'Use Share capital to track the funds raised by issuing shares.', 81);
+        INSERT INTO tbl_get_account_type_details VALUES(82, 10, 'Treasury Shares', 'Corporations use Treasury shares to track amounts paid by the corporation to buy its own shares back from shareholders.', 82);
+        INSERT INTO tbl_get_account_type_details VALUES(83, 11, 'Discounts/Refunds Given', 'Use Discounts/refunds given to track discounts you give to customers.\r\nThis account typically has a negative balance so it offsets other income.\r\n\r\nFor discounts from suppliers, use an expense account, instead.', 83);
+        INSERT INTO tbl_get_account_type_details VALUES(84, 11, 'Non-Profit Income', 'Use Non-profit income to track money coming in if you are a non-profit organisation.', 84);
+        INSERT INTO tbl_get_account_type_details VALUES(85, 11, 'Other Primary Income', 'Use Other primary income to track income from normal business operations that doesn’t fall into another Income type.', 85);
+        INSERT INTO tbl_get_account_type_details VALUES(86, 11, 'Revenue - General', 'Use Revenue - General to track income from normal business operations that do not fit under any other category.', 86);
+        INSERT INTO tbl_get_account_type_details VALUES(87, 11, 'Sales - retail', 'Use Sales - retail to track sales of goods/services that have a mark-up cost to consumers.', 87);
+        INSERT INTO tbl_get_account_type_details VALUES(88, 11, 'Sales - wholesale', 'Use Sales - wholesale to track the sale of goods in quantity for resale purposes.', 88);
+        INSERT INTO tbl_get_account_type_details VALUES(89, 11, 'Sales of Product Income', 'Use Sales of product income to track income from selling products.\r\nThis can include all kinds of products, like crops and livestock, rental fees, performances, and food served.', 89);
+        INSERT INTO tbl_get_account_type_details VALUES(90, 11, 'Service/Fee Income', 'Use Service/fee income to track income from services you perform or ordinary usage fees you charge.\r\nFor fees customers pay you for late payments or other uncommon situations, use an Other Income account type called Other miscellaneous income, instead.', 90);
+        INSERT INTO tbl_get_account_type_details VALUES(91, 11, 'Unapplied Cash Payment Income', 'Unapplied Cash Payment Income reports the Cash Basis income from customers payments you’ve received but not applied to invoices or charges. In general, you would never use this directly on a purchase or sale transaction.', 91);
+        INSERT INTO tbl_get_account_type_details VALUES(92, 12, 'Dividend income', 'Use Dividend income to track taxable dividends from investments.', 92);
+        INSERT INTO tbl_get_account_type_details VALUES(93, 12, 'Interest earned', 'Use Interest earned to track interest from bank or savings accounts, investments, or interest payments to you on loans your business made.', 93);
+        INSERT INTO tbl_get_account_type_details VALUES(94, 12, 'Loss on disposal of assets', 'Use Loss on disposal of assets to track losses realised on the disposal of assets.', 94);
+        INSERT INTO tbl_get_account_type_details VALUES(95, 12, 'Other Investment Income', 'Use Other investment income to track other types of investment income that isn’t from dividends or interest.', 95);
+        INSERT INTO tbl_get_account_type_details VALUES(96, 12, 'Other Miscellaneous Income', 'Use Other miscellaneous income to track income that isn’t from normal business operations, and doesn’t fall into another Other Income type.', 96);
+        INSERT INTO tbl_get_account_type_details VALUES(97, 12, 'Other operating income', 'Use Other operating income to track income from activities other than normal business operations. For example, Investment interest, foreign exchange gains, and rent income.', 97);
+        INSERT INTO tbl_get_account_type_details VALUES(98, 12, 'Tax-Exempt Interest', 'Use Tax-exempt interest to record interest that isn’t taxable, such as interest on money in tax-exempt retirement accounts, or interest from tax-exempt bonds.', 98);
+        INSERT INTO tbl_get_account_type_details VALUES(99, 12, 'Unrealised loss on securities, net of tax', 'Use Unrealised loss on securities, net of tax to track losses on securities that have occurred but are yet been realised through a transaction. For example, shares whose value has fallen but that are still being held.', 99);
+        INSERT INTO tbl_get_account_type_details VALUES(100, 13, 'Cost of labour - COS', 'Use Cost of labour - COS to track the cost of paying employees to produce products or supply services.\r\nIt includes all employment costs, including food and transportation, if applicable.', 100);
+        INSERT INTO tbl_get_account_type_details VALUES(101, 13, 'Equipment rental - COS', 'Use Equipment rental - COS to track the cost of renting equipment to produce products or services.\r\nIf you purchase equipment, use a Fixed Asset account type called Machinery and equipment.', 101);
+        INSERT INTO tbl_get_account_type_details VALUES(102, 13, 'Freight and delivery - COS', 'Use Freight and delivery - COS to track the cost of shipping/delivery of obtaining raw materials and producing finished goods for resale.', 102);
+        INSERT INTO tbl_get_account_type_details VALUES(103, 13, 'Other costs of sales - COS', 'Use Other costs of sales - COS to track costs related to services or sales that you provide that don’t fall into another Cost of Sales type.', 103);
+        INSERT INTO tbl_get_account_type_details VALUES(104, 13, 'Supplies and materials - COS', 'Use Supplies and materials - COS to track the cost of raw goods and parts used or consumed when producing a product or providing a service.', 104);
+        INSERT INTO tbl_get_account_type_details VALUES(105, 14, 'Advertising/Promotional', 'Use Advertising/promotional to track money spent promoting your company.\r\nYou may want different accounts of this type to track different promotional efforts (Yellow Pages, newspaper, radio, flyers, events, and so on).\r\n\r\nIf the promotion effort is a meal', 105);
+        INSERT INTO tbl_get_account_type_details VALUES(106, 14, 'Amortisation expense', 'Use Amortisation expense to track writing off of assets (such as intangible assets or investments) over the projected life of the assets.', 106);
+        INSERT INTO tbl_get_account_type_details VALUES(107, 14, 'Auto', 'Use Auto to track costs associated with vehicles.\r\nYou may want different accounts of this type to track petrol, repairs, and maintenance.\r\n\r\nIf your business owns a car or lorry, you may want to track its value as a Fixed Asset, in addition to tracking i', 107);
+        INSERT INTO tbl_get_account_type_details VALUES(108, 14, 'Bad debts', 'Use Bad debt to track debt you have written off.', 108);
+        INSERT INTO tbl_get_account_type_details VALUES(109, 14, 'Bank charges', 'Use Bank charges for any fees you pay to financial institutions.', 109);
+        INSERT INTO tbl_get_account_type_details VALUES(110, 14, 'Charitable Contributions', 'Use Charitable contributions to track gifts to charity.', 110);
+        INSERT INTO tbl_get_account_type_details VALUES(111, 14, 'Commissions and fees', 'Use Commissions and fees to track amounts paid to agents (such as brokers) in order for them to execute a trade.', 111);
+        INSERT INTO tbl_get_account_type_details VALUES(112, 14, 'Cost of Labour', 'Use Cost of labour to track the cost of paying employees to produce products or supply services.\r\nIt includes all employment costs, including food and transportation, if applicable.\r\n\r\nThis account is also available as a Cost of Sales (COS) account.', 112);
+        INSERT INTO tbl_get_account_type_details VALUES(113, 14, 'Dues and Subscriptions', 'Use Dues and subscriptions to track dues and subscriptions related to running your business.\r\nYou may want different accounts of this type for professional dues, fees for licences that can’t be transferred, magazines, newspapers, industry publications, or', 113);
+        INSERT INTO tbl_get_account_type_details VALUES(114, 14, 'Equipment rental', 'Use Equipment rental to track the cost of renting equipment to produce products or services.\r\nThis account is also available as a Cost of Sales account.\r\n\r\nIf you purchase equipment, use a Fixed asset account type called Machinery and equipment.', 114);
+        INSERT INTO tbl_get_account_type_details VALUES(115, 14, 'Finance costs', 'Use Finance costs to track the costs of obtaining loans or credit.\r\nExamples of finance costs would be credit card fees, interest and mortgage costs.', 115);
+        INSERT INTO tbl_get_account_type_details VALUES(116, 14, 'Income tax expense', 'Use Income tax expense to track income taxes that the company has paid to meet their tax obligations.', 116);
+        INSERT INTO tbl_get_account_type_details VALUES(117, 14, 'Insurance', 'Use Insurance to track insurance payments.\r\nYou may want different accounts of this type for different types of insurance (auto, general liability, and so on).', 117);
+        INSERT INTO tbl_get_account_type_details VALUES(118, 14, 'Interest paid', 'Use Interest paid for all types of interest you pay, including mortgage interest, finance charges on credit cards, or interest on loans.', 118);
+        INSERT INTO tbl_get_account_type_details VALUES(119, 14, 'Legal and professional fees', 'Use Legal and professional fees to track money to pay to professionals to help you run your business.\r\nYou may want different accounts of this type for payments to your accountant, attorney, or other consultants.', 119);
+        INSERT INTO tbl_get_account_type_details VALUES(120, 14, 'Loss on discontinued operations, net of tax', 'Use Loss on discontinued operations, net of tax to track the loss realised when a part of the business ceases to operate or when a product line is discontinued.', 120);
+        INSERT INTO tbl_get_account_type_details VALUES(121, 14, 'Management compensation', 'Use Management compensation to track remuneration paid to Management, Executives and non-Executives. For example, salary, fees, and benefits.', 121);
+        INSERT INTO tbl_get_account_type_details VALUES(122, 14, 'Meals and entertainment', 'Use Meals and entertainment to track how much you spend on dining with your employees to promote morale.\r\nIf you dine with a customer to promote your business, use a Promotional meals account, instead.\r\n\r\nBe sure to include who you ate with and the purpos', 122);
+        INSERT INTO tbl_get_account_type_details VALUES(123, 14, 'Office/General Administrative Expenses', 'Use Office/general administrative expenses to track all types of general or office-related expenses.', 123);
+        INSERT INTO tbl_get_account_type_details VALUES(124, 14, 'Other Miscellaneous Service Cost', 'Use Other miscellaneous service cost to track costs related to providing services that don’t fall into another Expense type.\r\nThis account is also available as a Cost of Sales (COS) account.', 124);
+        INSERT INTO tbl_get_account_type_details VALUES(125, 14, 'Other selling expenses', 'Use Other selling expenses to track selling expenses incurred that do not fall under any other category.', 125);
+        INSERT INTO tbl_get_account_type_details VALUES(126, 14, 'Payroll Expenses', 'Use Payroll expenses to track payroll expenses. You may want different accounts of this type for things like:\r\n- Compensation of officers\r\n- Guaranteed payments\r\n- Workers compensation\r\n- Salaries and wages\r\n- Payroll taxes', 126);
+        INSERT INTO tbl_get_account_type_details VALUES(127, 14, 'Rent or Lease of Buildings', 'Use Rent or lease of buildings to track rent payments you make.', 127);
+        INSERT INTO tbl_get_account_type_details VALUES(128, 14, 'Repair and maintenance', 'Use Repair and maintenance to track any repairs and periodic maintenance fees.\r\nYou may want different accounts of this type to track different types repair & maintenance expenses (auto, equipment, landscape, and so on).', 128);
+        INSERT INTO tbl_get_account_type_details VALUES(129, 14, 'Shipping and delivery expense', 'Use Shipping and delivery expense to track the cost of shipping and delivery of goods to customers.', 129);
+        INSERT INTO tbl_get_account_type_details VALUES(130, 14, 'Supplies and materials', 'Use Supplies & materials to track the cost of raw goods and parts used or consumed when producing a product or providing a service.\r\nThis account is also available as a Cost of Sales account.', 130);
+        INSERT INTO tbl_get_account_type_details VALUES(131, 14, 'Taxes Paid', 'Use Taxes paid to track taxes you pay.\r\nYou may want different accounts of this type for payments to different tax agencies.', 131);
+        INSERT INTO tbl_get_account_type_details VALUES(132, 14, 'Travel expenses - general and admin expenses', 'Use Travel expenses - general and admin expenses to track travelling costs incurred that are not directly related to the revenue-generating operation of the company. For example, flight tickets and hotel costs when performing job interviews.', 132);
+        INSERT INTO tbl_get_account_type_details VALUES(133, 14, 'Travel expenses - selling expense', 'Use Travel expenses - selling expense to track travelling costs incurred that are directly related to the revenue-generating operation of the company. For example, flight tickets and hotel costs when selling products and services.', 133);
+        INSERT INTO tbl_get_account_type_details VALUES(134, 14, 'Unapplied Cash Bill Payment Expense', 'Unapplied Cash Bill Payment Expense reports the Cash Basis expense from supplier payment cheques you’ve sent but not yet applied to supplier bills. In general, you would never use this directly on a purchase or sale transaction.', 134);
+        INSERT INTO tbl_get_account_type_details VALUES(135, 14, 'Utilities', 'Use Utilities to track utility payments.\r\nYou may want different accounts of this type to track different types of utility payments (gas and electric, telephone, water, and so on).', 135);
+        INSERT INTO tbl_get_account_type_details VALUES(136, 15, 'Amortisation', 'Use Amortisation to track amortisation of intangible assets.\r\nAmortisation is spreading the cost of an intangible asset over its useful life, like depreciation of fixed assets.\r\n\r\nYou may want an amortisation account for each intangible asset you have.', 136);
+        INSERT INTO tbl_get_account_type_details VALUES(137, 15, 'Depreciation', 'Use Depreciation to track how much you depreciate fixed assets.\r\nYou may want a depreciation account for each fixed asset you have.', 137);
+        INSERT INTO tbl_get_account_type_details VALUES(138, 15, 'Exchange Gain or Loss', 'Use Exchange Gain or Loss to track gains or losses that occur as a result of exchange rate fluctuations.', 138);
+        INSERT INTO tbl_get_account_type_details VALUES(139, 15, 'Other Expense', 'Use Other expense to track unusual or infrequent expenses that don’t fall into another Other Expense type.', 139);
+        INSERT INTO tbl_get_account_type_details VALUES(140, 15, 'Penalties and settlements', 'Use Penalties and settlements to track money you pay for violating laws or regulations, settling lawsuits, or other penalties.', 140);
+        INSERT INTO tbl_get_account_type_details VALUES(141, 2, 'Employee Cash Advances', 'Use Employee cash advances to track employee wages and salary you issue to an employee early, or other non-salary money given to employees.\r\nIf you make a loan to an employee, use the Current asset account type called Loans to others, instead.', 5);
+        ";
+        DB::statement($querysixtyTwo);
+
+        $querysixtyThree = "INSERT INTO terms VALUES(1, 'itinerary', '&lt;h1&gt;Bank Payments Terms &lt;/h1&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt; Payment for tour services is made by bank transfer under contract and by invoice.&lt;br&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;', '																																																																																																																					&lt;ul&gt;&lt;li&gt; 14 days	-100% of holiday cost&lt;/li&gt;&lt;li&gt; 60 days -	10 % of land cost or 5000 whichever is higher&lt;/li&gt;&lt;/ul&gt;', '&lt;h1&gt;Terms &amp; Conditions &lt;/h1&gt;&lt;ul&gt;&lt;li&gt; Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;li&gt;Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;li&gt;Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;li&gt;Rates are valid only for Indian Nationals, for any other nationality, please speak to our tour experts.&lt;/li&gt;&lt;/ul&gt;', '																																																																						&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;li&gt;The Company is under no obligation to furnish a breakdown of the costs involved in a holiday.&lt;/li&gt;&lt;li&gt;After a Confirmation Invoice has been issued, unless you choose to pay for your holiday in full at the time of booking, the price of your holiday is subject to the possibilities of surcharges in certain limited circumstances. However, a surcharge will only be levied to allow for variations in transportation cost, including cost of fuel, increase in normal published airfares, taxes or fees chargeable for services such as landing taxes at airports, the exchange rate applied to the particular package or if the government or regulatory body introduce an increase of taxes. Even then, the Company will absorb an amount equal to 2% of your holiday price (excluding insurance premiums and amendment charges) before passing on any surcharge to you. Only amounts in excess of this 2% will be surcharged. Surcharges will be notified by a revised Confirmation Invoice sent to you.&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do edfiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;', '', '																																																																																																																					&lt;ul&gt;&lt;li&gt; The itinerary may be modified based on various factors like maintenance of historical monuments, museums, major events like sports conventions, religious festivals, etc. Musafir.com reserves the right to change the departure date or cancel a departure due to unforeseen reasons and will not take any responsibility for any ticket of the customer which they may have purchased in advance for sector within India or abroad.&lt;/li&gt;&lt;li&gt; Individuals are responsible for the adherence of time at all stages of the tour. In the event that a customer misses on any part of the sightseeing tour or any such tour due to delay on his part, he will not be entitled to claim refund of the same.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;/ul&gt;&lt;hr&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;', '', '&lt;p&gt; roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.&lt;br&gt;&lt;/p&gt;', '', '', 'a:6:{i:0;a:1:{s:9:\"hotel_exc\";s:31:\"el Exclusion Hotel Inclusions 1\";}i:1;a:1:{s:9:\"hotel_exc\";s:31:\"el Exclusion Hotel Inclusions 1\";}i:2;a:1:{s:9:\"hotel_exc\";s:31:\"el Exclusion Hotel Inclusions 1\";}i:3;a:1:{s:9:\"hotel_exc\";s:31:\"el Exclusion Hotel Inclusions 1\";}i:4;a:1:{s:9:\"hotel_exc\";s:45:\"hotel_exclusionhotel_exclusionhotel_exclusion\";}i:5;a:1:{s:9:\"hotel_exc\";s:45:\"hotel_exclusionhotel_exclusionhotel_exclusion\";}}', '																																																																																																		&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;sdfsfsdfsdfdf&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;df&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;f&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;df&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;d&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 36px; background-color: rgb(115, 165, 173);&quot;&gt;f&lt;/span&gt;&lt;/p&gt;', '																																																																																																																					&lt;ul&gt;&lt;li&gt;  The Company is under no obligation to furnish a breakdown of the costs involved in a holiday.&lt;/li&gt;&lt;li&gt; After a Confirmation Invoice has been issued, unless you choose to pay for your holiday in full at the time of booking, the price of your holiday is subject to the possibilities of surcharges in certain limited circumstances. However, a surcharge will only be levied to allow for variations in transportation cost, including cost of fuel, increase in normal published airfares, taxes or fees chargeable for services such as landing taxes at airports, the exchange rate applied to the particular package or if the government or regulatory body introduce an increase of taxes. Even then, the Company will absorb an amount equal to 2% of your holiday price (excluding insurance premiums and amendment charges) before passing on any surcharge to you. Only amounts in excess of this 2% will be surcharged. Surcharges will be notified by a revised Confirmation Invoice sent to you.&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;', '&lt;ul&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut&lt;/li&gt;&lt;li&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt u&lt;/li&gt;&lt;/ul&gt;', 'a:6:{i:0;a:1:{s:9:\"hotel_inc\";s:34:\"Hotel Exclusion Hotel Inclusions 1\";}i:1;a:1:{s:9:\"hotel_inc\";s:51:\"Medical Facilities - Doctor on Call, Medicines etc.\";}i:2;a:1:{s:9:\"hotel_inc\";s:52:\"Any personal expensive - laundry, shopping, tip etc.\";}i:3;a:1:{s:9:\"hotel_inc\";s:22:\"Any adventure activity\";}i:4;a:1:{s:9:\"hotel_inc\";s:36:\"Monument entrance fee / Camera fees.\";}i:5;a:1:{s:9:\"hotel_inc\";s:35:\"Anything not included in inclusions\";}}', '2023-10-11 15:52:45');
+        INSERT INTO terms VALUES(2, 'hotel', 'a:2:{s:7:\"heading\";s:0:\"\";i:0;a:1:{s:5:\"terms\";s:0:\"\";}}', 'a:5:{s:7:\"heading\";s:0:\"\";i:0;a:2:{s:12:\"cancel_terms\";s:8:\"14 days	\";s:18:\"cancel_terms_right\";s:20:\"100% of holiday cost\";}i:1;a:2:{s:12:\"cancel_terms\";s:11:\"15-29 days	\";s:18:\"cancel_terms_right\";s:16:\"50% of land cost\";}i:2;a:2:{s:12:\"cancel_terms\";s:10:\"30-59 days\";s:18:\"cancel_terms_right\";s:17:\"	25% of land cost\";}i:3;a:2:{s:12:\"cancel_terms\";s:8:\"60 days	\";s:18:\"cancel_terms_right\";s:45:\"10 % of land cost or 5000 whichever is higher\";}}', 'a:5:{s:7:\"heading\";s:0:\"\";i:0;a:1:{s:5:\"terms\";s:20:\"Booking your Holiday\";}i:1;a:1:{s:5:\"terms\";s:12:\"Price Policy\";}i:2;a:1:{s:5:\"terms\";s:39:\"Cancellation and Changes by the Company\";}i:3;a:1:{s:5:\"terms\";s:32:\" Cancellation and Changes by You\";}}', 'a:4:{s:7:\"heading\";s:25:\"HOW TO BOOK PACKAGEfgfgt \";s:11:\"sub_heading\";s:89:\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising \";i:0;a:2:{s:16:\"hotel_book_terms\";s:19:\"Section 1.10.33 of \";s:22:\"hotel_book_terms_right\";s:97:\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum \";}i:1;a:2:{s:16:\"hotel_book_terms\";s:86:\"et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in\";s:22:\"hotel_book_terms_right\";s:82:\"laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.\";}}', 'a:6:{s:7:\"heading\";s:19:\"Section 1.10.32 of \";i:0;a:1:{s:5:\"terms\";s:85:\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium\";}i:1;a:1:{s:5:\"terms\";s:109:\"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized\";}i:2;a:1:{s:5:\"terms\";s:80:\"pleasure of the moment, so blinded by desire, that they cannot foresee the pain \";}i:3;a:1:{s:5:\"terms\";s:82:\"In a free hour, when our power of choice is untrammelled and when nothing prevents\";}i:4;a:1:{s:5:\"terms\";s:114:\"to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated\";}}', 'a:3:{s:7:\"heading\";s:0:\"\";i:0;a:2:{s:12:\"amend_policy\";s:23:\"Changing departure date\";s:18:\"amend_policy_right\";s:34:\" Changing pick up time or location\";}i:1;a:2:{s:12:\"amend_policy\";s:13:\"Changing tour\";s:18:\"amend_policy_right\";s:19:\"Changing guest name\";}}', '', '&lt;p&gt;&lt;span style=&quot;font-family: &quot;Verlag A&quot;, &quot;Verlag B&quot;; font-size: 17px; text-align: center; background-color: rgb(254, 246, 235);&quot;&gt;Travel to tropical island havens, hike in the breathtakingly beautiful Swiss mountains and marvel at the starry night sky. Be an explorer on a trip through the endless landscapes of Botswana, spend a night at a luxurious lodge and be woken up by the rising sun. Forget time, unwind, enjoy authentic, warm hospitality in an exclusive Greek island resort.  Soak up the endless expanse of blue on the high seas. Stand at the prow of an expedition ship, inhale the crystal-clear sea air and listen to the ice break. Dream. Dive head over heels into a pulsating metropolis. Live in the moment. Whatever you are dreaming of, here you will find select offers from the SIGNATURE VOYAGES premium travel portfolio.&lt;/span&gt;&lt;br&gt;&lt;/p&gt;', 'a:4:{i:0;a:1:{s:11:\"hotel_notes\";s:246:\"Permit require for Tsomgo Lake. It is mandatory that guest should carry 04 copies of pass – port size photograph, original photo ID proof with photo copy (identity card – Voter ID card/Pass-port/Driving License etc) for processing the permit.\";}i:1;a:1:{s:11:\"hotel_notes\";s:158:\"Permit also require for traveling to North Sikkim (Lachung & Lachen). Requires 02 more copies of passport size photographs along with original photo ID proof.\";}i:2;a:1:{s:11:\"hotel_notes\";s:118:\"The above mentioned hotels will be confirmed as per the room availability. Otherwise we will confirm similar category.\";}i:3;a:1:{s:11:\"hotel_notes\";s:177:\"The rates quoted in the packages are on per person basis, valid for Indian nationals & till 15th Sep 2014 (High seasons surcharge will be applicable from 20TH Dec – 04TH Jan).\";}}', 'a:1:{i:0;a:1:{s:11:\"rates_notes\";s:0:\"\";}}', 'a:5:{i:0;a:1:{s:9:\"hotel_exc\";s:22:\"Air Fare / Train fare.\";}i:1;a:1:{s:9:\"hotel_exc\";s:173:\"Personal expenses such as laundry, telephone calls, tips & gratuity, mineral water, soft & hard drinks, rafting, rock climbing, paragliding, joy ride (Toy Train), porterage.\";}i:2;a:1:{s:9:\"hotel_exc\";s:88:\"Additional sightseeing or extra usage of vehicle, other than mentioned in the itinerary.\";}i:3;a:1:{s:9:\"hotel_exc\";s:29:\"Entrance Fees & Guide charges\";}i:4;a:1:{s:9:\"hotel_exc\";s:181:\"Any cost arising due to natural calamities like, landslides, road blockage, political disturbances (strikes), etc (to be borne by the client, which is directly payable on the spot).\";}}', 'Hotel Terms You will find below the package that we propose for your unique vacation experience. Based on the preferences that you have highlighted to us previously, we feel that this plan would be the best arrangement. However, if there are further changes that you would like to add, we will be happy to amend it. Trackitinerary has enjoyed helping thousands of people experience amazing holidays, and we aim to do the same for you. Here’s to an unforgettable trip ahead!', 'a:3:{s:7:\"heading\";s:0:\"\";i:0;a:2:{s:10:\"pay_policy\";s:31:\"1 – 60 days prior to arrival	\";s:16:\"pay_policy_right\";s:8:\"100% Pay\";}i:1;a:2:{s:10:\"pay_policy\";s:31:\"61 – 90 days prior to arrival\";s:16:\"pay_policy_right\";s:12:\"100% Payable\";}}', 'a:1:{i:0;a:1:{s:11:\"benefit_inc\";s:7:\"safsadf\";}}', 'a:3:{i:0;a:1:{s:9:\"hotel_inc\";s:28:\"Hotel Terms Hotel Inclusions\";}i:1;a:1:{s:9:\"hotel_inc\";s:31:\"Hotel Terms Hotel Inclusions 00\";}i:2;a:1:{s:9:\"hotel_inc\";s:31:\"Hotel Terms Hotel Inclusions 88\";}}', '2023-03-30 13:30:29');
+        INSERT INTO terms VALUES(3, 'cab', 'a:2:{s:7:\"heading\";s:0:\"\";i:0;a:1:{s:5:\"terms\";s:0:\"\";}}', 'a:2:{s:7:\"heading\";s:0:\"\";i:0;a:2:{s:12:\"cancel_terms\";s:0:\"\";s:18:\"cancel_terms_right\";s:0:\"\";}}', 'a:2:{s:7:\"heading\";s:0:\"\";i:0;a:1:{s:5:\"terms\";s:0:\"\";}}', 'a:4:{s:7:\"heading\";s:31:\"Holiday Package booking process\";s:11:\"sub_heading\";s:58:\"For booking confirmation, Please follow the below process:\";i:0;a:2:{s:16:\"hotel_book_terms\";s:96:\"If travel date is more than 90 days then 50% amount is to be collected within 30 days of booking\";s:22:\"hotel_book_terms_right\";s:97:\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum \";}i:1;a:2:{s:16:\"hotel_book_terms\";s:106:\"If travel date is less than 90 days then 50% of package cost is to be collected within 15 days of booking.\";s:22:\"hotel_book_terms_right\";s:82:\"laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.\";}}', 'a:7:{s:7:\"heading\";s:48:\"Package can be booked using any of below methods\";i:0;a:1:{s:5:\"terms\";s:85:\"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium\";}i:1;a:1:{s:5:\"terms\";s:109:\"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized\";}i:2;a:1:{s:5:\"terms\";s:80:\"pleasure of the moment, so blinded by desire, that they cannot foresee the pain \";}i:3;a:1:{s:5:\"terms\";s:82:\"In a free hour, when our power of choice is untrammelled and when nothing prevents\";}i:4;a:1:{s:5:\"terms\";s:114:\"to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated\";}i:5;a:1:{s:5:\"terms\";s:114:\"to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated\";}}', 'a:2:{s:7:\"heading\";s:0:\"\";i:0;a:2:{s:12:\"amend_policy\";s:0:\"\";s:18:\"amend_policy_right\";s:0:\"\";}}', '', '', 'a:1:{i:0;a:1:{s:11:\"hotel_notes\";s:0:\"\";}}', 'a:1:{i:0;a:1:{s:11:\"rates_notes\";s:0:\"\";}}', 'a:1:{i:0;a:1:{s:9:\"hotel_exc\";s:0:\"\";}}', 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"', 'a:2:{s:7:\"heading\";s:0:\"\";i:0;a:2:{s:10:\"pay_policy\";s:0:\"\";s:16:\"pay_policy_right\";s:0:\"\";}}', 'a:1:{i:0;a:1:{s:11:\"benefit_inc\";s:0:\"\";}}', 'a:1:{i:0;a:1:{s:9:\"hotel_inc\";s:0:\"\";}}', '2022-10-20 18:56:54');
+        ";
+        DB::statement($querysixtyThree);
+
+        $querysixtyFour = "INSERT INTO users VALUES(326, 'EMP-326', 1, 0, 'SWAPNIL PATEL', '', 'Admin', 'info.safarnamaholidays@gmail.com', '$2a$08$0MqlKZEDlUQqID23ReSTkukwN8l3zHWTWVyNHcZxkBClnHuaiXuD6', '', 'male', '9816068116', '', '', '', NULL, '', '', '', '99', 0, 'active', 0, 'default', '2023-10-12 04:58:00 PM', '2023-10-12 16:59:09', '49.36.185.136', 0, 0, '2023-10-12 04:58:00', '2022-02-28 18:59:19', 0, '6527d840b4f99', 2, '2022-12-17 11:39:30');
+        ";
+        DB::statement($querysixtyFour);
+
+        $querysixtyFive = "INSERT INTO user_dashboard VALUES(2, 339, 'dashboard_widgets_order', 'a:11:{s:6:\"top-12\";a:1:{i:0;s:23:\"widget-target_month_my_\";}s:6:\"left-6\";a:1:{i:0;s:22:\"widget-top_5_leads_my_\";}s:7:\"right-6\";a:2:{i:0;s:30:\"widget-weekly_leads_status_my_\";i:1;s:31:\"widget-average_weekly_sales_my_\";}s:7:\"right-8\";a:1:{i:0;s:25:\"widget-sales_overview_my_\";}s:6:\"left-4\";a:0:{}s:7:\"right-4\";a:1:{i:0;s:31:\"widget-monthly_leads_status_my_\";}s:6:\"left-8\";a:1:{i:0;s:23:\"widget-today_status_my_\";}s:6:\"left-7\";a:4:{i:0;s:26:\"widget-todays_checkout_my_\";i:1;s:24:\"widget-top_5_sellers_my_\";i:2;s:20:\"widget-above_50k_my_\";i:3;s:23:\"widget-leads_of_day_my_\";}s:7:\"right-5\";a:3:{i:0;s:23:\"widget-month_status_my_\";i:1;s:33:\"widget-top_5_selling_packages_my_\";i:2;s:25:\"widget-followp_of_day_my_\";}s:8:\"left-l-6\";a:2:{i:0;s:23:\"widget-pending_rate_my_\";i:1;s:21:\"widget-ammendment_my_\";}s:9:\"right-l-6\";a:3:{i:0;s:33:\"widget-rejcted_iti_by_manager_my_\";i:1;s:24:\"widget-approved_rate_my_\";i:2;s:24:\"widget-ammendmnt_app_my_\";}}');
+        INSERT INTO user_dashboard VALUES(4, 326, 'dashboard_widgets_order', 'a:11:{s:6:\"top-12\";a:1:{i:0;s:28:\"widget-main_general_card_my_\";}s:6:\"left-6\";a:1:{i:0;s:22:\"widget-top_5_leads_my_\";}s:7:\"right-6\";a:1:{i:0;s:25:\"widget-income-expense_my_\";}s:7:\"right-8\";a:2:{i:0;s:30:\"widget-weekly_leads_status_my_\";i:1;s:31:\"widget-average_weekly_sales_my_\";}s:6:\"left-4\";a:2:{i:0;s:31:\"widget-monthly_leads_status_my_\";i:1;s:25:\"widget-sales_overview_my_\";}s:7:\"right-4\";a:1:{i:0;s:23:\"widget-month_status_my_\";}s:6:\"left-8\";a:1:{i:0;s:23:\"widget-today_status_my_\";}s:6:\"left-7\";a:4:{i:0;s:24:\"widget-top_5_sellers_my_\";i:1;s:26:\"widget-todays_checkout_my_\";i:2;s:20:\"widget-above_50k_my_\";i:3;s:23:\"widget-leads_of_day_my_\";}s:7:\"right-5\";a:2:{i:0;s:33:\"widget-top_5_selling_packages_my_\";i:1;s:25:\"widget-followp_of_day_my_\";}s:8:\"left-l-6\";a:2:{i:0;s:23:\"widget-pending_rate_my_\";i:1;s:21:\"widget-ammendment_my_\";}s:9:\"right-l-6\";a:3:{i:0;s:33:\"widget-rejcted_iti_by_manager_my_\";i:1;s:24:\"widget-approved_rate_my_\";i:2;s:24:\"widget-ammendmnt_app_my_\";}}');
+        INSERT INTO user_dashboard VALUES(6, 335, 'dashboard_widgets_order', 'a:11:{s:6:\"top-12\";a:1:{i:0;s:28:\"widget-main_general_card_my_\";}s:6:\"left-6\";a:1:{i:0;s:31:\"widget-average_weekly_sales_my_\";}s:7:\"right-6\";a:1:{i:0;s:30:\"widget-weekly_leads_status_my_\";}s:7:\"right-8\";a:1:{i:0;s:25:\"widget-sales_overview_my_\";}s:6:\"left-4\";a:2:{i:0;s:22:\"widget-top_5_leads_my_\";i:1;s:23:\"widget-target_month_my_\";}s:7:\"right-4\";a:1:{i:0;s:31:\"widget-monthly_leads_status_my_\";}s:6:\"left-8\";a:1:{i:0;s:23:\"widget-today_status_my_\";}s:6:\"left-7\";a:4:{i:0;s:26:\"widget-todays_checkout_my_\";i:1;s:24:\"widget-top_5_sellers_my_\";i:2;s:20:\"widget-above_50k_my_\";i:3;s:23:\"widget-leads_of_day_my_\";}s:7:\"right-5\";a:3:{i:0;s:23:\"widget-month_status_my_\";i:1;s:33:\"widget-top_5_selling_packages_my_\";i:2;s:25:\"widget-followp_of_day_my_\";}s:8:\"left-l-6\";a:2:{i:0;s:23:\"widget-pending_rate_my_\";i:1;s:21:\"widget-ammendment_my_\";}s:9:\"right-l-6\";a:3:{i:0;s:33:\"widget-rejcted_iti_by_manager_my_\";i:1;s:24:\"widget-approved_rate_my_\";i:2;s:24:\"widget-ammendmnt_app_my_\";}}');
+        INSERT INTO user_dashboard VALUES(31, 0, 'client_widgets_order', 'a:1:{s:6:\"top-12\";a:16:{i:0;s:22:\"widget-itineraries_my_\";i:1;s:26:\"widget-package_summary_my_\";i:2;s:17:\"widget-flight_my_\";i:3;s:16:\"widget-train_my_\";i:4;s:30:\"widget-how_to_book_package_my_\";i:5;s:34:\"widget-refund_and_cancellation_my_\";i:6;s:27:\"widget-amendment_policy_my_\";i:7;s:25:\"widget-payment_policy_my_\";i:8;s:21:\"widget-inclusions_my_\";i:9;s:21:\"widget-exclusions_my_\";i:10;s:14:\"widget-t&c_my_\";i:11;s:29:\"widget-special_inclusions_my_\";i:12;s:24:\"widget-hotel_details_my_\";i:13;s:22:\"widget-bankdetails_my_\";i:14;s:26:\"widget-company_details_my_\";i:15;s:23:\"widget-our_services_my_\";}}');
+        INSERT INTO user_dashboard VALUES(32, 326, 'theme_set', ' ');";
+        DB::statement($querysixtyFive);
+
+        $querysixtySix = "INSERT INTO user_permission VALUES(1, 1, 66, NULL, 'Income & Expense', 'income-expense', 'To view income & expense chart');
+        INSERT INTO user_permission VALUES(2, 1, 66, NULL, 'Weekly Leads Status', 'weekly-leads-status', 'To view 	Weekly Leads  chart \r\n');
+        INSERT INTO user_permission VALUES(3, 1, 66, NULL, 'Top 5 Lead Sources	', 'top-5-lead-sources', 'To view 	Top 5 Lead Sources	\r\n');
+        INSERT INTO user_permission VALUES(4, 1, 66, NULL, 'Average Weekly Sales ', 'average-weekly-sales-', 'To view Average Weekly Sales \r\n\r\n');
+        INSERT INTO user_permission VALUES(5, 1, 66, NULL, 'Top 5 Selling Packages', 'top-5-selling-packages', 'To view Average Weekly Sales \r\n\r\n');
+        INSERT INTO user_permission VALUES(7, 1, 66, NULL, 'Top 5 Sellers', 'top-5-sellers', 'To view Top 5 Sellers\r\n\r\n');
+        INSERT INTO user_permission VALUES(8, 1, 66, NULL, 'Total itineraries', 'total-itineraries', 'To view Total itineraries\r\n\r\n');
+        INSERT INTO user_permission VALUES(9, 1, 66, NULL, 'Total All  customer ', 'total-customer', 'To view Total itineraries\r\n\r\n');
+        INSERT INTO user_permission VALUES(11, 1, 66, NULL, 'Amount payable', 'amount-payable', 'To view 	amount payable\r\n\r\n\r\n');
+        INSERT INTO user_permission VALUES(12, 1, 66, NULL, 'Amonut receivable', 'amonut-receivable', 'To view 	Amont receivable\r\n\r\n\r\n');
+        INSERT INTO user_permission VALUES(13, 1, 66, 0, 'Today\'s My   Checkout', 'today-s-my-checkout', 'To Today\'s My   Checkout\r\n\r\n');
+        INSERT INTO user_permission VALUES(14, 1, 66, 0, 'Above 50k Packages Working On (Monthly)', 'above-50k-packages-working-on-monthly-', 'To view 	Above 50k Packages Working On (Monthly)\r\n\r\n\r\n');
+        INSERT INTO user_permission VALUES(15, 1, 66, NULL, 'Target (Monthly)', 'target-monthly-', 'To view 	Target (Monthly)\r\n\r\n\r\n');
+        INSERT INTO user_permission VALUES(16, 1, 66, NULL, ' Rejected Itineraries By Sales Manager', 'rejected-itineraries-by-sales-manager', 'To view 	 Rejected Itineraries By Sales ManagerT\r\n\r\n\r\n');
+        INSERT INTO user_permission VALUES(17, 1, 66, NULL, 'Iti booked today', 'iti-booked-today', 'To view Iti booked today');
+        INSERT INTO user_permission VALUES(18, 1, 66, NULL, 'Iti booked this month', 'iti-booked-this-month', 'To view Iti booked this month');
+        INSERT INTO user_permission VALUES(19, 1, 66, NULL, 'Today total own call picked', 'today-total-call-picked', 'To view Today total call picked');
+        INSERT INTO user_permission VALUES(20, 1, 66, NULL, 'today call own  not picked', 'today-call-not-picked', 'To view Today total call picked');
+        INSERT INTO user_permission VALUES(22, 1, 66, NULL, 'Today  own declined', 'today-declined', 'To view Today declined');
+        INSERT INTO user_permission VALUES(23, 1, 66, NULL, 'monthly leads status', 'monthly-leads-status', 'To view monthly leads status');
+        INSERT INTO user_permission VALUES(24, 1, 6, 0, 'My leads  of day ', 'my-leads-of-day', 'To leads  of day For Team My ');
+        INSERT INTO user_permission VALUES(25, 1, 7, 0, 'All User followp of day', 'all-user-followp-of-day', 'To view All User followp of day');
+        INSERT INTO user_permission VALUES(26, 1, 66, NULL, 'Sales overview', 'sales-overview', 'To view sales_overview chart');
+        INSERT INTO user_permission VALUES(27, 1, 0, NULL, 'Total Total Leads', 'total-total-leads', 'To view today total leads');
+        INSERT INTO user_permission VALUES(28, 1, 75, NULL, 'Today\'s Status', 'today-s-status', 'To view Today\'s Status Card');
+        INSERT INTO user_permission VALUES(31, 1, 1, 1, 'Total All Call Picked', 'total-call-picked', 'To view All Total Call Picked');
+        INSERT INTO user_permission VALUES(32, 1, 1, 1, 'Total  All Not Picked', 'total-not-picked', 'To view Total Not Picked');
+        INSERT INTO user_permission VALUES(33, 1, 1, 1, 'Total All Declined Leads', 'total-declined-leads', 'To view Today Total Declined Leads');
+        INSERT INTO user_permission VALUES(34, 1, 1, 1, 'Today All Unwork Leads', 'unwork-leads', 'To view Today Total Unwork Leads\r\n');
+        INSERT INTO user_permission VALUES(35, 1, 1, 1, 'Today All Quotations Sent', 'quotations-sent', 'To view Today Total Quotations Sent\r\n');
+        INSERT INTO user_permission VALUES(36, 1, 1, 1, 'Total All Working Itineraries', 'total-working-itineraries', 'To view Today Total Working Itineraries\r\n');
+        INSERT INTO user_permission VALUES(37, 1, 1, 1, 'Total All  Approved Itineraries', 'total-approved-itineraries', 'To view Today Total Approved Itineraries\r\n');
+        INSERT INTO user_permission VALUES(38, 1, 1, 1, 'Total All Declined Itineraries', 'total-declined-itineraries', 'To view Today Total Declined Itineraries\r\n');
+        INSERT INTO user_permission VALUES(39, 1, 1, 1, 'Revised All Quotations Sent', 'revised-quotations-sent', 'To view Today Revised Quotations Sent\r\n');
+        INSERT INTO user_permission VALUES(40, 1, 1, 1, 'Revised All  Approved Itineraries', 'revised-approved-itineraries', 'To view Today Revised Approved Itinerariest\r\n');
+        INSERT INTO user_permission VALUES(41, 1, 1, 1, 'Revised All  Declined Itineraries', 'revised-declined-itineraries', 'To view Today Revised Declined Itineraries\r\n');
+        INSERT INTO user_permission VALUES(42, 1, 1, 1, 'Decline All  Revised Leads', 'decline-revised-leads', 'To view Today Decline Revised Leads\r\n');
+        INSERT INTO user_permission VALUES(46, 1, 74, NULL, 'Month\'s Status', 'month-s-status', 'To view Month\'s Status\r\n');
+        INSERT INTO user_permission VALUES(47, 1, 2, 4, 'Month\'s All Total Leads', 'month-s-all-total-leads', 'To view Month\'s All  Total Leads');
+        INSERT INTO user_permission VALUES(48, 1, 2, 4, 'Month\'s All  Total Call Picked', 'month-s-all-total-call-picked', 'To view Month\'s  All  Total Call Picked');
+        INSERT INTO user_permission VALUES(49, 1, 2, 4, 'Month\'s All  Total Not Picked', 'month-s-all-total-not-picked', 'To view Month\'s All Total Not Picked');
+        INSERT INTO user_permission VALUES(50, 1, 2, 4, 'Month\'s Total All  Declined Leads', 'month-s-total-all-declined-leads', 'To view Month\'s Tota All l Declined Leads');
+        INSERT INTO user_permission VALUES(51, 1, 2, 4, 'Month\'s All  Unwork Leads', 'month-s-all-unwork-leads', 'To view Month\'s Total 	All  eUnwork Leads\r\n');
+        INSERT INTO user_permission VALUES(52, 1, 2, 4, 'Month\'s All Quotations Sent', 'month-s-all-quotations-sent', 'To view Month\'s All  Total Quotations Sent\r\n');
+        INSERT INTO user_permission VALUES(53, 1, 2, 4, 'Month\'s Total All  Working Itineraries', 'month-s-total-all-working-itineraries', 'To view Month\'s Total All  Working Itineraries\r\n');
+        INSERT INTO user_permission VALUES(54, 1, 2, 4, 'Month\'s Total All  Approved Itineraries', 'month-s-total-all-approved-itineraries', 'To view Month\'s Total All  Approved Itineraries\r\n');
+        INSERT INTO user_permission VALUES(55, 1, 2, 4, 'Month\'s All  Total Declined Itineraries', 'month-s-all-total-declined-itineraries', 'To view Month\'s  All  Total Declined Itineraries');
+        INSERT INTO user_permission VALUES(56, 1, 2, 4, 'Month\'s All  Revised Quotations Sent', 'month-s-all-revised-quotations-sent', 'To view Month\'s  All  Revised Quotations Sent');
+        INSERT INTO user_permission VALUES(57, 1, 2, 4, 'Month\'s All  Revised Approved Itineraries', 'month-s-all-revised-approved-itineraries', 'To view Month\'s All  Revised Approved Itineraries');
+        INSERT INTO user_permission VALUES(58, 1, 2, 4, 'Month\'s All  Revised Declined Itineraries', 'month-s-all-revised-declined-itineraries', 'To view Month\'s All  Revised Declined Itineraries');
+        INSERT INTO user_permission VALUES(59, 1, 2, 4, 'Month\'s All  Decline Revised Leads', 'month-s-all-decline-revised-leads', 'To view Month\'s  All  Decline Revised Leads');
+        INSERT INTO user_permission VALUES(60, 2, 60, NULL, 'add leads', 'add-leads', 'To Add Leads');
+        INSERT INTO user_permission VALUES(61, 2, 60, NULL, 'Edit leads', 'edit-leads', 'To Edit Leads');
+        INSERT INTO user_permission VALUES(62, 2, 60, NULL, 'Delete leads', 'delete-leads', 'To Delete Leads');
+        INSERT INTO user_permission VALUES(64, 2, 60, NULL, 'Reassign leads', 'reassign-leads', 'To Reassign leads');
+        INSERT INTO user_permission VALUES(65, 2, 60, NULL, 'reopen leads', 'reopen-leads', 'To Reopen leads');
+        INSERT INTO user_permission VALUES(66, 2, 60, NULL, 'Create followup', 'create-followup', 'To Create followup');
+        INSERT INTO user_permission VALUES(67, 2, 60, NULL, 'View All Leads', 'view-all-leads', 'To view All User Leads');
+        INSERT INTO user_permission VALUES(68, 2, 60, NULL, 'View Own  Leads', 'view-own-leads', 'To view View Own  Leads');
+        INSERT INTO user_permission VALUES(69, 3, 62, NULL, 'Create Itineraries', 'create-itineraries', 'To Create Itineraries');
+        INSERT INTO user_permission VALUES(70, 3, 62, NULL, 'view All user Itineraries', 'view-all-user-itineraries', 'To view All User   Itineraries');
+        INSERT INTO user_permission VALUES(71, 3, 62, NULL, 'edit Itineraries', 'edit-itineraries', 'To edit Itineraries');
+        INSERT INTO user_permission VALUES(72, 3, 62, NULL, 'delete  Itineraries', 'delete-itineraries', 'To delete Itineraries');
+        INSERT INTO user_permission VALUES(73, 3, 62, NULL, 'clone Itineraries', 'clone-itineraries', 'To clone Itineraries');
+        INSERT INTO user_permission VALUES(75, 4, 58, NULL, 'Edit packages', 'edit-packages', 'To Edit  packages');
+        INSERT INTO user_permission VALUES(76, 4, 58, NULL, 'View packages', 'view-packages', 'To View   packages');
+        INSERT INTO user_permission VALUES(77, 4, 58, NULL, 'Delete temporary packages', 'delete-temporary-packages', 'To Delete   packages');
+        INSERT INTO user_permission VALUES(78, 4, 58, NULL, 'Send packages', 'send-packages', 'To send packages');
+        INSERT INTO user_permission VALUES(79, 4, 58, NULL, 'Delete permanent packages', 'followp-of-day', 'To Delete permanent packages');
+        INSERT INTO user_permission VALUES(80, 4, 59, 0, 'Add package category', 'add-package-category', 'To Add package category');
+        INSERT INTO user_permission VALUES(81, 4, 59, NULL, 'View package category', 'view-package-category', 'To View package category');
+        INSERT INTO user_permission VALUES(82, 4, 59, NULL, 'Edit package category', 'edit-package-category', 'To Edit package category');
+        INSERT INTO user_permission VALUES(83, 4, 59, NULL, 'Delete  package category', 'delete-package-category', 'To Delete package category');
+        INSERT INTO user_permission VALUES(84, 6, 67, NULL, 'Add Hotel', 'add-hotel', 'To add Add Hotel');
+        INSERT INTO user_permission VALUES(85, 6, 67, NULL, 'Edit Hotel', 'edit-hotel', 'To Edit  Hotel');
+        INSERT INTO user_permission VALUES(86, 6, 67, NULL, 'View Hotel', 'view-hotel', 'To View   Hotel');
+        INSERT INTO user_permission VALUES(87, 6, 67, NULL, 'Delete Hotel', 'delete-hotel', 'To Delete    Hotel');
+        INSERT INTO user_permission VALUES(88, 6, 15, NULL, 'Add Hotel Category', 'add-hotel-category', 'To  Add Hotel Category');
+        INSERT INTO user_permission VALUES(89, 6, 15, NULL, 'Edit Hotel Category', 'edit-hotel-category', 'To  Edit Hotel Category');
+        INSERT INTO user_permission VALUES(90, 6, 15, NULL, 'View  Hotel Category', 'view-hotel-category', 'To view Hotel Category');
+        INSERT INTO user_permission VALUES(91, 6, 15, NULL, 'Delete   Hotel Category', 'delete-hotel-category', 'To Delete  Category');
+        INSERT INTO user_permission VALUES(92, 6, 16, NULL, 'Add Room Category', 'add-room-category', 'To Add Room Category');
+        INSERT INTO user_permission VALUES(93, 6, 16, NULL, 'Edit Room Category', 'edit-room-category', 'To Edit  Room Category');
+        INSERT INTO user_permission VALUES(94, 6, 16, NULL, 'View Room Category', 'view-room-category', 'To view Room Category');
+        INSERT INTO user_permission VALUES(95, 6, 16, NULL, 'Delete Room Category', 'delete-room-category', 'To Delete Room Category');
+        INSERT INTO user_permission VALUES(96, 6, 19, NULL, 'Add Room Rates', 'add-room-rates', 'To Add Room Rates');
+        INSERT INTO user_permission VALUES(97, 6, 19, NULL, 'Edit Room Rates', 'edit-room-rates', 'To Edit Room Rates');
+        INSERT INTO user_permission VALUES(98, 6, 19, NULL, 'View Room Rates', 'view-room-rates', 'To View Room Rates');
+        INSERT INTO user_permission VALUES(99, 6, 19, NULL, 'Delete Room Rates', 'delete-room-rates', 'To  Delete Room Rates');
+        INSERT INTO user_permission VALUES(100, 6, 20, NULL, 'view Season', 'view-season', 'To  view Season');
+        INSERT INTO user_permission VALUES(101, 6, 20, NULL, 'Add Season', 'add-season', 'To  Add Season');
+        INSERT INTO user_permission VALUES(102, 6, 20, NULL, 'Edit  Season', 'edit-season', 'To  Edit Season');
+        INSERT INTO user_permission VALUES(103, 6, 20, NULL, 'Delete  Season', 'delete-season', 'To  Delete Season');
+        INSERT INTO user_permission VALUES(104, 6, 23, NULL, 'View Meal Plan', 'view-meal-plan', 'To  View Meal Plan');
+        INSERT INTO user_permission VALUES(105, 6, 23, NULL, 'Add  Meal Plan', 'add-meal-plan', 'To  Add Meal Plan');
+        INSERT INTO user_permission VALUES(106, 6, 23, NULL, 'Edit Meal Plan', 'edit-meal-plan', 'To  Edit Meal Plan');
+        INSERT INTO user_permission VALUES(107, 6, 23, NULL, 'Delete Meal Plan', 'delete-meal-plan', 'To  Delete Meal Plan');
+        INSERT INTO user_permission VALUES(108, 7, 25, NULL, 'Add Vehicles', 'add-vehicles', 'To Add Vehicles');
+        INSERT INTO user_permission VALUES(109, 7, 25, NULL, 'View Vehicles', 'view-vehicles', 'To View  Vehicles');
+        INSERT INTO user_permission VALUES(110, 7, 25, NULL, 'Delete Vehicles', 'delete-vehicles', 'To Delete   Vehicles');
+        INSERT INTO user_permission VALUES(111, 7, 25, NULL, 'Edit Vehicles', 'edit-vehicles', 'To Edit  Vehicles');
+        INSERT INTO user_permission VALUES(112, 7, 26, NULL, 'View Transporters', 'view-transporters', 'To View Transporter');
+        INSERT INTO user_permission VALUES(113, 7, 26, NULL, 'Add  Transporters', 'add-transporters', 'To Add Transporter');
+        INSERT INTO user_permission VALUES(114, 7, 26, NULL, 'Edit Transporters', 'edit-transporters', 'To Edit Transporter');
+        INSERT INTO user_permission VALUES(115, 7, 26, NULL, 'Delete Transporters', 'delete-transporters', 'To Delete Transporter');
+        INSERT INTO user_permission VALUES(116, 8, 29, NULL, 'Add Users', 'add-users', 'To Add Users');
+        INSERT INTO user_permission VALUES(117, 8, 29, NULL, 'Edit Users', 'edit-users', 'To Edit  Users');
+        INSERT INTO user_permission VALUES(118, 8, 29, NULL, 'View Users', 'view-users', 'To View   Users');
+        INSERT INTO user_permission VALUES(119, 8, 29, NULL, 'Delete Users', 'delete-users', 'To Delete Users');
+        INSERT INTO user_permission VALUES(120, 8, 29, NULL, 'Block Users', 'block-users', 'To Block  Users');
+        INSERT INTO user_permission VALUES(121, 8, 29, NULL, 'login Request Approve', 'login-request-approve', 'To Approve login Request');
+        INSERT INTO user_permission VALUES(123, 8, 30, NULL, 'Add Team Leaders', 'add-team-leaders', 'To Add Team Leaders');
+        INSERT INTO user_permission VALUES(124, 8, 30, NULL, 'Edit Team Leaders', 'edit-team-leaders', 'To Edit  Team Leaders');
+        INSERT INTO user_permission VALUES(125, 8, 30, NULL, 'View  Team Leaders', 'view-team-leaders', 'To View   Team Leaders');
+        INSERT INTO user_permission VALUES(126, 8, 30, NULL, 'Delete Team Leaders', 'delete-team-leaders', 'To delete   Team Leaders');
+        INSERT INTO user_permission VALUES(127, 9, 37, NULL, 'General settings', 'general-settings', 'To Edit General settings');
+        INSERT INTO user_permission VALUES(128, 9, 37, NULL, 'Company Info', 'company-info', 'To Edit Company Info');
+        INSERT INTO user_permission VALUES(129, 9, 37, NULL, 'Standard Login Time Settings', 'standard-login-time-settings', 'To Edit Standard Login Time Settings');
+        INSERT INTO user_permission VALUES(130, 9, 37, NULL, 'Agent Discount Price & Set Agent Margin', 'agent-discount-price-set-agent-margin', 'To Edit Agent Discount Price & Set Agent Margin');
+        INSERT INTO user_permission VALUES(131, 9, 37, NULL, 'PDf Templates Change', 'pdf-templates-change', 'To Edit PDf Templates Change');
+        INSERT INTO user_permission VALUES(132, 9, 37, NULL, 'Payment Setting', 'payment-setting', 'To Edit Payment Setting');
+        INSERT INTO user_permission VALUES(133, 9, 38, NULL, 'homepage Info', 'homepage-info', 'To Edit homepage Info');
+        INSERT INTO user_permission VALUES(134, 9, 41, NULL, 'Office branches Edit ', 'office-branches-edit-', 'To Office branches Edit ');
+        INSERT INTO user_permission VALUES(135, 9, 41, NULL, 'Office branches Add', 'office-branches-add', 'To Office branches Add');
+        INSERT INTO user_permission VALUES(136, 9, 41, NULL, 'Office branches Delete', 'office-branches-delete', 'To Office branches Delete');
+        INSERT INTO user_permission VALUES(137, 9, 41, NULL, 'Office branches View', 'office-branches-view', 'To Office branches View');
+        INSERT INTO user_permission VALUES(138, 9, 42, NULL, 'Greeting Message', 'holiday-greeting-message', 'To Edit Greeting Message');
+        INSERT INTO user_permission VALUES(139, 9, 42, NULL, 'How to book package', 'holiday-how-to-book-package', 'To Edit How to book package');
+        INSERT INTO user_permission VALUES(140, 9, 42, NULL, 'Refund Policy & Cancellation Terms', 'holiday-refund-policy-cancellation-terms', 'To Edit Refund Policy & Cancellation Terms');
+        INSERT INTO user_permission VALUES(141, 9, 42, NULL, 'Amendment Policy', 'holiday-amendment-policy', 'To Edit Amendment Policy');
+        INSERT INTO user_permission VALUES(142, 9, 42, NULL, 'Payment Policy', 'holiday-payment-policy', 'To Edit Payment Policy');
+        INSERT INTO user_permission VALUES(143, 9, 42, NULL, 'Terms & Condition', 'holiday-terms-condition', 'To Edit Terms & Condition');
+        INSERT INTO user_permission VALUES(144, 9, 42, NULL, 'Promotion Signature', 'holiday-promotion-signature', 'To Edit Promotion Signature');
+        INSERT INTO user_permission VALUES(145, 9, 42, NULL, 'Bank Payment Terms', 'holiday-bank-payment-terms', 'To Edit Bank Payment Terms');
+        INSERT INTO user_permission VALUES(146, 9, 42, NULL, 'Hotel Exclusion & Notes', 'holiday-hotel-exclusion-notes', 'To Edit Hotel Exclusion & Notes');
+        INSERT INTO user_permission VALUES(147, 9, 42, NULL, 'Benefits of Booking With Us', 'holiday-benefits-of-booking-with-us', 'To Edit Benefits of Booking With Us');
+        INSERT INTO user_permission VALUES(148, 9, 47, NULL, 'Update Social API settings', 'update-social-api-settings', 'To Update Social API settings');
+        INSERT INTO user_permission VALUES(149, 9, 48, NULL, 'Update Sms Api', 'update-sms-api', 'To Update Sms Api');
+        INSERT INTO user_permission VALUES(150, 9, 45, NULL, 'Hotel Greeting Message', 'hotel-greeting-message', 'To Update Hotel Greeting Message');
+        INSERT INTO user_permission VALUES(151, 9, 45, NULL, 'Hotel How to book package', 'hotel-how-to-book-package', 'To Update  Hotel How to book package');
+        INSERT INTO user_permission VALUES(152, 9, 45, NULL, 'Hotel Refund Policy & Cancellation Terms', 'hotel-refund-policy-cancellation-terms', 'To Update  Hotel Refund Policy & Cancellation Terms');
+        INSERT INTO user_permission VALUES(153, 9, 45, NULL, 'Hotel Amendment Policy', 'hotel-amendment-policy', 'To Update  Hotel Amendment Policy');
+        INSERT INTO user_permission VALUES(154, 9, 45, NULL, 'Hotel Payment Policy', 'hotel-payment-policy', 'To Update  Payment Policy');
+        INSERT INTO user_permission VALUES(155, 9, 45, NULL, 'Hotel Terms & Condition', 'hotel-terms-condition', 'To Update  Hotel Terms & Condition');
+        INSERT INTO user_permission VALUES(156, 9, 45, NULL, 'Hotel Promotion Signature', 'hotel-promotion-signature', 'To Update  Hotel Promotion Signature');
+        INSERT INTO user_permission VALUES(157, 9, 45, NULL, 'Hotel Bank Payment Terms', 'hotel-bank-payment-terms', 'To Update  Hotel Bank Payment Terms');
+        INSERT INTO user_permission VALUES(158, 9, 45, NULL, 'Hotel Hotel Exclusion & Notes', 'hotel-hotel-exclusion-notes', 'To Update  Hotel Exclusion & Notes');
+        INSERT INTO user_permission VALUES(159, 9, 45, NULL, 'Hotel Benefits of Booking With Us', 'hotel-benefits-of-booking-with-us', 'To Update  Hotel Benefits of Booking With Us');
+        INSERT INTO user_permission VALUES(160, 9, 46, NULL, 'Cab Greeting Message', 'cab-greeting-message', 'To Update  Cab Greeting Message');
+        INSERT INTO user_permission VALUES(161, 9, 46, NULL, 'Cab How to book package', 'cab-how-to-book-package', 'To Update  Cab How to book package');
+        INSERT INTO user_permission VALUES(162, 9, 46, NULL, 'Cab Refund Policy & Cancellation Terms', 'cab-refund-policy-cancellation-terms', 'To Update  Cab Refund Policy & Cancellation Terms');
+        INSERT INTO user_permission VALUES(163, 9, 46, NULL, 'Cab Amendment Policy', 'cab-amendment-policy', 'To Update  Cab Amendment Policy');
+        INSERT INTO user_permission VALUES(164, 9, 46, NULL, 'Cab Payment Policy', 'cab-payment-policy', 'To Update  Cab Payment Policy');
+        INSERT INTO user_permission VALUES(165, 9, 46, NULL, 'Cab Terms & Condition', 'cab-terms-condition', 'To Update  Cab Terms & Condition');
+        INSERT INTO user_permission VALUES(166, 9, 46, NULL, 'Cab Promotion Signature', 'cab-promotion-signature', 'To Update  Cab Promotion Signature');
+        INSERT INTO user_permission VALUES(167, 9, 46, NULL, 'Cab Bank Payment Terms', 'cab-bank-payment-terms', 'To Update  Cab Bank Payment Terms');
+        INSERT INTO user_permission VALUES(168, 9, 46, NULL, 'Cab Hotel Exclusion & Notes', 'cab-hotel-exclusion-notes', 'To Update  Cab Hotel Exclusion & Notes');
+        INSERT INTO user_permission VALUES(169, 9, 46, NULL, 'Cab Benefits of Booking With Us', 'cab-benefits-of-booking-with-us', 'To Update  Cab Benefits of Booking With Us');
+        INSERT INTO user_permission VALUES(170, 3, 62, NULL, 'Price Update', 'price-update', 'To update price ');
+        INSERT INTO user_permission VALUES(171, 3, 62, NULL, 'Price Request To update Price', 'price-request-to-updtae-price', 'To Price Request To Updtae Price');
+        INSERT INTO user_permission VALUES(172, 3, 62, NULL, 'Send Itineraries Quotation', 'send-itineraries-quotation', 'To  send  Itineraries Quotation To client ');
+        INSERT INTO user_permission VALUES(173, 3, 62, NULL, 'Price Self update ', 'price-self-update-', 'To  update price by Price Self update ');
+        INSERT INTO user_permission VALUES(174, 3, 62, NULL, 'View All Revised  Itineraries', 'view-all-revised-itineraries', 'To  View  All Revised Itineraries');
+        INSERT INTO user_permission VALUES(176, 3, 62, NULL, 'View My  Closed Itineraries', 'view-my-closed-itineraries', 'To  View  My Closed   Itineraries');
+        INSERT INTO user_permission VALUES(178, 5, 53, NULL, 'view  Booked Hotel', 'view-hotel-booking', 'To view Hotel');
+        INSERT INTO user_permission VALUES(179, 5, 53, NULL, 'Edit Booked Hotel', 'edit-hotel-booking', 'To edit Hotel');
+        INSERT INTO user_permission VALUES(180, 5, 53, NULL, 'Book Hotel', 'add-hotel-booking', 'To Add Hotel');
+        INSERT INTO user_permission VALUES(181, 5, 53, NULL, 'Delete booked Hotel', 'delete-hotel-booking', 'To Delete Hotel');
+        INSERT INTO user_permission VALUES(182, 5, 53, 0, 'Approved Hotel  booking ', 'approved-hotel-booking-', 'To  approved-hotel-booking-');
+        INSERT INTO user_permission VALUES(185, 5, 54, NULL, 'Book Cab', 'book-cab', 'To Book Cab');
+        INSERT INTO user_permission VALUES(186, 5, 54, NULL, 'Edit Book Cab', 'edit-book-cab', 'To Edit Book Cab');
+        INSERT INTO user_permission VALUES(187, 5, 54, NULL, 'Delete Book Cab', 'delete-book-cab', 'To Delete Book Cab');
+        INSERT INTO user_permission VALUES(188, 5, 54, 0, 'View All Book Cab', 'view-all-book-cab', 'To View Book Cab');
+        INSERT INTO user_permission VALUES(190, 5, 55, NULL, 'Book Train ', 'book-train', 'Too book Train');
+        INSERT INTO user_permission VALUES(191, 5, 57, NULL, 'Book flight ', 'book-flight-', 'Too book Flight');
+        INSERT INTO user_permission VALUES(192, 5, 56, NULL, 'Book Volvo', 'book-volvo', 'Too book Volvo');
+        INSERT INTO user_permission VALUES(193, 5, 56, NULL, 'view Book Volvo', 'view-book-volvo', 'To view Book Volvo');
+        INSERT INTO user_permission VALUES(194, 5, 55, NULL, 'view Book Train', 'view-book-train', 'To view Book Train');
+        INSERT INTO user_permission VALUES(195, 5, 57, NULL, 'view Book Flight', 'view-book-flight', 'To view Book Flight');
+        INSERT INTO user_permission VALUES(196, 2, 60, NULL, 'Export Leads', 'export-leads', 'To Export Leads');
+        INSERT INTO user_permission VALUES(198, 1, 66, NULL, 'Today total own leads', 'today-total-own-leads', 'To Today total own leads');
+        INSERT INTO user_permission VALUES(199, 8, 30, NULL, 'Is Team Member', 'is-team-member', 'To make Team Member ');
+        INSERT INTO user_permission VALUES(200, 8, 30, NULL, 'Is Team Leader', 'is-team-leader', 'To make TIs Team Leader');
+        INSERT INTO user_permission VALUES(201, 2, 61, NULL, 'query generator', 'query-generator', 'View query-generator');
+        INSERT INTO user_permission VALUES(202, 2, 61, NULL, 'Assign Query generator Leads ', 'assign-query-generator-leads-', 'To Assign Query generator Leads ');
+        INSERT INTO user_permission VALUES(203, 2, 61, NULL, 'Delete Query generator Leads ', 'delete-query-generator-leads-', 'To Assign Query generator Leads ');
+        INSERT INTO user_permission VALUES(204, 2, 60, NULL, 'View Team  Leads  Pending Leads', 'view-team-leads-pending-leads', 'To View Team  Leads  Pending Leads');
+        INSERT INTO user_permission VALUES(205, 2, 60, NULL, 'View Team  Leads own  Pending Leads', 'view-team-leads-own-pending-leads', 'To View Team  Leads own    Pending Leads');
+        INSERT INTO user_permission VALUES(206, 2, 60, NULL, 'Assign Leads To Team Member', 'assign-leads-to-team-member', 'To Assign Leads To Team Member');
+        INSERT INTO user_permission VALUES(207, 2, 60, NULL, 'View Team Member Leads', 'view-team-member-leads', 'To View Team Member Leads');
+        INSERT INTO user_permission VALUES(208, 1, 1, 1, 'Today All Total Leads', 'today-total-leads', 'To Today Total Leads');
+        INSERT INTO user_permission VALUES(209, 1, 75, 2, 'Today My Total Leads', 'today-own-total-leads', 'To Today Own Total Leads');
+        INSERT INTO user_permission VALUES(211, 1, 75, 2, 'Total My  Call Picked', 'total-my-call-picked', 'To View Total All Call Picked');
+        INSERT INTO user_permission VALUES(213, 1, 75, 2, 'Today My Not Picked Call', 'today-my-not-picked-call', 'To view Today My Not Picked Call');
+        INSERT INTO user_permission VALUES(216, 1, 75, 2, 'Today My Declined Call', 'today-my-declined-call', 'To view Today My  Declined  Call');
+        INSERT INTO user_permission VALUES(217, 1, 75, 2, 'Today My unwork-leads', 'today-my-unwork-leads', 'To view Today My  unwork-leads');
+        INSERT INTO user_permission VALUES(220, 1, 75, 2, 'Today My Quotations Sent', 'today-my-quotations-sent', 'To view Today My   Quotations Sent');
+        INSERT INTO user_permission VALUES(221, 1, 75, 2, 'Today My  Total Working Itineraries', 'today-my-total-working-itineraries', 'To view Today My  Total Working Itineraries');
+        INSERT INTO user_permission VALUES(224, 1, 75, 2, 'Today My Total Approved Itineraries', 'today-my-total-approved-itineraries', 'To view Today My Total Approved  Itineraries');
+        INSERT INTO user_permission VALUES(225, 1, 75, 2, 'Today My Total Declined Itineraries', 'today-my-total-declined-itineraries', 'To view Today My Total Declined Itineraries');
+        INSERT INTO user_permission VALUES(228, 1, 75, 2, 'Today My   Revised Quotations Sent', 'today-my-revised-quotations-sent', 'To view Today My  Total Revised Quotations Sent');
+        INSERT INTO user_permission VALUES(229, 1, 75, 2, 'Today My   Revised approved itineraries', 'today-my-revised-approved-itineraries', 'To view Today My  Total Revised approved itineraries');
+        INSERT INTO user_permission VALUES(232, 1, 75, 2, 'Today My    Revised declined itineraries', 'today-my-revised-declined-itineraries', 'To view Today My Total declined approved itineraries');
+        INSERT INTO user_permission VALUES(233, 1, 75, 2, 'Today My  Decline Revised Leads', 'today-my-decline-revised-leads', 'To view Today My Total  Decline Revised Leads');
+        INSERT INTO user_permission VALUES(235, 1, 74, NULL, 'Month\'s My Total Leads', 'month-s-my-total-leads', 'To view Month\'s My Total Leads');
+        INSERT INTO user_permission VALUES(237, 1, 74, NULL, 'Month\'s My  Total Call Picked', 'month-s-my-total-call-picked', 'To view Month\'s My Total Call Picked');
+        INSERT INTO user_permission VALUES(240, 1, 74, NULL, 'Month\'s My  Total Not Picked', 'month-s-my-total-not-picked', 'To view Month\'s My Total Not Picked');
+        INSERT INTO user_permission VALUES(241, 1, 74, NULL, 'Month\'s Total My Declined Leads', 'month-s-total-my-declined-leads', 'To view Month\'s Total MyDeclined Leads');
+        INSERT INTO user_permission VALUES(243, 1, 74, NULL, 'Month\'s My  Unwork Leads', 'month-s-my-unwork-leads', 'To view Month\'s My  Unwork Leads');
+        INSERT INTO user_permission VALUES(246, 1, 74, NULL, 'Month\'s My Quotations Sent', 'month-s-my-quotations-sent', 'To view Month\'s My Quotations Sent');
+        INSERT INTO user_permission VALUES(247, 1, 74, NULL, 'Month\'s Total My Working Itineraries', 'month-s-total-my-working-itineraries', 'To view Month\'s Total My Working Itineraries');
+        INSERT INTO user_permission VALUES(250, 1, 74, NULL, 'Month\'s Total My Approved Itineraries', 'month-s-total-my-approved-itineraries', 'To view Month\'s Total My Approved Itineraries');
+        INSERT INTO user_permission VALUES(251, 1, 74, NULL, 'Month\'s  My Total Declined Itineraries', 'month-s-my-total-declined-itineraries', 'To view Month\'s  My Total Declined Itineraries');
+        INSERT INTO user_permission VALUES(254, 1, 74, NULL, 'Month\'s My Revised Quotations Sent', 'month-s-my-revised-quotations-sent', 'To view Month\'s My Revised Quotations Sent');
+        INSERT INTO user_permission VALUES(255, 1, 74, NULL, 'Month\'s My Revised Approved Itineraries', 'month-s-my-revised-approved-itineraries', 'To view Month\'s My Revised Approved Itineraries');
+        INSERT INTO user_permission VALUES(257, 1, 74, NULL, 'Month\'s My  Revised Declined Itineraries', 'month-s-my-revised-declined-itineraries', 'To view Month\'s My  Revised Declined Itineraries');
+        INSERT INTO user_permission VALUES(259, 1, 74, NULL, 'Month\'s My  Decline Revised Leads', 'month-s-my-decline-revised-leads', 'To view Month\'s My  Decline Revised Leads');
+        INSERT INTO user_permission VALUES(261, 10, 63, NULL, 'Is Accounts', 'is-accounts', 'To view And login Accounts');
+        INSERT INTO user_permission VALUES(262, 1, 66, NULL, 'View user Dashboard', 'view-user-dashboard', 'To view All user Dashboard');
+        INSERT INTO user_permission VALUES(263, 3, 62, NULL, 'View On Hold (Pending Payment itineraries)', 'view-on-hold-pending-payment-itineraries-', 'To view View On Hold (Pending Payment itineraries)');
+        INSERT INTO user_permission VALUES(264, 3, 62, NULL, 'View My booked Itineraries', 'view-my-booked-itineraries', 'To View My  booked Itineraries');
+        INSERT INTO user_permission VALUES(265, 3, 62, NULL, 'View My Revised itineraries', 'view-my-revised-itineraries', 'To View My  Revised tineraries');
+        INSERT INTO user_permission VALUES(266, 3, 62, NULL, 'View All Closed Itineraries', 'view-all-closed-itineraries', 'To View All Closedt ineraries');
+        INSERT INTO user_permission VALUES(267, 3, 62, NULL, 'view All Booked Itineraries', 'view-all-booked-itineraries', 'To view view All Booked Itineraries');
+        INSERT INTO user_permission VALUES(268, 3, 62, NULL, 'View My All Itineraries', 'view-my-all-itineraries', 'To view My All Itineraries');
+        INSERT INTO user_permission VALUES(269, 3, 62, NULL, 'view itineraries   Pdf', 'view-itineraries-pdf', 'View itineraries  Pdf');
+        INSERT INTO user_permission VALUES(270, 3, 62, NULL, 'Clone Package from Itineraries', 'clone-package-form-itineraries', 'Clone Package  Form  itineraries');
+        INSERT INTO user_permission VALUES(271, 3, 62, NULL, 'Amendment In Itinerary', 'amendment-in-itinerary', 'To Amendment In Itinerary');
+        INSERT INTO user_permission VALUES(272, 3, 62, NULL, 'View Amendment In Itinerary', 'view-amendment-in-itinerary', 'To View  Amendment In Itinerary');
+        INSERT INTO user_permission VALUES(273, 3, 62, NULL, 'View Old Quotation After Amendment', 'view-old-quotation-after-amendment', 'To View Old Quotation After Amendment');
+        INSERT INTO user_permission VALUES(274, 8, 29, 0, 'Create  Role', 'create-role', 'To Create  Role');
+        INSERT INTO user_permission VALUES(275, 8, 65, 0, 'View Roles', 'view-roles', 'To View Roles');
+        INSERT INTO user_permission VALUES(276, 10, 63, NULL, 'View itineraries Payment', 'view-itineraries-payment', 'To View itineraries Payment');
+        INSERT INTO user_permission VALUES(277, 5, 54, 0, 'Send Cab Booking', 'send-cab-booking', 'view Send Cab Booking');
+        INSERT INTO user_permission VALUES(278, 4, 58, 0, 'add-packages', 'add-packages', 'To add-packages');
+        INSERT INTO user_permission VALUES(279, 10, 64, 0, 'View Confirmed Vouchers', 'view-confirmed-vouchers', 'To view  Confirmed Vouchers');
+        INSERT INTO user_permission VALUES(281, 10, 64, 0, 'Confirmed Vouchers', 'confirmed-vouchers', 'To Confirmed Vouchers');
+        INSERT INTO user_permission VALUES(282, 10, 63, 0, 'Payments Confirm Status', 'payments-confirm-status', 'To Confirmed Vouchers');
+        INSERT INTO user_permission VALUES(283, 10, 63, 0, 'View journal  entry and  Chart of Accounts', 'view-journal-entry-and-chart-of-accounts', 'To view View journal  entry and  Chart of Accounts');
+        INSERT INTO user_permission VALUES(284, 10, 63, 0, 'View expenses', 'view-expenses', 'To view View journal  entry and  Chart of Accounts');
+        INSERT INTO user_permission VALUES(285, 10, 63, 0, 'view Purchase', 'view-purchase', 'To view View journal  entry and  Chart of Accounts');
+        INSERT INTO user_permission VALUES(286, 10, 63, 0, 'view Accounts Reports', 'view-accounts-reports', 'To view View journal  entry and  Chart of Accounts');
+        INSERT INTO user_permission VALUES(287, 8, 65, 0, 'Create Roles', 'create-roles', 'To view View journal  entry and  Chart of Accounts');
+        INSERT INTO user_permission VALUES(288, 8, 65, 0, 'Edit Roles', 'edit-roles', 'To create-roles');
+        INSERT INTO user_permission VALUES(289, 8, 65, 0, 'Delete Roles', 'delete-roles', 'To Delete Roles');
+        INSERT INTO user_permission VALUES(290, 5, 54, 0, 'Cab Booking Cancel ', 'cab-booking-cancel', 'To Cab  Cancel Booking');
+        INSERT INTO user_permission VALUES(291, 5, 54, 0, 'Approve Cab Booking', 'approve-cab-booking', 'To Approve Hotel Booking');
+        INSERT INTO user_permission VALUES(292, 5, 53, 0, 'Cancel Hotel Booking', 'cancel-hotel-booking', 'To Cancel Hotel Booking');
+        INSERT INTO user_permission VALUES(293, 5, 53, 0, ' Duplicate Hotel Booking', '-duplicate-hotel-booking', 'To  Duplicate Hotel Booking');
+        INSERT INTO user_permission VALUES(294, 5, 57, 0, 'Edit Flight Booking', 'edit-flight-booking', 'To Edit Flight Booking');
+        INSERT INTO user_permission VALUES(295, 5, 57, 0, 'Cancel  Flight Booking', 'cancel-flight-booking', 'To Cancel  Flight Booking');
+        INSERT INTO user_permission VALUES(296, 5, 57, 0, 'Update Ticket Details ', 'update-ticket-details-', 'To Update Ticket Details ');
+        INSERT INTO user_permission VALUES(297, 5, 56, 0, 'Update Volvo Ticket Details ', 'update-volvo-ticket-details-', 'To Update volvo Ticket Details ');
+        INSERT INTO user_permission VALUES(298, 5, 56, 0, 'Update Volvo Ticket Details ', 'update-volvo-ticket-details-', 'To Update volvo Ticket Details ');
+        INSERT INTO user_permission VALUES(299, 5, 56, 0, 'Edit  Volvo Booking', 'edit-volvo-booking', 'To Edit  Volvo Booking');
+        INSERT INTO user_permission VALUES(300, 5, 56, 0, 'Cancel  Volvo Booking', 'cancel-volvo-booking', 'To Cancel Volvo Booking');
+        INSERT INTO user_permission VALUES(301, 5, 55, 0, 'Cancel  Train Booking', 'cancel-train-booking', 'To Cancel Train   Booking');
+        INSERT INTO user_permission VALUES(302, 5, 55, 0, 'Edit Train Booking', 'edit-train-booking', 'To Edit Train   Booking');
+        INSERT INTO user_permission VALUES(303, 5, 55, 0, 'Update  Train Booking Details', 'update-train-booking-details', 'To Update  Train Booking Details');
+        INSERT INTO user_permission VALUES(304, 3, 62, 0, 'Give Price For Itineraries', 'give-price-for-itineraries', 'To Give Price For Itineraries');
+        INSERT INTO user_permission VALUES(305, 1, 3, 0, 'View All User Pending Rate', 'view-all-user-pending-rate', 'To View All User Pending Rate ');
+        INSERT INTO user_permission VALUES(306, 1, 3, 0, 'View My  Pending Rate', 'view-my-pending-rate', 'To View My Pending Rate ');
+        INSERT INTO user_permission VALUES(308, 5, 54, 0, 'Update Cab Details', 'update-cab-details', 'To Update Cab Details');
+        INSERT INTO user_permission VALUES(309, 5, 53, 0, 'send hotel booking mail', 'send-hotel-booking-mail', 'To send hotel booking mail');
+        INSERT INTO user_permission VALUES(310, 10, 64, 0, 'View Pending Vouchers', 'view-pending-vouchers', 'To View Pending Vouchers');
+        INSERT INTO user_permission VALUES(311, 10, 64, 0, 'generate voucher', 'generate-voucher', 'To generate voucher');
+        INSERT INTO user_permission VALUES(312, 10, 64, 0, 'Send Voucher To Customer', 'send-voucher-to-customer', 'To Send Voucher To Customer');
+        INSERT INTO user_permission VALUES(313, 10, 63, 0, 'view Itineraries Payments', 'view-itineraries-payments', 'To view Itineraries Payments');
+        INSERT INTO user_permission VALUES(314, 3, 62, 0, 'Closed Itineraries', 'closed-itineraries', 'To closed-itineraries');
+        INSERT INTO user_permission VALUES(315, 1, 72, 0, 'View All User Approved Rate', 'view-all-user-approved-rate', 'To View All User Approved Rate');
+        INSERT INTO user_permission VALUES(316, 1, 72, 0, 'View My  Approved Rate', 'view-my-approved-rate', 'To View My Approved Rate');
+        INSERT INTO user_permission VALUES(317, 1, 4, 0, 'view All User Amendment Pending Rates', 'view-all-user-amendment-pending-rates', 'To view All User Amendment Pending Rates');
+        INSERT INTO user_permission VALUES(318, 1, 4, 0, 'view My Amendment Pending Rates', 'view-my-amendment-pending-rates', 'To view My  Amendment Pending Rates');
+        INSERT INTO user_permission VALUES(319, 1, 70, 0, 'Approved Amendment Pending Rates', 'approved-amendment-pending-rates', 'To Approved Amendment Pending Rates');
+        INSERT INTO user_permission VALUES(321, 1, 73, 0, 'View My Amendment Approved Rates', 'view-my-amendment-approved-rates', 'To view  Amendment Approved Rates');
+        INSERT INTO user_permission VALUES(322, 1, 73, 0, 'View All user  Amendment Approved Rates', 'view-all-user-amendment-approved-rates', 'To View All user  Amendment Approved Rates');
+        INSERT INTO user_permission VALUES(323, 1, 6, 0, 'leads of day for all user', 'leads-of-day-for-all-user', 'To leads of day for all user');
+        INSERT INTO user_permission VALUES(324, 1, 6, 0, 'my team leads of day ', 'my-team-leads-of-day-', 'To my team leads of day ');
+        INSERT INTO user_permission VALUES(325, 1, 7, 0, 'View My  followp of day', 'view-my-followp-of-day', 'To  View My  followp of day\r\n');
+        INSERT INTO user_permission VALUES(326, 1, 7, 0, 'View My Team  followp of day', 'view-my-team-followp-of-day', 'To  View My Team  followp of day');
+        INSERT INTO user_permission VALUES(327, 2, 71, 0, 'View  Customer Type', 'view-customer-type', 'To  View Customer Type');
+        INSERT INTO user_permission VALUES(328, 2, 71, 0, 'Add Customer Type', 'add-customer-type', 'To  Add  Customer Type');
+        INSERT INTO user_permission VALUES(329, 2, 71, 0, 'Edit Customer Type', 'edit-customer-type', 'To  Edit  Customer Type');
+        INSERT INTO user_permission VALUES(330, 2, 71, 0, 'Delete Customer Type', 'delete-customer-type', 'To  Delete Customer Type');
+        INSERT INTO user_permission VALUES(331, 3, 62, 0, 'View itineraries Total Profit And Loss', 'view-itineraries-total-profit-and-lose', 'To View itineraries Total Profit And Lose');
+        INSERT INTO user_permission VALUES(332, 10, 63, 0, 'Update Payments Schedules', 'update-payments-schedules', 'To Update Payments Schedules');
+        INSERT INTO user_permission VALUES(333, 8, 31, 0, 'View My Incentive', 'view-my-incentive', 'To View My Incentive');
+        INSERT INTO user_permission VALUES(334, 8, 31, 0, 'View All Users  Incentive', 'view-all-users-incentive', 'To View Users Incentive');
+        INSERT INTO user_permission VALUES(335, 8, 32, 0, 'View Targets', 'view-targets', 'To view View Targets');
+        INSERT INTO user_permission VALUES(336, 8, 32, 0, 'Edit Targets', 'edit-targets', 'To view Edit Targets');
+        INSERT INTO user_permission VALUES(337, 0, NULL, NULL, 'View All Book Cab\r\n', '', '');
+        INSERT INTO user_permission VALUES(338, 11, 68, NULL, 'view all notifications', 'view-all-notifications', 'To view-all-notifications');
+        INSERT INTO user_permission VALUES(339, 11, 70, NULL, 'view team notifications', 'view-team-notifications', 'To view-team-notifications');
+        INSERT INTO user_permission VALUES(340, 11, 71, NULL, 'view own notifications', 'view-own-notifications', 'To view-own-notifications');
+        INSERT INTO user_permission VALUES(341, 11, 69, NULL, 'view accounts notifications', 'view-accounts-notifications', 'To view-accounts-notifications');
+        INSERT INTO user_permission VALUES(342, 2, 60, 0, 'Booking confirmation alert', 'booking-confirmation-alert', 'To show booking alert after Booking is confirmation ');
+        INSERT INTO user_permission VALUES(343, 8, 29, 0, 'View Profile', 'view-profile', 'To view View Profile');
+        INSERT INTO user_permission VALUES(344, 8, 29, 0, 'It is admin', 'it-is-admin', 'Make as admin');
+        INSERT INTO user_permission VALUES(345, 1, 66, NULL, 'Total No OF User', 'total-no-of-user', 'To See Total No of user');
+        INSERT INTO user_permission VALUES(346, 1, 66, NULL, 'Total My customer', 'total-my-customer', 'To view My customer');
+        INSERT INTO user_permission VALUES(347, 8, 29, NULL, 'view Vendors', 'view-vendors', '');
+        ";
+        DB::statement($querysixtySix);
+
+
+
+        $querysixtySeven = "INSERT INTO user_permission_category VALUES(1, 'Dashboard', '#F26A6D');
+        INSERT INTO user_permission_category VALUES(2, 'Leads', '#FCC56E');
+        INSERT INTO user_permission_category VALUES(3, 'Itineraries', '#96BB7F');
+        INSERT INTO user_permission_category VALUES(4, 'Packages', '#44c9c7');
+        INSERT INTO user_permission_category VALUES(5, 'Booking', '#ff43a5');
+        INSERT INTO user_permission_category VALUES(6, 'Hotels', '#A52A2A');
+        INSERT INTO user_permission_category VALUES(7, 'Vehicles', '#00BFFF');
+        INSERT INTO user_permission_category VALUES(8, 'Users', '#FF1493');
+        INSERT INTO user_permission_category VALUES(9, 'Settings', '#7CFC00');
+        INSERT INTO user_permission_category VALUES(10, 'accounts', '#ff43a5');
+        INSERT INTO user_permission_category VALUES(11, 'Notifications', '#ff43a5');";
+        DB::statement($querysixtySeven);
+
+
+        $querysixtyEight = "INSERT INTO user_permission_sub_category VALUES(1, 1, 'All User Today\'s Status');
+        INSERT INTO user_permission_sub_category VALUES(2, 1, 'All User Month\'s Status');
+        INSERT INTO user_permission_sub_category VALUES(3, 1, 'Pending Rates');
+        INSERT INTO user_permission_sub_category VALUES(4, 1, 'Amendment Pending Rates');
+        INSERT INTO user_permission_sub_category VALUES(5, 1, ' Today\'s Reports');
+        INSERT INTO user_permission_sub_category VALUES(6, 1, 'Leads of The Day');
+        INSERT INTO user_permission_sub_category VALUES(7, 1, 'Follow Up\'s of The Day');
+        INSERT INTO user_permission_sub_category VALUES(15, 6, 'hotel category');
+        INSERT INTO user_permission_sub_category VALUES(16, 6, 'Room category');
+        INSERT INTO user_permission_sub_category VALUES(19, 6, 'Room Rates');
+        INSERT INTO user_permission_sub_category VALUES(20, 6, 'seasons');
+        INSERT INTO user_permission_sub_category VALUES(23, 6, 'meal plan');
+        INSERT INTO user_permission_sub_category VALUES(25, 7, 'Vehicles');
+        INSERT INTO user_permission_sub_category VALUES(26, 7, 'transporters');
+        INSERT INTO user_permission_sub_category VALUES(29, 8, 'users');
+        INSERT INTO user_permission_sub_category VALUES(30, 8, 'team leaders');
+        INSERT INTO user_permission_sub_category VALUES(31, 8, 'incentive');
+        INSERT INTO user_permission_sub_category VALUES(32, 8, 'Targets');
+        INSERT INTO user_permission_sub_category VALUES(37, 9, 'General settings');
+        INSERT INTO user_permission_sub_category VALUES(38, 9, 'Hompage Info');
+        INSERT INTO user_permission_sub_category VALUES(41, 9, 'office branches');
+        INSERT INTO user_permission_sub_category VALUES(42, 9, 'Holiday Terms');
+        INSERT INTO user_permission_sub_category VALUES(45, 9, 'Hotel Terms');
+        INSERT INTO user_permission_sub_category VALUES(46, 9, 'Cab Booking Terms');
+        INSERT INTO user_permission_sub_category VALUES(47, 9, ' Social API settings');
+        INSERT INTO user_permission_sub_category VALUES(48, 9, 'sms Setting');
+        INSERT INTO user_permission_sub_category VALUES(53, 5, 'Hotel Booking');
+        INSERT INTO user_permission_sub_category VALUES(54, 5, 'Cab  Booking');
+        INSERT INTO user_permission_sub_category VALUES(55, 5, 'Train Booking');
+        INSERT INTO user_permission_sub_category VALUES(56, 5, 'Volvo Booking');
+        INSERT INTO user_permission_sub_category VALUES(57, 5, 'Flight Booking');
+        INSERT INTO user_permission_sub_category VALUES(58, 4, 'Package ');
+        INSERT INTO user_permission_sub_category VALUES(59, 4, 'Package Category');
+        INSERT INTO user_permission_sub_category VALUES(60, 2, 'Raw Leads');
+        INSERT INTO user_permission_sub_category VALUES(61, 2, 'Query generator Leads');
+        INSERT INTO user_permission_sub_category VALUES(62, 3, 'Itineraries');
+        INSERT INTO user_permission_sub_category VALUES(63, 10, 'Accounts');
+        INSERT INTO user_permission_sub_category VALUES(64, 10, 'Vouchers');
+        INSERT INTO user_permission_sub_category VALUES(65, 8, 'Roles and Permissions');
+        INSERT INTO user_permission_sub_category VALUES(66, 1, ' Dashboard ');
+        INSERT INTO user_permission_sub_category VALUES(67, 6, 'Hotel');
+        INSERT INTO user_permission_sub_category VALUES(68, 11, 'All Notifications');
+        INSERT INTO user_permission_sub_category VALUES(69, 11, 'Accounts Notifications');
+        INSERT INTO user_permission_sub_category VALUES(70, 11, 'Team Notifications');
+        INSERT INTO user_permission_sub_category VALUES(71, 11, 'Own Notifications');
+        INSERT INTO user_permission_sub_category VALUES(72, 1, 'Approved Rate');
+        INSERT INTO user_permission_sub_category VALUES(73, 1, 'Amendment Approved Rates');
+        INSERT INTO user_permission_sub_category VALUES(74, 1, 'Own  Month\'s Status');
+        INSERT INTO user_permission_sub_category VALUES(75, 1, 'Own  Today\'s Status');";
+        DB::statement($querysixtyEight);
+
+
+        $querysixtyNine = "INSERT INTO user_role VALUES(99, 'Admin', '2022-09-14 16:49:02', 0, 'true');
+        INSERT INTO user_role VALUES(133, 'Manager', '2023-02-11 09:51:43', 1, 'true');
+        INSERT INTO user_role VALUES(134, 'Sale', '2023-02-11 09:52:21', 3, 'true');
+        INSERT INTO user_role VALUES(135, 'Service', '2023-02-11 09:53:14', 5, 'true');
+        INSERT INTO user_role VALUES(136, 'Account', '2023-02-11 09:53:50', 4, 'true');
+        INSERT INTO user_role VALUES(137, 'Team Leader', '2023-02-18 10:56:16', 2, 'true');";
+        DB::statement($querysixtyNine);
+
+
+        $querysixtyNine = "INSERT INTO user_role_old VALUES(1, 99, 'administrator', 'Admin full access of app.', '2018-09-27 17:52:05', '', 0, '');
+        INSERT INTO user_role_old VALUES(2, 98, 'manager', 'manager can add cost of itinerary and approve/reject itinerary. All things done by sales team is approved/declined by manager.', '2018-09-27 17:52:05', '', 0, '');
+        INSERT INTO user_role_old VALUES(3, 97, 'service team', 'service team for book hotel , cab and take payments from client', '2018-09-27 17:52:41', '', 0, '');
+        INSERT INTO user_role_old VALUES(4, 96, 'sales team', 'create itinerary , book itinerary and take followup of itinerary and leads.', '2018-09-27 17:52:41', '', 0, '');
+        INSERT INTO user_role_old VALUES(5, 95, 'Leads Team', 'is kind of marketing manager who can add leads agent. leads team member can reopen declined leads/itinerary and have all access of marketing user access.', '2018-09-27 17:53:13', '', 0, '');
+        INSERT INTO user_role_old VALUES(6, 94, 'Leads agent', 'add marketing user of specific area which assign by leads team(95)', '2018-09-27 17:53:13', '', 0, '');
+        INSERT INTO user_role_old VALUES(7, 93, 'accounts team', 'he will view only booked itineraries and update the price as he needs. Update installments', '2019-01-10 23:17:29', '', 0, '');
+        INSERT INTO user_role_old VALUES(11, NULL, 'Test Leads', NULL, '2022-09-13 19:11:46', NULL, 1, 'true');";
+        DB::statement($querysixtyNine);
+
+
+        $querySeventy = "ALTER TABLE ac_bank_cash_account_listing
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table ac_booking_reference_details
+      --
+      ALTER TABLE ac_booking_reference_details
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_cus_account_id (cus_account_id) USING BTREE;
+      
+      --
+      -- Indexes for table ac_customer_accounts
+      --
+      ALTER TABLE ac_customer_accounts
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table ac_invoices
+      --
+      ALTER TABLE ac_invoices
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table ac_online_transactions
+      --
+      ALTER TABLE ac_online_transactions
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table ac_payment_links
+      --
+      ALTER TABLE ac_payment_links
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table ac_receipts
+      --
+      ALTER TABLE ac_receipts
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table ac_vendor_accounts
+      --
+      ALTER TABLE ac_vendor_accounts
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table agent_targets
+      --
+      ALTER TABLE agent_targets
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table airports
+      --
+      ALTER TABLE airports
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table assign_user_area
+      --
+      ALTER TABLE assign_user_area
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table attendance
+      --
+      ALTER TABLE attendance
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table attraction
+      --
+      ALTER TABLE attraction
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table attractionname
+      --
+      ALTER TABLE attractionname
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table attraction_images
+      --
+      ALTER TABLE attraction_images
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table bankpayment_link
+      --
+      ALTER TABLE bankpayment_link
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table bank_details
+      --
+      ALTER TABLE bank_details
+        ADD PRIMARY KEY (bank_id);
+      
+      --
+      -- Indexes for table cab_booking
+      --
+      ALTER TABLE cab_booking
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_iti_id (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table callrecord
+      --
+      ALTER TABLE callrecord
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table cities
+      --
+      ALTER TABLE cities
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table client_messages
+      --
+      ALTER TABLE client_messages
+        ADD PRIMARY KEY (msg_id);
+      
+      --
+      -- Indexes for table client_reviews
+      --
+      ALTER TABLE client_reviews
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table client_view_status
+      --
+      ALTER TABLE client_view_status
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table comments
+      --
+      ALTER TABLE comments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table countries
+      --
+      ALTER TABLE countries
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table crm
+      --
+      ALTER TABLE crm
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table customers_inquery
+      --
+      ALTER TABLE customers_inquery
+        ADD PRIMARY KEY (customer_id);
+      
+      --
+      -- Indexes for table customer_followup
+      --
+      ALTER TABLE customer_followup
+        ADD PRIMARY KEY (id),
+        ADD KEY cf_cus_id_fk (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table customer_type
+      --
+      ALTER TABLE customer_type
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table discount
+      --
+      ALTER TABLE discount
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table flight_details
+      --
+      ALTER TABLE flight_details
+        ADD PRIMARY KEY (id_bef),
+        ADD KEY frk_flight_key (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table homepage_setting
+      --
+      ALTER TABLE homepage_setting
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hooney_moon_kit
+      --
+      ALTER TABLE hooney_moon_kit
+        ADD PRIMARY KEY (id),
+        ADD UNIQUE KEY id (id);
+      
+      --
+      -- Indexes for table hotels
+      --
+      ALTER TABLE hotels
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hotel_booking
+      --
+      ALTER TABLE hotel_booking
+        ADD PRIMARY KEY (id),
+        ADD KEY iti_id (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table hotel_categories
+      --
+      ALTER TABLE hotel_categories
+        ADD PRIMARY KEY (id),
+        ADD UNIQUE KEY star_id (star_id);
+      
+      --
+      -- Indexes for table hotel_category
+      --
+      ALTER TABLE hotel_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hotel_room_rates
+      --
+      ALTER TABLE hotel_room_rates
+        ADD PRIMARY KEY (htr_id),
+        ADD KEY frk_hotel_id (hotel_id) USING BTREE;
+      
+      --
+      -- Indexes for table hrr_auto_itinerary
+      --
+      ALTER TABLE hrr_auto_itinerary
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_cab_categories
+      --
+      ALTER TABLE hrr_cab_categories
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_cab_rate
+      --
+      ALTER TABLE hrr_cab_rate
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_cab_route
+      --
+      ALTER TABLE hrr_cab_route
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_extra_bed_cost
+      --
+      ALTER TABLE hrr_extra_bed_cost
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_hotel_incusion
+      --
+      ALTER TABLE hrr_hotel_incusion
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_inclusion_rate
+      --
+      ALTER TABLE hrr_inclusion_rate
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_iti_amendment_temp
+      --
+      ALTER TABLE hrr_iti_amendment_temp
+        ADD PRIMARY KEY (id_temp);
+      
+      --
+      -- Indexes for table hrr_iti_before_amendment
+      --
+      ALTER TABLE hrr_iti_before_amendment
+        ADD PRIMARY KEY (id_bef);
+      
+      --
+      -- Indexes for table hrr_meal_rate
+      --
+      ALTER TABLE hrr_meal_rate
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table hrr_room_base_rate
+      --
+      ALTER TABLE hrr_room_base_rate
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table image_template
+      --
+      ALTER TABLE image_template
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table itinerary
+      --
+      ALTER TABLE itinerary
+        ADD PRIMARY KEY (iti_id),
+        ADD KEY agent_ind (agent_id) USING BTREE,
+        ADD KEY frk_c_id (customer_id) USING BTREE,
+        ADD KEY is_amendmenr_index (is_amendment) USING BTREE,
+        ADD KEY iti_status_index (iti_status) USING BTREE,
+        ADD KEY iti_type (iti_type) USING BTREE,
+        ADD KEY parent_iti_id (parent_iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table itinerary_discount_price_data
+      --
+      ALTER TABLE itinerary_discount_price_data
+        ADD PRIMARY KEY (id),
+        ADD KEY iti_pay_dis_frk (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table itinerary_visiter_data
+      --
+      ALTER TABLE itinerary_visiter_data
+        ADD PRIMARY KEY (id),
+        ADD KEY frkvisiter_iti (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table ititaxname
+      --
+      ALTER TABLE ititaxname
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table iti_amendment_temp
+      --
+      ALTER TABLE iti_amendment_temp
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_am_iti_id (iti_id) USING BTREE,
+        ADD KEY frk_cus_id (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_before_amendment
+      --
+      ALTER TABLE iti_before_amendment
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_am_iti_id (iti_id) USING BTREE,
+        ADD KEY frk_cus_id (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_befor_flight_details
+      --
+      ALTER TABLE iti_befor_flight_details
+        ADD PRIMARY KEY (id_bef),
+        ADD KEY frk_flight_key (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_befor_train_details
+      --
+      ALTER TABLE iti_befor_train_details
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_train_iti_id (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_clients_docs
+      --
+      ALTER TABLE iti_clients_docs
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table iti_email_followup
+      --
+      ALTER TABLE iti_email_followup
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_iti_email_f (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_followup
+      --
+      ALTER TABLE iti_followup
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_follow_iti_id (iti_id) USING BTREE,
+        ADD KEY ind_follow_cus_id (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_package_category
+      --
+      ALTER TABLE iti_package_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table iti_payment_details
+      --
+      ALTER TABLE iti_payment_details
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_cus_pay (customer_id) USING BTREE,
+        ADD KEY frk_iti_pay (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_payment_transactions
+      --
+      ALTER TABLE iti_payment_transactions
+        ADD PRIMARY KEY (tra_id),
+        ADD KEY frk_tra_iti_key (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_schedule_payment
+      --
+      ALTER TABLE iti_schedule_payment
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table iti_temp_flight_details
+      --
+      ALTER TABLE iti_temp_flight_details
+        ADD PRIMARY KEY (id_temp),
+        ADD KEY frk_flight_key (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_temp_train_details
+      --
+      ALTER TABLE iti_temp_train_details
+        ADD PRIMARY KEY (id_temp),
+        ADD KEY frk_train_iti_id (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table iti_vouchers_status
+      --
+      ALTER TABLE iti_vouchers_status
+        ADD PRIMARY KEY (id),
+        ADD KEY iti_voucher_frk (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table it_instant_call_details
+      --
+      ALTER TABLE it_instant_call_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table it_queries
+      --
+      ALTER TABLE it_queries
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table leads
+      --
+      ALTER TABLE leads
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table marketing
+      --
+      ALTER TABLE marketing
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table marketing_category
+      --
+      ALTER TABLE marketing_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table marketing_customer_followup
+      --
+      ALTER TABLE marketing_customer_followup
+        ADD PRIMARY KEY (id),
+        ADD KEY cf_cus_id_fk (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table meal_plan
+      --
+      ALTER TABLE meal_plan
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table message
+      --
+      ALTER TABLE message
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table msg_log
+      --
+      ALTER TABLE msg_log
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table newsletters
+      --
+      ALTER TABLE newsletters
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table newsletter_templates
+      --
+      ALTER TABLE newsletter_templates
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table new_setting
+      --
+      ALTER TABLE new_setting
+        ADD PRIMARY KEY (id),
+        ADD UNIQUE KEY meta_key (meta_key);
+      
+      --
+      -- Indexes for table notifications
+      --
+      ALTER TABLE notifications
+        ADD PRIMARY KEY (id),
+        ADD KEY index_customerID (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table offer
+      --
+      ALTER TABLE offer
+        ADD PRIMARY KEY (offerid),
+        ADD UNIQUE KEY offerid (offerid);
+      
+      --
+      -- Indexes for table offers
+      --
+      ALTER TABLE offers
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table office_branches
+      --
+      ALTER TABLE office_branches
+        ADD PRIMARY KEY (branch_id);
+      
+      --
+      -- Indexes for table other_venodrs
+      --
+      ALTER TABLE other_venodrs
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table otp_expiry
+      --
+      ALTER TABLE otp_expiry
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table packages
+      --
+      ALTER TABLE packages
+        ADD PRIMARY KEY (package_id);
+      
+      --
+      -- Indexes for table package_category
+      --
+      ALTER TABLE package_category
+        ADD PRIMARY KEY (p_cat_id);
+      
+      --
+      -- Indexes for table payment_refund
+      --
+      ALTER TABLE payment_refund
+        ADD PRIMARY KEY (tra_id),
+        ADD KEY frk_tra_iti_key (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table pdf_setting
+      --
+      ALTER TABLE pdf_setting
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table pdf_static_iamge
+      --
+      ALTER TABLE pdf_static_iamge
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table permission
+      --
+      ALTER TABLE permission
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table permission_category
+      --
+      ALTER TABLE permission_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table permission_sub_sub_category
+      --
+      ALTER TABLE permission_sub_sub_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table profi_loss_table
+      --
+      ALTER TABLE profi_loss_table
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table promotion_details
+      --
+      ALTER TABLE promotion_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table promotion_pages
+      --
+      ALTER TABLE promotion_pages
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table purchase_leads
+      --
+      ALTER TABLE purchase_leads
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table qrcodeimg
+      --
+      ALTER TABLE qrcodeimg
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table reference_customers
+      --
+      ALTER TABLE reference_customers
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table reference_customer_followup
+      --
+      ALTER TABLE reference_customer_followup
+        ADD PRIMARY KEY (id),
+        ADD KEY cf_cus_id_fk (customer_id) USING BTREE;
+      
+      --
+      -- Indexes for table role_has_permission
+      --
+      ALTER TABLE role_has_permission
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table room_category
+      --
+      ALTER TABLE room_category
+        ADD PRIMARY KEY (room_cat_id);
+      
+      --
+      -- Indexes for table room_rates
+      --
+      ALTER TABLE room_rates
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table season_type
+      --
+      ALTER TABLE season_type
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table sentoffers
+      --
+      ALTER TABLE sentoffers
+        ADD PRIMARY KEY (id),
+        ADD UNIQUE KEY id (id);
+      
+      --
+      -- Indexes for table settings
+      --
+      ALTER TABLE settings
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table sliders
+      --
+      ALTER TABLE sliders
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table sms_settings
+      --
+      ALTER TABLE sms_settings
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table social_api
+      --
+      ALTER TABLE social_api
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table states
+      --
+      ALTER TABLE states
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_accounts
+      --
+      ALTER TABLE tblacc_accounts
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_account_history
+      --
+      ALTER TABLE tblacc_account_history
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_account_type_details
+      --
+      ALTER TABLE tblacc_account_type_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_banking_rules
+      --
+      ALTER TABLE tblacc_banking_rules
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_banking_rule_details
+      --
+      ALTER TABLE tblacc_banking_rule_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_budgets
+      --
+      ALTER TABLE tblacc_budgets
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_budget_details
+      --
+      ALTER TABLE tblacc_budget_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_expense_category_mappings
+      --
+      ALTER TABLE tblacc_expense_category_mappings
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_item_automatics
+      --
+      ALTER TABLE tblacc_item_automatics
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_journal_entries
+      --
+      ALTER TABLE tblacc_journal_entries
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_matched_transactions
+      --
+      ALTER TABLE tblacc_matched_transactions
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_payment_mode_mappings
+      --
+      ALTER TABLE tblacc_payment_mode_mappings
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_plaid_transaction_logs
+      --
+      ALTER TABLE tblacc_plaid_transaction_logs
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_reconciles
+      --
+      ALTER TABLE tblacc_reconciles
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_tax_mappings
+      --
+      ALTER TABLE tblacc_tax_mappings
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_transaction_bankings
+      --
+      ALTER TABLE tblacc_transaction_bankings
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblacc_transfers
+      --
+      ALTER TABLE tblacc_transfers
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblactivity_log
+      --
+      ALTER TABLE tblactivity_log
+        ADD PRIMARY KEY (id),
+        ADD KEY staffid (staffid);
+      
+      --
+      -- Indexes for table tbladminclientreminders
+      --
+      ALTER TABLE tbladminclientreminders
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbladvancetovendor
+      --
+      ALTER TABLE tbladvancetovendor
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblannouncements
+      --
+      ALTER TABLE tblannouncements
+        ADD PRIMARY KEY (announcementid);
+      
+      --
+      -- Indexes for table tblclients
+      --
+      ALTER TABLE tblclients
+        ADD PRIMARY KEY (userid),
+        ADD KEY country (country),
+        ADD KEY leadid (leadid),
+        ADD KEY company (company),
+        ADD KEY active (active);
+      
+      --
+      -- Indexes for table tblconsents
+      --
+      ALTER TABLE tblconsents
+        ADD PRIMARY KEY (id),
+        ADD KEY purpose_id (purpose_id),
+        ADD KEY contact_id (contact_id),
+        ADD KEY lead_id (lead_id);
+      
+      --
+      -- Indexes for table tblconsent_purposes
+      --
+      ALTER TABLE tblconsent_purposes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcontacts
+      --
+      ALTER TABLE tblcontacts
+        ADD PRIMARY KEY (id),
+        ADD KEY userid (userid),
+        ADD KEY firstname (firstname),
+        ADD KEY lastname (lastname),
+        ADD KEY email (email),
+        ADD KEY is_primary (is_primary);
+      
+      --
+      -- Indexes for table tblcontact_permissions
+      --
+      ALTER TABLE tblcontact_permissions
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcontractrenewals
+      --
+      ALTER TABLE tblcontractrenewals
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcontracts
+      --
+      ALTER TABLE tblcontracts
+        ADD PRIMARY KEY (id),
+        ADD KEY client (client),
+        ADD KEY contract_type (contract_type);
+      
+      --
+      -- Indexes for table tblcontracts_types
+      --
+      ALTER TABLE tblcontracts_types
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcontracttypes
+      --
+      ALTER TABLE tblcontracttypes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcontract_comments
+      --
+      ALTER TABLE tblcontract_comments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcontract_renewals
+      --
+      ALTER TABLE tblcontract_renewals
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcountries
+      --
+      ALTER TABLE tblcountries
+        ADD PRIMARY KEY (country_id);
+      
+      --
+      -- Indexes for table tblcreditnotes
+      --
+      ALTER TABLE tblcreditnotes
+        ADD PRIMARY KEY (id),
+        ADD KEY currency (currency),
+        ADD KEY clientid (clientid),
+        ADD KEY project_id (project_id);
+      
+      --
+      -- Indexes for table tblcreditnote_refunds
+      --
+      ALTER TABLE tblcreditnote_refunds
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcredits
+      --
+      ALTER TABLE tblcredits
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcurrencies
+      --
+      ALTER TABLE tblcurrencies
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcurrency_rates
+      --
+      ALTER TABLE tblcurrency_rates
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcurrency_rate_logs
+      --
+      ALTER TABLE tblcurrency_rate_logs
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcustomers_groups
+      --
+      ALTER TABLE tblcustomers_groups
+        ADD PRIMARY KEY (id),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tblcustomer_admins
+      --
+      ALTER TABLE tblcustomer_admins
+        ADD KEY customer_id (customer_id),
+        ADD KEY staff_id (staff_id);
+      
+      --
+      -- Indexes for table tblcustomer_groups
+      --
+      ALTER TABLE tblcustomer_groups
+        ADD PRIMARY KEY (id),
+        ADD KEY groupid (groupid),
+        ADD KEY customer_id (customer_id);
+      
+      --
+      -- Indexes for table tblcustomfields
+      --
+      ALTER TABLE tblcustomfields
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblcustomfieldsvalues
+      --
+      ALTER TABLE tblcustomfieldsvalues
+        ADD PRIMARY KEY (id),
+        ADD KEY relid (relid),
+        ADD KEY fieldto (fieldto),
+        ADD KEY fieldid (fieldid);
+      
+      --
+      -- Indexes for table tbldepartments
+      --
+      ALTER TABLE tbldepartments
+        ADD PRIMARY KEY (departmentid),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tbldismissed_announcements
+      --
+      ALTER TABLE tbldismissed_announcements
+        ADD PRIMARY KEY (dismissedannouncementid),
+        ADD KEY announcementid (announcementid),
+        ADD KEY staff (staff),
+        ADD KEY userid (userid);
+      
+      --
+      -- Indexes for table tblemailtemplates
+      --
+      ALTER TABLE tblemailtemplates
+        ADD PRIMARY KEY (emailtemplateid);
+      
+      --
+      -- Indexes for table tblestimateactivity
+      --
+      ALTER TABLE tblestimateactivity
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblestimateitems
+      --
+      ALTER TABLE tblestimateitems
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblestimates
+      --
+      ALTER TABLE tblestimates
+        ADD PRIMARY KEY (id),
+        ADD KEY clientid (clientid),
+        ADD KEY currency (currency),
+        ADD KEY project_id (project_id),
+        ADD KEY sale_agent (sale_agent),
+        ADD KEY status (status);
+      
+      --
+      -- Indexes for table tblestimate_requests
+      --
+      ALTER TABLE tblestimate_requests
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblestimate_request_forms
+      --
+      ALTER TABLE tblestimate_request_forms
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblestimate_request_status
+      --
+      ALTER TABLE tblestimate_request_status
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblevents
+      --
+      ALTER TABLE tblevents
+        ADD PRIMARY KEY (eventid);
+      
+      --
+      -- Indexes for table tblexpenses
+      --
+      ALTER TABLE tblexpenses
+        ADD PRIMARY KEY (id),
+        ADD KEY clientid (clientid),
+        ADD KEY project_id (project_id),
+        ADD KEY category (category),
+        ADD KEY currency (currency);
+      
+      --
+      -- Indexes for table tblexpensescategories
+      --
+      ALTER TABLE tblexpensescategories
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblexpenses_categories
+      --
+      ALTER TABLE tblexpenses_categories
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblfiles
+      --
+      ALTER TABLE tblfiles
+        ADD PRIMARY KEY (id),
+        ADD KEY rel_id (rel_id),
+        ADD KEY rel_type (rel_type);
+      
+      --
+      -- Indexes for table tblform_questions
+      --
+      ALTER TABLE tblform_questions
+        ADD PRIMARY KEY (questionid);
+      
+      --
+      -- Indexes for table tblform_question_box
+      --
+      ALTER TABLE tblform_question_box
+        ADD PRIMARY KEY (boxid);
+      
+      --
+      -- Indexes for table tblform_question_box_description
+      --
+      ALTER TABLE tblform_question_box_description
+        ADD PRIMARY KEY (questionboxdescriptionid);
+      
+      --
+      -- Indexes for table tblform_results
+      --
+      ALTER TABLE tblform_results
+        ADD PRIMARY KEY (resultid);
+      
+      --
+      -- Indexes for table tblgdpr_requests
+      --
+      ALTER TABLE tblgdpr_requests
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblgoals
+      --
+      ALTER TABLE tblgoals
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblinvoiceattachments
+      --
+      ALTER TABLE tblinvoiceattachments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblinvoicepaymentrecords
+      --
+      ALTER TABLE tblinvoicepaymentrecords
+        ADD PRIMARY KEY (id),
+        ADD KEY invoiceid (invoiceid),
+        ADD KEY paymentmethod (paymentmethod);
+      
+      --
+      -- Indexes for table tblinvoices
+      --
+      ALTER TABLE tblinvoices
+        ADD PRIMARY KEY (id),
+        ADD KEY currency (currency),
+        ADD KEY clientid (clientid),
+        ADD KEY project_id (project_id),
+        ADD KEY sale_agent (sale_agent),
+        ADD KEY total (total),
+        ADD KEY status (status);
+      
+      --
+      -- Indexes for table tblitemable
+      --
+      ALTER TABLE tblitemable
+        ADD PRIMARY KEY (id),
+        ADD KEY rel_id (rel_id),
+        ADD KEY rel_type (rel_type),
+        ADD KEY qty (qty),
+        ADD KEY rate (rate);
+      
+      --
+      -- Indexes for table tblitems
+      --
+      ALTER TABLE tblitems
+        ADD PRIMARY KEY (id),
+        ADD KEY tax (tax),
+        ADD KEY tax2 (tax2),
+        ADD KEY group_id (group_id);
+      
+      --
+      -- Indexes for table tblitems_groups
+      --
+      ALTER TABLE tblitems_groups
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblitems_of_vendor
+      --
+      ALTER TABLE tblitems_of_vendor
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblitem_tax
+      --
+      ALTER TABLE tblitem_tax
+        ADD PRIMARY KEY (id),
+        ADD KEY itemid (itemid),
+        ADD KEY rel_id (rel_id);
+      
+      --
+      -- Indexes for table tblknowedge_base_article_feedback
+      --
+      ALTER TABLE tblknowedge_base_article_feedback
+        ADD PRIMARY KEY (articleanswerid);
+      
+      --
+      -- Indexes for table tblknowledge_base
+      --
+      ALTER TABLE tblknowledge_base
+        ADD PRIMARY KEY (articleid);
+      
+      --
+      -- Indexes for table tblknowledge_base_groups
+      --
+      ALTER TABLE tblknowledge_base_groups
+        ADD PRIMARY KEY (groupid);
+      
+      --
+      -- Indexes for table tblleadattachments
+      --
+      ALTER TABLE tblleadattachments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblleads
+      --
+      ALTER TABLE tblleads
+        ADD PRIMARY KEY (id),
+        ADD KEY name (name),
+        ADD KEY company (company),
+        ADD KEY email (email),
+        ADD KEY assigned (assigned),
+        ADD KEY status (status),
+        ADD KEY source (source),
+        ADD KEY lastcontact (lastcontact),
+        ADD KEY dateadded (dateadded),
+        ADD KEY leadorder (leadorder),
+        ADD KEY from_form_id (from_form_id);
+      
+      --
+      -- Indexes for table tblleads_email_integration
+      --
+      ALTER TABLE tblleads_email_integration
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblleads_sources
+      --
+      ALTER TABLE tblleads_sources
+        ADD PRIMARY KEY (id),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tblleads_status
+      --
+      ALTER TABLE tblleads_status
+        ADD PRIMARY KEY (id),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tbllead_activity_log
+      --
+      ALTER TABLE tbllead_activity_log
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbllead_integration_emails
+      --
+      ALTER TABLE tbllead_integration_emails
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblmail_queue
+      --
+      ALTER TABLE tblmail_queue
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblmilestones
+      --
+      ALTER TABLE tblmilestones
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblmodules
+      --
+      ALTER TABLE tblmodules
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblnewsfeed_comment_likes
+      --
+      ALTER TABLE tblnewsfeed_comment_likes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblnewsfeed_posts
+      --
+      ALTER TABLE tblnewsfeed_posts
+        ADD PRIMARY KEY (postid);
+      
+      --
+      -- Indexes for table tblnewsfeed_post_comments
+      --
+      ALTER TABLE tblnewsfeed_post_comments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblnewsfeed_post_likes
+      --
+      ALTER TABLE tblnewsfeed_post_likes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblnotes
+      --
+      ALTER TABLE tblnotes
+        ADD PRIMARY KEY (id),
+        ADD KEY rel_id (rel_id),
+        ADD KEY rel_type (rel_type);
+      
+      --
+      -- Indexes for table tblnotifications
+      --
+      ALTER TABLE tblnotifications
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbloptions
+      --
+      ALTER TABLE tbloptions
+        ADD PRIMARY KEY (id),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tblpayment
+      --
+      ALTER TABLE tblpayment
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpayment_modes
+      --
+      ALTER TABLE tblpayment_modes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpinned_projects
+      --
+      ALTER TABLE tblpinned_projects
+        ADD PRIMARY KEY (id),
+        ADD KEY project_id (project_id);
+      
+      --
+      -- Indexes for table tblprojectdiscussioncomments
+      --
+      ALTER TABLE tblprojectdiscussioncomments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblprojectdiscussions
+      --
+      ALTER TABLE tblprojectdiscussions
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblprojects
+      --
+      ALTER TABLE tblprojects
+        ADD PRIMARY KEY (id),
+        ADD KEY clientid (clientid),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tblproject_activity
+      --
+      ALTER TABLE tblproject_activity
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblproject_files
+      --
+      ALTER TABLE tblproject_files
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblproject_members
+      --
+      ALTER TABLE tblproject_members
+        ADD PRIMARY KEY (id),
+        ADD KEY project_id (project_id),
+        ADD KEY staff_id (staff_id);
+      
+      --
+      -- Indexes for table tblproject_notes
+      --
+      ALTER TABLE tblproject_notes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblproject_settings
+      --
+      ALTER TABLE tblproject_settings
+        ADD PRIMARY KEY (id),
+        ADD KEY project_id (project_id);
+      
+      --
+      -- Indexes for table tblproposals
+      --
+      ALTER TABLE tblproposals
+        ADD PRIMARY KEY (id),
+        ADD KEY status (status);
+      
+      --
+      -- Indexes for table tblproposal_comments
+      --
+      ALTER TABLE tblproposal_comments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpurchase_option
+      --
+      ALTER TABLE tblpurchase_option
+        ADD PRIMARY KEY (option_id);
+      
+      --
+      -- Indexes for table tblpur_activity_log
+      --
+      ALTER TABLE tblpur_activity_log
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_approval_details
+      --
+      ALTER TABLE tblpur_approval_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_approval_setting
+      --
+      ALTER TABLE tblpur_approval_setting
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_comments
+      --
+      ALTER TABLE tblpur_comments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_contacts
+      --
+      ALTER TABLE tblpur_contacts
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_contracts
+      --
+      ALTER TABLE tblpur_contracts
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_debits
+      --
+      ALTER TABLE tblpur_debits
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_debits_refunds
+      --
+      ALTER TABLE tblpur_debits_refunds
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_debit_notes
+      --
+      ALTER TABLE tblpur_debit_notes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_estimates
+      --
+      ALTER TABLE tblpur_estimates
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_estimate_detail
+      --
+      ALTER TABLE tblpur_estimate_detail
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_invoices
+      --
+      ALTER TABLE tblpur_invoices
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_invoice_details
+      --
+      ALTER TABLE tblpur_invoice_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_invoice_payment
+      --
+      ALTER TABLE tblpur_invoice_payment
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_orders
+      --
+      ALTER TABLE tblpur_orders
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_order_detail
+      --
+      ALTER TABLE tblpur_order_detail
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_order_payment
+      --
+      ALTER TABLE tblpur_order_payment
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_request
+      --
+      ALTER TABLE tblpur_request
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_request_detail
+      --
+      ALTER TABLE tblpur_request_detail
+        ADD PRIMARY KEY (prd_id);
+      
+      --
+      -- Indexes for table tblpur_unit
+      --
+      ALTER TABLE tblpur_unit
+        ADD PRIMARY KEY (unit_id);
+      
+      --
+      -- Indexes for table tblpur_vendor
+      --
+      ALTER TABLE tblpur_vendor
+        ADD PRIMARY KEY (userid);
+      
+      --
+      -- Indexes for table tblpur_vendor_cate
+      --
+      ALTER TABLE tblpur_vendor_cate
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblpur_vendor_items
+      --
+      ALTER TABLE tblpur_vendor_items
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblrelated_items
+      --
+      ALTER TABLE tblrelated_items
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblreminders
+      --
+      ALTER TABLE tblreminders
+        ADD PRIMARY KEY (id),
+        ADD KEY rel_id (rel_id),
+        ADD KEY rel_type (rel_type),
+        ADD KEY staff (staff);
+      
+      --
+      -- Indexes for table tblroles
+      --
+      ALTER TABLE tblroles
+        ADD PRIMARY KEY (roleid);
+      
+      --
+      -- Indexes for table tblsales_activity
+      --
+      ALTER TABLE tblsales_activity
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblscheduled_emails
+      --
+      ALTER TABLE tblscheduled_emails
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblservices
+      --
+      ALTER TABLE tblservices
+        ADD PRIMARY KEY (serviceid);
+      
+      --
+      -- Indexes for table tblsessions
+      --
+      ALTER TABLE tblsessions
+        ADD PRIMARY KEY (id),
+        ADD KEY ci_sessions_timestamp (timestamp);
+      
+      --
+      -- Indexes for table tblspam_filters
+      --
+      ALTER TABLE tblspam_filters
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblstaff
+      --
+      ALTER TABLE tblstaff
+        ADD PRIMARY KEY (staffid),
+        ADD KEY firstname (firstname),
+        ADD KEY lastname (lastname);
+      
+      --
+      -- Indexes for table tblstafftasksattachments
+      --
+      ALTER TABLE tblstafftasksattachments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblstaff_departments
+      --
+      ALTER TABLE tblstaff_departments
+        ADD PRIMARY KEY (staffdepartmentid);
+      
+      --
+      -- Indexes for table tblsubscriptions
+      --
+      ALTER TABLE tblsubscriptions
+        ADD PRIMARY KEY (id),
+        ADD KEY clientid (clientid),
+        ADD KEY currency (currency),
+        ADD KEY tax_id (tax_id);
+      
+      --
+      -- Indexes for table tbltaggables
+      --
+      ALTER TABLE tbltaggables
+        ADD KEY rel_id (rel_id),
+        ADD KEY rel_type (rel_type),
+        ADD KEY tag_id (tag_id);
+      
+      --
+      -- Indexes for table tbltags
+      --
+      ALTER TABLE tbltags
+        ADD PRIMARY KEY (id),
+        ADD KEY name (name);
+      
+      --
+      -- Indexes for table tbltasks
+      --
+      ALTER TABLE tbltasks
+        ADD PRIMARY KEY (id),
+        ADD KEY rel_id (rel_id),
+        ADD KEY rel_type (rel_type),
+        ADD KEY milestone (milestone),
+        ADD KEY kanban_order (kanban_order),
+        ADD KEY status (status);
+      
+      --
+      -- Indexes for table tbltaskstimers
+      --
+      ALTER TABLE tbltaskstimers
+        ADD PRIMARY KEY (id),
+        ADD KEY task_id (task_id),
+        ADD KEY staff_id (staff_id);
+      
+      --
+      -- Indexes for table tbltasks_checklist_templates
+      --
+      ALTER TABLE tbltasks_checklist_templates
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltask_assigned
+      --
+      ALTER TABLE tbltask_assigned
+        ADD PRIMARY KEY (id),
+        ADD KEY taskid (taskid),
+        ADD KEY staffid (staffid);
+      
+      --
+      -- Indexes for table tbltask_checklist_items
+      --
+      ALTER TABLE tbltask_checklist_items
+        ADD PRIMARY KEY (id),
+        ADD KEY taskid (taskid);
+      
+      --
+      -- Indexes for table tbltask_comments
+      --
+      ALTER TABLE tbltask_comments
+        ADD PRIMARY KEY (id),
+        ADD KEY file_id (file_id),
+        ADD KEY taskid (taskid);
+      
+      --
+      -- Indexes for table tbltask_followers
+      --
+      ALTER TABLE tbltask_followers
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltaxes
+      --
+      ALTER TABLE tbltaxes
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltemplates
+      --
+      ALTER TABLE tbltemplates
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltickets
+      --
+      ALTER TABLE tbltickets
+        ADD PRIMARY KEY (ticketid),
+        ADD KEY service (service),
+        ADD KEY department (department),
+        ADD KEY status (status),
+        ADD KEY userid (userid),
+        ADD KEY priority (priority),
+        ADD KEY project_id (project_id),
+        ADD KEY contactid (contactid);
+      
+      --
+      -- Indexes for table tbltickets_pipe_log
+      --
+      ALTER TABLE tbltickets_pipe_log
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltickets_predefined_replies
+      --
+      ALTER TABLE tbltickets_predefined_replies
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltickets_priorities
+      --
+      ALTER TABLE tbltickets_priorities
+        ADD PRIMARY KEY (priorityid);
+      
+      --
+      -- Indexes for table tbltickets_status
+      --
+      ALTER TABLE tbltickets_status
+        ADD PRIMARY KEY (ticketstatusid);
+      
+      --
+      -- Indexes for table tblticket_attachments
+      --
+      ALTER TABLE tblticket_attachments
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblticket_replies
+      --
+      ALTER TABLE tblticket_replies
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltodos
+      --
+      ALTER TABLE tbltodos
+        ADD PRIMARY KEY (todoid);
+      
+      --
+      -- Indexes for table tbltracked_mails
+      --
+      ALTER TABLE tbltracked_mails
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbltwocheckout_log
+      --
+      ALTER TABLE tbltwocheckout_log
+        ADD PRIMARY KEY (id),
+        ADD KEY invoice_id (invoice_id);
+      
+      --
+      -- Indexes for table tbluser_meta
+      --
+      ALTER TABLE tbluser_meta
+        ADD PRIMARY KEY (umeta_id);
+      
+      --
+      -- Indexes for table tblvault
+      --
+      ALTER TABLE tblvault
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblviews_tracking
+      --
+      ALTER TABLE tblviews_tracking
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblware_unit_type
+      --
+      ALTER TABLE tblware_unit_type
+        ADD PRIMARY KEY (unit_type_id);
+      
+      --
+      -- Indexes for table tblweb_to_lead
+      --
+      ALTER TABLE tblweb_to_lead
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblwh_goods_delivery_activity_log
+      --
+      ALTER TABLE tblwh_goods_delivery_activity_log
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblwh_order_returns
+      --
+      ALTER TABLE tblwh_order_returns
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblwh_order_returns_refunds
+      --
+      ALTER TABLE tblwh_order_returns_refunds
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblwh_order_return_details
+      --
+      ALTER TABLE tblwh_order_return_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tblwh_sub_group
+      --
+      ALTER TABLE tblwh_sub_group
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table tbl_get_account_type_details
+      --
+      ALTER TABLE tbl_get_account_type_details
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table teamleaders
+      --
+      ALTER TABLE teamleaders
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table terms
+      --
+      ALTER TABLE terms
+        ADD PRIMARY KEY (term_id);
+      
+      --
+      -- Indexes for table text_template
+      --
+      ALTER TABLE text_template
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table thought_of_day
+      --
+      ALTER TABLE thought_of_day
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table train_details
+      --
+      ALTER TABLE train_details
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_train_iti_id (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table transporters
+      --
+      ALTER TABLE transporters
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table travel_booking
+      --
+      ALTER TABLE travel_booking
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_vtf_iti_id (iti_id) USING BTREE;
+      
+      --
+      -- Indexes for table users
+      --
+      ALTER TABLE users
+        ADD PRIMARY KEY (user_id),
+        ADD UNIQUE KEY email (email),
+        ADD UNIQUE KEY user_name (user_name);
+      
+      --
+      -- Indexes for table user_dashboard
+      --
+      ALTER TABLE user_dashboard
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table user_permission
+      --
+      ALTER TABLE user_permission
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table user_permission_category
+      --
+      ALTER TABLE user_permission_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table user_permission_sub_category
+      --
+      ALTER TABLE user_permission_sub_category
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table user_role
+      --
+      ALTER TABLE user_role
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table user_role_old
+      --
+      ALTER TABLE user_role_old
+        ADD PRIMARY KEY (id),
+        ADD UNIQUE KEY role_id (role_id);
+      
+      --
+      -- Indexes for table vehicles
+      --
+      ALTER TABLE vehicles
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table vehicles_rates_by_tour
+      --
+      ALTER TABLE vehicles_rates_by_tour
+        ADD PRIMARY KEY (id),
+        ADD KEY frk_key_vid (vehicle_id) USING BTREE;
+      
+      --
+      -- Indexes for table vehicle_package_list
+      --
+      ALTER TABLE vehicle_package_list
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table vouchers
+      --
+      ALTER TABLE vouchers
+        ADD PRIMARY KEY (voucher_id);
+      
+      --
+      -- Indexes for table vtf_booking_docs
+      --
+      ALTER TABLE vtf_booking_docs
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- Indexes for table youtube_videos
+      --
+      ALTER TABLE youtube_videos
+        ADD PRIMARY KEY (id);
+      
+      --
+      -- AUTO_INCREMENT for dumped tables
+      --
+      
+      --
+      -- AUTO_INCREMENT for table ac_bank_cash_account_listing
+      --
+      ALTER TABLE ac_bank_cash_account_listing
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_booking_reference_details
+      --
+      ALTER TABLE ac_booking_reference_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_customer_accounts
+      --
+      ALTER TABLE ac_customer_accounts
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_invoices
+      --
+      ALTER TABLE ac_invoices
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_online_transactions
+      --
+      ALTER TABLE ac_online_transactions
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_payment_links
+      --
+      ALTER TABLE ac_payment_links
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_receipts
+      --
+      ALTER TABLE ac_receipts
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ac_vendor_accounts
+      --
+      ALTER TABLE ac_vendor_accounts
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table agent_targets
+      --
+      ALTER TABLE agent_targets
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table airports
+      --
+      ALTER TABLE airports
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4724;
+      
+      --
+      -- AUTO_INCREMENT for table assign_user_area
+      --
+      ALTER TABLE assign_user_area
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table attendance
+      --
+      ALTER TABLE attendance
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table attraction
+      --
+      ALTER TABLE attraction
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table attractionname
+      --
+      ALTER TABLE attractionname
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table attraction_images
+      --
+      ALTER TABLE attraction_images
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table bankpayment_link
+      --
+      ALTER TABLE bankpayment_link
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table bank_details
+      --
+      ALTER TABLE bank_details
+        MODIFY bank_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table cab_booking
+      --
+      ALTER TABLE cab_booking
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table callrecord
+      --
+      ALTER TABLE callrecord
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table cities
+      --
+      ALTER TABLE cities
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48341;
+      
+      --
+      -- AUTO_INCREMENT for table client_messages
+      --
+      ALTER TABLE client_messages
+        MODIFY msg_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table client_reviews
+      --
+      ALTER TABLE client_reviews
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table client_view_status
+      --
+      ALTER TABLE client_view_status
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table comments
+      --
+      ALTER TABLE comments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table countries
+      --
+      ALTER TABLE countries
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
+      
+      --
+      -- AUTO_INCREMENT for table customers_inquery
+      --
+      ALTER TABLE customers_inquery
+        MODIFY customer_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table customer_followup
+      --
+      ALTER TABLE customer_followup
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table customer_type
+      --
+      ALTER TABLE customer_type
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+      
+      --
+      -- AUTO_INCREMENT for table discount
+      --
+      ALTER TABLE discount
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table flight_details
+      --
+      ALTER TABLE flight_details
+        MODIFY id_bef int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table homepage_setting
+      --
+      ALTER TABLE homepage_setting
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table hooney_moon_kit
+      --
+      ALTER TABLE hooney_moon_kit
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hotels
+      --
+      ALTER TABLE hotels
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hotel_booking
+      --
+      ALTER TABLE hotel_booking
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hotel_categories
+      --
+      ALTER TABLE hotel_categories
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+      
+      --
+      -- AUTO_INCREMENT for table hotel_category
+      --
+      ALTER TABLE hotel_category
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+      
+      --
+      -- AUTO_INCREMENT for table hotel_room_rates
+      --
+      ALTER TABLE hotel_room_rates
+        MODIFY htr_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_auto_itinerary
+      --
+      ALTER TABLE hrr_auto_itinerary
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_cab_categories
+      --
+      ALTER TABLE hrr_cab_categories
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_cab_rate
+      --
+      ALTER TABLE hrr_cab_rate
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_cab_route
+      --
+      ALTER TABLE hrr_cab_route
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_extra_bed_cost
+      --
+      ALTER TABLE hrr_extra_bed_cost
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_hotel_incusion
+      --
+      ALTER TABLE hrr_hotel_incusion
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_inclusion_rate
+      --
+      ALTER TABLE hrr_inclusion_rate
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_iti_amendment_temp
+      --
+      ALTER TABLE hrr_iti_amendment_temp
+        MODIFY id_temp int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_iti_before_amendment
+      --
+      ALTER TABLE hrr_iti_before_amendment
+        MODIFY id_bef int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_meal_rate
+      --
+      ALTER TABLE hrr_meal_rate
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table hrr_room_base_rate
+      --
+      ALTER TABLE hrr_room_base_rate
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table image_template
+      --
+      ALTER TABLE image_template
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table itinerary
+      --
+      ALTER TABLE itinerary
+        MODIFY iti_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+      
+      --
+      -- AUTO_INCREMENT for table itinerary_discount_price_data
+      --
+      ALTER TABLE itinerary_discount_price_data
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table itinerary_visiter_data
+      --
+      ALTER TABLE itinerary_visiter_data
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table ititaxname
+      --
+      ALTER TABLE ititaxname
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_amendment_temp
+      --
+      ALTER TABLE iti_amendment_temp
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_before_amendment
+      --
+      ALTER TABLE iti_before_amendment
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_befor_flight_details
+      --
+      ALTER TABLE iti_befor_flight_details
+        MODIFY id_bef int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_befor_train_details
+      --
+      ALTER TABLE iti_befor_train_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_clients_docs
+      --
+      ALTER TABLE iti_clients_docs
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_email_followup
+      --
+      ALTER TABLE iti_email_followup
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_followup
+      --
+      ALTER TABLE iti_followup
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_package_category
+      --
+      ALTER TABLE iti_package_category
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+      
+      --
+      -- AUTO_INCREMENT for table iti_payment_details
+      --
+      ALTER TABLE iti_payment_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_payment_transactions
+      --
+      ALTER TABLE iti_payment_transactions
+        MODIFY tra_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_schedule_payment
+      --
+      ALTER TABLE iti_schedule_payment
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_temp_flight_details
+      --
+      ALTER TABLE iti_temp_flight_details
+        MODIFY id_temp int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_temp_train_details
+      --
+      ALTER TABLE iti_temp_train_details
+        MODIFY id_temp int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table iti_vouchers_status
+      --
+      ALTER TABLE iti_vouchers_status
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table it_instant_call_details
+      --
+      ALTER TABLE it_instant_call_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table it_queries
+      --
+      ALTER TABLE it_queries
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table leads
+      --
+      ALTER TABLE leads
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table marketing
+      --
+      ALTER TABLE marketing
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table marketing_category
+      --
+      ALTER TABLE marketing_category
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+      
+      --
+      -- AUTO_INCREMENT for table marketing_customer_followup
+      --
+      ALTER TABLE marketing_customer_followup
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table meal_plan
+      --
+      ALTER TABLE meal_plan
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+      
+      --
+      -- AUTO_INCREMENT for table message
+      --
+      ALTER TABLE message
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table msg_log
+      --
+      ALTER TABLE msg_log
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table newsletters
+      --
+      ALTER TABLE newsletters
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table newsletter_templates
+      --
+      ALTER TABLE newsletter_templates
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table new_setting
+      --
+      ALTER TABLE new_setting
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+      
+      --
+      -- AUTO_INCREMENT for table notifications
+      --
+      ALTER TABLE notifications
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table offer
+      --
+      ALTER TABLE offer
+        MODIFY offerid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table offers
+      --
+      ALTER TABLE offers
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table office_branches
+      --
+      ALTER TABLE office_branches
+        MODIFY branch_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table other_venodrs
+      --
+      ALTER TABLE other_venodrs
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table otp_expiry
+      --
+      ALTER TABLE otp_expiry
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table packages
+      --
+      ALTER TABLE packages
+        MODIFY package_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table package_category
+      --
+      ALTER TABLE package_category
+        MODIFY p_cat_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+      
+      --
+      -- AUTO_INCREMENT for table payment_refund
+      --
+      ALTER TABLE payment_refund
+        MODIFY tra_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table pdf_setting
+      --
+      ALTER TABLE pdf_setting
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table pdf_static_iamge
+      --
+      ALTER TABLE pdf_static_iamge
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table permission
+      --
+      ALTER TABLE permission
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table permission_category
+      --
+      ALTER TABLE permission_category
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table permission_sub_sub_category
+      --
+      ALTER TABLE permission_sub_sub_category
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table profi_loss_table
+      --
+      ALTER TABLE profi_loss_table
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table promotion_details
+      --
+      ALTER TABLE promotion_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table promotion_pages
+      --
+      ALTER TABLE promotion_pages
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table purchase_leads
+      --
+      ALTER TABLE purchase_leads
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table qrcodeimg
+      --
+      ALTER TABLE qrcodeimg
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table reference_customers
+      --
+      ALTER TABLE reference_customers
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table reference_customer_followup
+      --
+      ALTER TABLE reference_customer_followup
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table role_has_permission
+      --
+      ALTER TABLE role_has_permission
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9050;
+      
+      --
+      -- AUTO_INCREMENT for table room_category
+      --
+      ALTER TABLE room_category
+        MODIFY room_cat_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+      
+      --
+      -- AUTO_INCREMENT for table room_rates
+      --
+      ALTER TABLE room_rates
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table season_type
+      --
+      ALTER TABLE season_type
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+      
+      --
+      -- AUTO_INCREMENT for table sentoffers
+      --
+      ALTER TABLE sentoffers
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table settings
+      --
+      ALTER TABLE settings
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table sliders
+      --
+      ALTER TABLE sliders
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table sms_settings
+      --
+      ALTER TABLE sms_settings
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table social_api
+      --
+      ALTER TABLE social_api
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table states
+      --
+      ALTER TABLE states
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4121;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_accounts
+      --
+      ALTER TABLE tblacc_accounts
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_account_history
+      --
+      ALTER TABLE tblacc_account_history
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_account_type_details
+      --
+      ALTER TABLE tblacc_account_type_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_banking_rules
+      --
+      ALTER TABLE tblacc_banking_rules
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_banking_rule_details
+      --
+      ALTER TABLE tblacc_banking_rule_details
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_budgets
+      --
+      ALTER TABLE tblacc_budgets
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_budget_details
+      --
+      ALTER TABLE tblacc_budget_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_expense_category_mappings
+      --
+      ALTER TABLE tblacc_expense_category_mappings
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_item_automatics
+      --
+      ALTER TABLE tblacc_item_automatics
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_journal_entries
+      --
+      ALTER TABLE tblacc_journal_entries
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_matched_transactions
+      --
+      ALTER TABLE tblacc_matched_transactions
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_payment_mode_mappings
+      --
+      ALTER TABLE tblacc_payment_mode_mappings
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_plaid_transaction_logs
+      --
+      ALTER TABLE tblacc_plaid_transaction_logs
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_reconciles
+      --
+      ALTER TABLE tblacc_reconciles
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_tax_mappings
+      --
+      ALTER TABLE tblacc_tax_mappings
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_transaction_bankings
+      --
+      ALTER TABLE tblacc_transaction_bankings
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblacc_transfers
+      --
+      ALTER TABLE tblacc_transfers
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblactivity_log
+      --
+      ALTER TABLE tblactivity_log
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1227;
+      
+      --
+      -- AUTO_INCREMENT for table tbladminclientreminders
+      --
+      ALTER TABLE tbladminclientreminders
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbladvancetovendor
+      --
+      ALTER TABLE tbladvancetovendor
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblannouncements
+      --
+      ALTER TABLE tblannouncements
+        MODIFY announcementid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblclients
+      --
+      ALTER TABLE tblclients
+        MODIFY userid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblconsents
+      --
+      ALTER TABLE tblconsents
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblconsent_purposes
+      --
+      ALTER TABLE tblconsent_purposes
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontacts
+      --
+      ALTER TABLE tblcontacts
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontact_permissions
+      --
+      ALTER TABLE tblcontact_permissions
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontractrenewals
+      --
+      ALTER TABLE tblcontractrenewals
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontracts
+      --
+      ALTER TABLE tblcontracts
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontracts_types
+      --
+      ALTER TABLE tblcontracts_types
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontracttypes
+      --
+      ALTER TABLE tblcontracttypes
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontract_comments
+      --
+      ALTER TABLE tblcontract_comments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcontract_renewals
+      --
+      ALTER TABLE tblcontract_renewals
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcountries
+      --
+      ALTER TABLE tblcountries
+        MODIFY country_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+      
+      --
+      -- AUTO_INCREMENT for table tblcreditnotes
+      --
+      ALTER TABLE tblcreditnotes
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcreditnote_refunds
+      --
+      ALTER TABLE tblcreditnote_refunds
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcredits
+      --
+      ALTER TABLE tblcredits
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcurrencies
+      --
+      ALTER TABLE tblcurrencies
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+      
+      --
+      -- AUTO_INCREMENT for table tblcurrency_rates
+      --
+      ALTER TABLE tblcurrency_rates
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcurrency_rate_logs
+      --
+      ALTER TABLE tblcurrency_rate_logs
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcustomers_groups
+      --
+      ALTER TABLE tblcustomers_groups
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcustomer_groups
+      --
+      ALTER TABLE tblcustomer_groups
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcustomfields
+      --
+      ALTER TABLE tblcustomfields
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblcustomfieldsvalues
+      --
+      ALTER TABLE tblcustomfieldsvalues
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbldepartments
+      --
+      ALTER TABLE tbldepartments
+        MODIFY departmentid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbldismissed_announcements
+      --
+      ALTER TABLE tbldismissed_announcements
+        MODIFY dismissedannouncementid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblemailtemplates
+      --
+      ALTER TABLE tblemailtemplates
+        MODIFY emailtemplateid int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2065;
+      
+      --
+      -- AUTO_INCREMENT for table tblestimateactivity
+      --
+      ALTER TABLE tblestimateactivity
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblestimateitems
+      --
+      ALTER TABLE tblestimateitems
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblestimates
+      --
+      ALTER TABLE tblestimates
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblestimate_requests
+      --
+      ALTER TABLE tblestimate_requests
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblestimate_request_forms
+      --
+      ALTER TABLE tblestimate_request_forms
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblestimate_request_status
+      --
+      ALTER TABLE tblestimate_request_status
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblevents
+      --
+      ALTER TABLE tblevents
+        MODIFY eventid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblexpenses
+      --
+      ALTER TABLE tblexpenses
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblexpensescategories
+      --
+      ALTER TABLE tblexpensescategories
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblexpenses_categories
+      --
+      ALTER TABLE tblexpenses_categories
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+      
+      --
+      -- AUTO_INCREMENT for table tblfiles
+      --
+      ALTER TABLE tblfiles
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tblform_questions
+      --
+      ALTER TABLE tblform_questions
+        MODIFY questionid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblform_question_box
+      --
+      ALTER TABLE tblform_question_box
+        MODIFY boxid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblform_question_box_description
+      --
+      ALTER TABLE tblform_question_box_description
+        MODIFY questionboxdescriptionid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblform_results
+      --
+      ALTER TABLE tblform_results
+        MODIFY resultid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblgdpr_requests
+      --
+      ALTER TABLE tblgdpr_requests
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblgoals
+      --
+      ALTER TABLE tblgoals
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblinvoiceattachments
+      --
+      ALTER TABLE tblinvoiceattachments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblinvoicepaymentrecords
+      --
+      ALTER TABLE tblinvoicepaymentrecords
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblinvoices
+      --
+      ALTER TABLE tblinvoices
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblitemable
+      --
+      ALTER TABLE tblitemable
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblitems
+      --
+      ALTER TABLE tblitems
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+      
+      --
+      -- AUTO_INCREMENT for table tblitems_groups
+      --
+      ALTER TABLE tblitems_groups
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblitems_of_vendor
+      --
+      ALTER TABLE tblitems_of_vendor
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblitem_tax
+      --
+      ALTER TABLE tblitem_tax
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblknowedge_base_article_feedback
+      --
+      ALTER TABLE tblknowedge_base_article_feedback
+        MODIFY articleanswerid int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+      
+      --
+      -- AUTO_INCREMENT for table tblknowledge_base
+      --
+      ALTER TABLE tblknowledge_base
+        MODIFY articleid int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+      
+      --
+      -- AUTO_INCREMENT for table tblknowledge_base_groups
+      --
+      ALTER TABLE tblknowledge_base_groups
+        MODIFY groupid int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tblleadattachments
+      --
+      ALTER TABLE tblleadattachments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblleads
+      --
+      ALTER TABLE tblleads
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblleads_email_integration
+      --
+      ALTER TABLE tblleads_email_integration
+        MODIFY id int NOT NULL AUTO_INCREMENT COMMENT 'the ID always must be 1', AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tblleads_sources
+      --
+      ALTER TABLE tblleads_sources
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblleads_status
+      --
+      ALTER TABLE tblleads_status
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbllead_activity_log
+      --
+      ALTER TABLE tbllead_activity_log
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbllead_integration_emails
+      --
+      ALTER TABLE tbllead_integration_emails
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblmail_queue
+      --
+      ALTER TABLE tblmail_queue
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblmilestones
+      --
+      ALTER TABLE tblmilestones
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblmodules
+      --
+      ALTER TABLE tblmodules
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table tblnewsfeed_comment_likes
+      --
+      ALTER TABLE tblnewsfeed_comment_likes
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblnewsfeed_posts
+      --
+      ALTER TABLE tblnewsfeed_posts
+        MODIFY postid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblnewsfeed_post_comments
+      --
+      ALTER TABLE tblnewsfeed_post_comments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblnewsfeed_post_likes
+      --
+      ALTER TABLE tblnewsfeed_post_likes
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblnotes
+      --
+      ALTER TABLE tblnotes
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+      
+      --
+      -- AUTO_INCREMENT for table tblnotifications
+      --
+      ALTER TABLE tblnotifications
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbloptions
+      --
+      ALTER TABLE tbloptions
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=532;
+      
+      --
+      -- AUTO_INCREMENT for table tblpayment
+      --
+      ALTER TABLE tblpayment
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpayment_modes
+      --
+      ALTER TABLE tblpayment_modes
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+      
+      --
+      -- AUTO_INCREMENT for table tblpinned_projects
+      --
+      ALTER TABLE tblpinned_projects
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblprojectdiscussioncomments
+      --
+      ALTER TABLE tblprojectdiscussioncomments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblprojectdiscussions
+      --
+      ALTER TABLE tblprojectdiscussions
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblprojects
+      --
+      ALTER TABLE tblprojects
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproject_activity
+      --
+      ALTER TABLE tblproject_activity
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproject_files
+      --
+      ALTER TABLE tblproject_files
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproject_members
+      --
+      ALTER TABLE tblproject_members
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproject_notes
+      --
+      ALTER TABLE tblproject_notes
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproject_settings
+      --
+      ALTER TABLE tblproject_settings
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproposals
+      --
+      ALTER TABLE tblproposals
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblproposal_comments
+      --
+      ALTER TABLE tblproposal_comments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpurchase_option
+      --
+      ALTER TABLE tblpurchase_option
+        MODIFY option_id int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_activity_log
+      --
+      ALTER TABLE tblpur_activity_log
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_approval_details
+      --
+      ALTER TABLE tblpur_approval_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_approval_setting
+      --
+      ALTER TABLE tblpur_approval_setting
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_comments
+      --
+      ALTER TABLE tblpur_comments
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_contacts
+      --
+      ALTER TABLE tblpur_contacts
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_contracts
+      --
+      ALTER TABLE tblpur_contracts
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_debits
+      --
+      ALTER TABLE tblpur_debits
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_debits_refunds
+      --
+      ALTER TABLE tblpur_debits_refunds
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_debit_notes
+      --
+      ALTER TABLE tblpur_debit_notes
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_estimates
+      --
+      ALTER TABLE tblpur_estimates
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_estimate_detail
+      --
+      ALTER TABLE tblpur_estimate_detail
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_invoices
+      --
+      ALTER TABLE tblpur_invoices
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_invoice_details
+      --
+      ALTER TABLE tblpur_invoice_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_invoice_payment
+      --
+      ALTER TABLE tblpur_invoice_payment
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_orders
+      --
+      ALTER TABLE tblpur_orders
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_order_detail
+      --
+      ALTER TABLE tblpur_order_detail
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_order_payment
+      --
+      ALTER TABLE tblpur_order_payment
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_request
+      --
+      ALTER TABLE tblpur_request
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_request_detail
+      --
+      ALTER TABLE tblpur_request_detail
+        MODIFY prd_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_unit
+      --
+      ALTER TABLE tblpur_unit
+        MODIFY unit_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_vendor
+      --
+      ALTER TABLE tblpur_vendor
+        MODIFY userid int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_vendor_cate
+      --
+      ALTER TABLE tblpur_vendor_cate
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table tblpur_vendor_items
+      --
+      ALTER TABLE tblpur_vendor_items
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblrelated_items
+      --
+      ALTER TABLE tblrelated_items
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblreminders
+      --
+      ALTER TABLE tblreminders
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblroles
+      --
+      ALTER TABLE tblroles
+        MODIFY roleid int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tblsales_activity
+      --
+      ALTER TABLE tblsales_activity
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=622;
+      
+      --
+      -- AUTO_INCREMENT for table tblscheduled_emails
+      --
+      ALTER TABLE tblscheduled_emails
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblservices
+      --
+      ALTER TABLE tblservices
+        MODIFY serviceid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblspam_filters
+      --
+      ALTER TABLE tblspam_filters
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblstaff
+      --
+      ALTER TABLE tblstaff
+        MODIFY staffid int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=328;
+      
+      --
+      -- AUTO_INCREMENT for table tblstafftasksattachments
+      --
+      ALTER TABLE tblstafftasksattachments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblstaff_departments
+      --
+      ALTER TABLE tblstaff_departments
+        MODIFY staffdepartmentid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblsubscriptions
+      --
+      ALTER TABLE tblsubscriptions
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltags
+      --
+      ALTER TABLE tbltags
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltasks
+      --
+      ALTER TABLE tbltasks
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tbltaskstimers
+      --
+      ALTER TABLE tbltaskstimers
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tbltasks_checklist_templates
+      --
+      ALTER TABLE tbltasks_checklist_templates
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltask_assigned
+      --
+      ALTER TABLE tbltask_assigned
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+      
+      --
+      -- AUTO_INCREMENT for table tbltask_checklist_items
+      --
+      ALTER TABLE tbltask_checklist_items
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltask_comments
+      --
+      ALTER TABLE tbltask_comments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltask_followers
+      --
+      ALTER TABLE tbltask_followers
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltaxes
+      --
+      ALTER TABLE tbltaxes
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+      
+      --
+      -- AUTO_INCREMENT for table tbltemplates
+      --
+      ALTER TABLE tbltemplates
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltickets
+      --
+      ALTER TABLE tbltickets
+        MODIFY ticketid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltickets_pipe_log
+      --
+      ALTER TABLE tbltickets_pipe_log
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltickets_predefined_replies
+      --
+      ALTER TABLE tbltickets_predefined_replies
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltickets_priorities
+      --
+      ALTER TABLE tbltickets_priorities
+        MODIFY priorityid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltickets_status
+      --
+      ALTER TABLE tbltickets_status
+        MODIFY ticketstatusid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblticket_attachments
+      --
+      ALTER TABLE tblticket_attachments
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblticket_replies
+      --
+      ALTER TABLE tblticket_replies
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltodos
+      --
+      ALTER TABLE tbltodos
+        MODIFY todoid int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltracked_mails
+      --
+      ALTER TABLE tbltracked_mails
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbltwocheckout_log
+      --
+      ALTER TABLE tbltwocheckout_log
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tbluser_meta
+      --
+      ALTER TABLE tbluser_meta
+        MODIFY umeta_id bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+      
+      --
+      -- AUTO_INCREMENT for table tblvault
+      --
+      ALTER TABLE tblvault
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblviews_tracking
+      --
+      ALTER TABLE tblviews_tracking
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblware_unit_type
+      --
+      ALTER TABLE tblware_unit_type
+        MODIFY unit_type_id int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+      
+      --
+      -- AUTO_INCREMENT for table tblweb_to_lead
+      --
+      ALTER TABLE tblweb_to_lead
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblwh_goods_delivery_activity_log
+      --
+      ALTER TABLE tblwh_goods_delivery_activity_log
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblwh_order_returns
+      --
+      ALTER TABLE tblwh_order_returns
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblwh_order_returns_refunds
+      --
+      ALTER TABLE tblwh_order_returns_refunds
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblwh_order_return_details
+      --
+      ALTER TABLE tblwh_order_return_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table tblwh_sub_group
+      --
+      ALTER TABLE tblwh_sub_group
+        MODIFY id int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+      
+      --
+      -- AUTO_INCREMENT for table tbl_get_account_type_details
+      --
+      ALTER TABLE tbl_get_account_type_details
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
+      
+      --
+      -- AUTO_INCREMENT for table teamleaders
+      --
+      ALTER TABLE teamleaders
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table terms
+      --
+      ALTER TABLE terms
+        MODIFY term_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+      
+      --
+      -- AUTO_INCREMENT for table text_template
+      --
+      ALTER TABLE text_template
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table thought_of_day
+      --
+      ALTER TABLE thought_of_day
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table train_details
+      --
+      ALTER TABLE train_details
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table transporters
+      --
+      ALTER TABLE transporters
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table travel_booking
+      --
+      ALTER TABLE travel_booking
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table users
+      --
+      ALTER TABLE users
+        MODIFY user_id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=327;
+      
+      --
+      -- AUTO_INCREMENT for table user_dashboard
+      --
+      ALTER TABLE user_dashboard
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+      
+      --
+      -- AUTO_INCREMENT for table user_permission
+      --
+      ALTER TABLE user_permission
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=348;
+      
+      --
+      -- AUTO_INCREMENT for table user_permission_category
+      --
+      ALTER TABLE user_permission_category
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+      
+      --
+      -- AUTO_INCREMENT for table user_permission_sub_category
+      --
+      ALTER TABLE user_permission_sub_category
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+      
+      --
+      -- AUTO_INCREMENT for table user_role
+      --
+      ALTER TABLE user_role
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+      
+      --
+      -- AUTO_INCREMENT for table user_role_old
+      --
+      ALTER TABLE user_role_old
+        MODIFY id int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+      
+      --
+      -- AUTO_INCREMENT for table vehicles
+      --
+      ALTER TABLE vehicles
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table vehicles_rates_by_tour
+      --
+      ALTER TABLE vehicles_rates_by_tour
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table vehicle_package_list
+      --
+      ALTER TABLE vehicle_package_list
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table vouchers
+      --
+      ALTER TABLE vouchers
+        MODIFY voucher_id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table vtf_booking_docs
+      --
+      ALTER TABLE vtf_booking_docs
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- AUTO_INCREMENT for table youtube_videos
+      --
+      ALTER TABLE youtube_videos
+        MODIFY id int NOT NULL AUTO_INCREMENT;
+      
+      --
+      -- Constraints for dumped tables
+      --
+      
+      --
+      -- Constraints for table cab_booking
+      --
+      ALTER TABLE cab_booking
+        ADD CONSTRAINT frk_iti_id FOREIGN KEY (iti_id) REFERENCES itinerary (iti_id) ON DELETE CASCADE; 
+      ALTER TABLE flight_details
+        ADD CONSTRAINT frk_flight_key FOREIGN KEY (iti_id) REFERENCES itinerary (iti_id) ON DELETE CASCADE; 
+      ALTER TABLE tbltwocheckout_log
+        ADD CONSTRAINT tbltwocheckout_log_ibfk_1 FOREIGN KEY (invoice_id) REFERENCES tblinvoices (id) ON DELETE CASCADE;";
+        DB::statement($querySeventy);
     }
 }

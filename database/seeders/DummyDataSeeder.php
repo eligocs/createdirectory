@@ -4734,8 +4734,7 @@ class DummyDataSeeder extends Seeder
         INSERT INTO airports VALUES(4721, 'BEK', 'Bareilly', 'BEK', 'Bareilly', 'India', 'INR', 0, NULL, NULL, '2020-05-23 13:14:32', '2020-05-23 13:14:32', 1);
         INSERT INTO airports VALUES(4722, 'KBK', 'Kushinagar International Airport', 'KBK', 'Kushinagar', 'India', 'INR', NULL, NULL, NULL, '2020-05-23 13:14:32', '2020-05-23 13:14:32', NULL);
         INSERT INTO airports VALUES(4723, 'DBR', 'Darbhanga Airport', 'DBR', 'Darbhanga', 'India', 'INR', NULL, NULL, NULL, '2020-05-23 13:14:32', '2020-05-23 13:14:32', NULL);";
-
-        // Execute the raw query
+ 
         DB::statement($query);
 
         $querytwo = "INSERT INTO cities VALUES(1, 'Bombuflat', 1);
