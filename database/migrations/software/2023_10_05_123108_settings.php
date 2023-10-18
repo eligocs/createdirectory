@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('company_contact', 200);
             $table->string('company_email', 200);
             $table->text('company_info');
-            $table->text('who_we_are');
+            $table->longtext('who_we_are');
             $table->text('what_we_do');
             $table->text('why_choose_us');
             $table->text('tagline');
