@@ -273,7 +273,7 @@ class FrontController extends Controller
     public function runSpecificSeeders()
     {
         // Run specific seeders using the Artisan command
-        Artisan::call('db:seed', ['--class' => 'DummyDataSeeder']); 
+        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']); 
         // Add more seeders as needed 
         return true;
     }
