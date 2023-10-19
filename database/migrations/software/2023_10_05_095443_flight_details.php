@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('flight_details', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id_bef');
             $table->integer('iti_id');
             $table->integer('in_itinerary')->default(1)->comment('0=false,1=true');
             $table->string('trip_type', 200);

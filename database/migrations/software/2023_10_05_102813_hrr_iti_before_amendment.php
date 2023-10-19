@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hrr_iti_before_amendment', function (Blueprint $table) {
-            $table->id('id_bef');
+            $table->increments('id_bef');
             $table->text('check_in_date')->default('0000-00-00 00:00:00');
             $table->text('check_out_date')->default('0000-00-00 00:00:00');
             $table->integer('city_id');

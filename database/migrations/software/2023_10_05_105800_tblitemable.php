@@ -23,6 +23,9 @@ return new class extends Migration
             $table->text('commodity_code', 100)->nullable();
             $table->text('commodity_barcode')->nullable();
             $table->integer('unit_id')->nullable();
+            $table->integer('rel_id')->nullable();
+            $table->integer('rel_type')->nullable();
+            $table->integer('qty')->nullable();
             $table->text('sku_code', 200)->nullable();
             $table->text('sku_name', 200)->nullable();
             $table->decimal('purchase_price', 15, 2)->nullable();

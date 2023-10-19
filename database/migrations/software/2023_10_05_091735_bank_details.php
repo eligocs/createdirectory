@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bank_details', function (Blueprint $table) {
-            $table->id('bank_id'); // Renaming 'bank_id' to 'id' and setting it as the primary key
+            $table->increments('bank_id'); // Renaming 'bank_id' to 'id' and setting it as the primary key
             $table->string('bank_name', 100);
             $table->string('payee_name', 100);
             $table->string('account_type', 30);

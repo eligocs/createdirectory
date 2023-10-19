@@ -17,6 +17,8 @@ return new class extends Migration
             $table->longText('permissions')->nullable();
             $table->timestamps();
         });
+        // DB::statement('ALTER TABLE tblroles AUTO_INCREMENT = 14;');
+// 
     }
 
     /**

@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tblpurchase_option', function (Blueprint $table) {
-            $table->unsignedInteger('option_id');
+            $table->id('option_id');
             $table->string('option_name', 200);
             $table->longText('option_val')->nullable();
-            $table->tinyInteger('auto')->nullable();
-            $table->primary('option_id');
+            $table->tinyInteger('auto')->nullable(); 
         });
+        DB::statement('ALTER TABLE tblpurchase_option AUTO_INCREMENT = 14;');
     }
+ 
 
     /**
      * Reverse the migrations.

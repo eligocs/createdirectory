@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->integer('emp_code')->nullable();
+            $table->id('user_id');
+            $table->string('emp_code')->nullable();
             $table->integer('is_super_admin')->default(0)->comment('1 = super admin');
             $table->integer('is_super_manager')->default(0)->comment('1=super manager,2=leads manager, 3 = sales manager, 4 = account manager,5=GM');
             $table->string('first_name', 200);
@@ -49,8 +49,7 @@ return new class extends Migration
             $table->timestamp('block_date')->default(now());
 
             $table->unique('email');
-            $table->unique('user_name');
-            $table->index('emp_code');
+            $table->unique('user_name'); 
         });
 
         // Set the auto-increment starting value to 1000

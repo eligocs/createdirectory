@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tbltodos', function (Blueprint $table) {
-            $table->id();
+            $table->id('todoid');
             $table->text('description');
             $table->integer('staffid');
             $table->datetime('dateadded');

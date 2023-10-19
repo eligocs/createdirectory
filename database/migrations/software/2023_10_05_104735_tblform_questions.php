@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tblform_questions', function (Blueprint $table) {
-            $table->id();
+            $table->id('questionid');
             $table->integer('rel_id');
             $table->string('rel_type', 20)->nullable();
             $table->mediumText('question');

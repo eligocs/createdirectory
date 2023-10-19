@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('account_type_id');
             $table->integer('account_detail_type_id');
             $table->decimal('balance', 15, 2)->nullable();
-            $table->date('balance_as_of')->nullable();
+            $table->text('balance_as_of')->nullable();
             $table->text('description')->nullable();
             $table->integer('default_account')->default(0);
             $table->integer('active')->default(1);

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hotel_room_rates', function (Blueprint $table) {
-            $table->id('htr_id');
+            $table->increments('htr_id');
             $table->integer('country_id');
             $table->integer('state_id');
             $table->integer('city_id');

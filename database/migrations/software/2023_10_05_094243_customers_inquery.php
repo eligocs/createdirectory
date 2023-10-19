@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customers_inquery', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('customer_id');
+        Schema::create('customers_inquery', function (Blueprint $table) { 
+            $table->increments('customer_id');
             $table->string('temp_key', 50)->nullable();
             $table->tinyInteger('customer_type')->default(0)->comment('0=Direct Customer OR 1=Travel Partner,2=Reference');
             $table->string('reference_name', 50)->nullable()->comment('if customer_type = 2');

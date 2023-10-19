@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('terms', function (Blueprint $table) {
-            $table->id();
+            $table->id('term_id');
             $table->string('term_type', 10)->comment('term type = "itinerary/hotel/cab"');
             $table->longText('bank_payment_terms_content');
             $table->longText('cancel_content');

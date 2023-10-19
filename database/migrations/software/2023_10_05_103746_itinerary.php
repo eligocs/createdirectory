@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('itinerary', function (Blueprint $table) {
-            $table->id('iti_id');
+            $table->increments('iti_id');
             $table->enum('iti_type', ['1', '2'])->default('1')->comment('1=itinerary,2=accommodation');
             $table->string('iti_package_type', 50)->nullable();
             $table->integer('is_amendment')->default(0)->comment('Is amendment in booked itinerary. 1=TRUE');

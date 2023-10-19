@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('client_messages', function (Blueprint $table) {
-            $table->id();
+            $table->increments('msg_id');
             $table->unsignedBigInteger('client_id');
             $table->text('message');
             $table->timestamps();

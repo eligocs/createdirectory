@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('iti_payment_transactions', function (Blueprint $table) {
-            $table->id('tra_id');
+            $table->increments('tra_id');
             $table->unsignedBigInteger('iti_id');
             $table->string('payment_received', 200);
             $table->string('payment_type', 200)->comment('cash/cheque');
