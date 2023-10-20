@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
         $this->call(DummyDataSeederFour::class);
         $this->call(DummyDataSeederFive::class);
         $this->call(DummyDataSeederSix::class);
+        // $this->call(TestSeeder::class);
     }
 }
