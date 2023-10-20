@@ -35,12 +35,14 @@
     }
 
     #progress-bar {
-        width: 0%;
+        width: 100%;
         height: 30px;
         background-color: linear;
         transition: width 0.6s;
     }
-   
+    .progress-container {
+        width: 100%;
+    }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css">
 
@@ -104,7 +106,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12 m-3">
+                        <div class="col-md-12   progress-container">
                             <progress id="progress-bar" max="100" value="0"></progress>
                             <p id="progress-label">0%</p> 
                         </div>
@@ -329,18 +331,17 @@
                     const percentComplete = (event.loaded / (1024 * 1024)) * 1000;  
                     progressBar.value = percentComplete;
                     var valpro = percentComplete.toFixed(2);
-                    progressLabel.innerText = valpro + "%";
-                    progressBar.style.width = valpro + "%"; 
+                    progressLabel.innerText = valpro + "%"; 
                     if(valpro > 1 && valpro < 20){
                         progressLabel.innerText =  "Starting setup "+ valpro + "%"; 
                     }else if(valpro > 20 && valpro < 45){
                         progressLabel.innerText =  "Setting up credentials "+ valpro + "%"; 
                     }else if(valpro > 45 && valpro < 85){
                         progressLabel.innerText =  "Installing Database "+ valpro + "%"; 
-                    }else if(valpro > 85 && valpro < 95){
+                    }else if(valpro > 85 && valpro < 97){
                         progressLabel.innerText =  "Setting up demo data.. "+valpro + "%"; 
-                    }else if(valpro > 95){
-                        progressLabel.innerText =  "Finishing... "+ valpro + "%"; 
+                    }else if(valpro > 97){
+                        progressLabel.innerText =  "Finishing up... "+ valpro + "%"; 
                         progressBar.style.width = "100%"; 
                     }  
                 }

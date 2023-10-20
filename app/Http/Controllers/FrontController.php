@@ -163,15 +163,16 @@ class FrontController extends Controller
             'database' => 'required',
             'username' => 'required',
         ]);
+      
         $total = 100;
         for ($i = 1; $i <= $total; $i++) { 
-            usleep(100000); 
+            usleep(250000); 
             $progress = ($i / $total) * 100;
               
             echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
             ob_flush();
             flush();
-        } 
+        }  
         $folderName = '/admin-directory'.'/'.$request->input('directory_name'); 
         if (!Storage::disk('public')->exists($folderName)) {
             Storage::disk('public')->makeDirectory($folderName);  
@@ -199,10 +200,13 @@ class FrontController extends Controller
         $database = $request->database ?? '';
         $username = $request->username ?? '';
         $password  = $this->generateRandomPassword(); 
-        // Create the database
-        DB::statement("CREATE DATABASE IF NOT EXISTS $database");  
-        DB::statement("CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'");
-        $res = DB::statement("GRANT ALL PRIVILEGES ON $database.* TO '$username'@'localhost'"); 
+        // Create the database 
+        $encryptedString = encrypt($password);  
+       
+        DB::statement("CREATE DATABASE IF NOT EXISTS ".$database."");  
+        DB::statement("CREATE USER '".$username."'@'127.0.0.1' IDENTIFIED BY '".$password."'");
+        $res = DB::statement( "GRANT ALL PRIVILEGES ON ".$database.".* TO '".$username."'@'127.0.0.1'"); 
+        $this->runMigrations($database,$username,$password);  
         if(!$res){
             return response()->json([
                 'status'=>500,
@@ -215,9 +219,8 @@ class FrontController extends Controller
             'directory_name'=>$directory_name,
             'database'=>$database,
             'username'=>$username,
-            'password'=>$password,
+            'password'=>$encryptedString,
         ]);
-        $this->runMigrations($database,$username,$password); 
         return response()->json([
             'status'=>200,
             'company_name'=>$company_name,
@@ -231,6 +234,12 @@ class FrontController extends Controller
         ]); 
 
     }
+
+    public function dycryptDbPass($pass) {
+        $decryptedString = decrypt($pass);
+        return $decryptedString;
+    }
+    
 
     public function generateRandomPassword($length = 10) {
         $characters = '0123456789!@#$&*'; // Include any other characters you want in the password 
@@ -251,7 +260,7 @@ class FrontController extends Controller
         $newConnectionName = 'new_connection';
         $newConnectionConfig = [
             'driver' => 'mysql',
-            'host' => 'localhost',
+            'host' => '127.0.0.1',
             'database' => $database,
             'username' => $username,
             'password' => $password,
@@ -263,8 +272,8 @@ class FrontController extends Controller
         // Run migrations using Artisan
         $migrationPath = 'database/migrations/software'; 
         // Run migrations for specific tables using Artisan with --path option
-        Artisan::call('migrate', ['--path' => $migrationPath]);
-        $this->runSpecificSeeders(); 
+        Artisan::call('migrate', ['--path' => $migrationPath]); 
+        Artisan::call('db:seed');
         // Optionally, revert back to the original/default connection
         Config::set("database.default", 'mysql'); 
         return true;
@@ -273,7 +282,8 @@ class FrontController extends Controller
     public function runSpecificSeeders()
     {
         // Run specific seeders using the Artisan command
-        Artisan::call('db:seed', ['--class' => 'DatabaseSeeder']); 
+        Artisan::call('db:seed', ['--class' => 'DummyDataSeeder']); 
+        Artisan::call('db:seed', ['--class'=> 'DummyDataSeederTwo']); 
         // Add more seeders as needed 
         return true;
     }

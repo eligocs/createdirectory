@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('directory_name'); 
             $table->string('database');
             $table->string('username');
-            $table->string('password'); 
+            $table->text('password'); 
             $table->timestamps();
         });
     }
