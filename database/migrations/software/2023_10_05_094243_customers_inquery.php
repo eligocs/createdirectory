@@ -58,6 +58,7 @@ return new class extends Migration
             $table->integer('lead_close_status')->default(0)->comment('1=closed');
             $table->integer('review_request_status')->default(0)->comment('1=review request sent to customer');
             $table->timestamps();
+            $table->string('created')->nullable();
             $table->string('meal_plan_type', 50)->nullable();
             $table->text('requirements_meta')->nullable();
             $table->timestamp('assigned_date')->default(now());
