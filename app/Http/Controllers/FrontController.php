@@ -204,8 +204,8 @@ class FrontController extends Controller
         $encryptedString = encrypt($password);  
        
         DB::statement("CREATE DATABASE IF NOT EXISTS ".$database."");  
-        DB::statement("CREATE USER '".$username."'@'127.0.0.1' IDENTIFIED BY '".$password."'");
-        $res = DB::statement( "GRANT ALL PRIVILEGES ON ".$database.".* TO '".$username."'@'127.0.0.1'"); 
+        DB::statement("CREATE USER '".$username."'@'".env('DB_HOST')."' IDENTIFIED BY '".$password."'");
+        $res = DB::statement( "GRANT ALL PRIVILEGES ON ".$database.".* TO '".$username."'@'".env('DB_HOST')."'"); 
         $this->runMigrations($database,$username,$password);  
         if(!$res){
             return response()->json([
@@ -260,7 +260,7 @@ class FrontController extends Controller
         $newConnectionName = 'new_connection';
         $newConnectionConfig = [
             'driver' => 'mysql',
-            'host' => '127.0.0.1',
+            'host' => env('DB_HOST'),
             'database' => $database,
             'username' => $username,
             'password' => $password,
