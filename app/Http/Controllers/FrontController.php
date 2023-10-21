@@ -54,10 +54,10 @@ class FrontController extends Controller
         $username = $request->input('db_username');
         $password = $request->input('db_password');
 
-        // Create the database
+        
         DB::statement("CREATE DATABASE IF NOT EXISTS $databaseName");
 
-        // Create the user and grant privileges
+        
         DB::statement("CREATE USER '$username'@'localhost' IDENTIFIED BY '$password'");
         $res = DB::statement("GRANT ALL PRIVILEGES ON $databaseName.* TO '$username'@'localhost'"); 
    
@@ -169,7 +169,7 @@ class FrontController extends Controller
             usleep(250000); 
             $progress = ($i / $total) * 100;
               
-            echo str_repeat(' ', 1024); // Flush the output buffer to update the browser
+            echo str_repeat(' ', 1024);  
             ob_flush();
             flush();
         }  
@@ -242,7 +242,7 @@ class FrontController extends Controller
     
 
     public function generateRandomPassword($length = 10) {
-        $characters = '0123456789!@#$&*'; // Include any other characters you want in the password 
+        $characters = '0123456789!@#$&*';  
         $password = '';
         $max = strlen($characters) - 1; 
         for ($i = 0; $i < $length; $i++) {
@@ -255,8 +255,7 @@ class FrontController extends Controller
 
 
     public function runMigrations($database,$username,$password)
-    {
-        // Define the new database connection configuration
+    { 
         $newConnectionName = 'new_connection';
         $newConnectionConfig = [
             'driver' => 'mysql',
@@ -264,27 +263,20 @@ class FrontController extends Controller
             'database' => $database,
             'username' => $username,
             'password' => $password,
-        ]; 
-        // Set the new database connection configuration
-        Config::set("database.connections.$newConnectionName", $newConnectionConfig); 
-        // Use the new connection to run migrations
-        Config::set("database.default", $newConnectionName); 
-        // Run migrations using Artisan
-        $migrationPath = 'database/migrations/software'; 
-        // Run migrations for specific tables using Artisan with --path option
+        ];  
+        Config::set("database.connections.$newConnectionName", $newConnectionConfig);  
+        Config::set("database.default", $newConnectionName);  
+        $migrationPath = 'database/migrations/software';  
         Artisan::call('migrate', ['--path' => $migrationPath]); 
-        Artisan::call('db:seed');
-        // Optionally, revert back to the original/default connection
+        Artisan::call('db:seed'); 
         Config::set("database.default", 'mysql'); 
         return true;
     }
 
     public function runSpecificSeeders()
-    {
-        // Run specific seeders using the Artisan command
+    { 
         Artisan::call('db:seed', ['--class' => 'DummyDataSeeder']); 
-        Artisan::call('db:seed', ['--class'=> 'DummyDataSeederTwo']); 
-        // Add more seeders as needed 
+        Artisan::call('db:seed', ['--class'=> 'DummyDataSeederTwo']);  
         return true;
     }
 
